@@ -123,10 +123,29 @@ class Diagram(BaseDiagram):
     ) -> None:
         """Construct diagram."""
         super().__init__(filename)
-        self.__filename = filename
         self.__networks = networks
         self.__peer_networks = peer_networks
         self.__groups = groups
+
+    def add_network(self: "Diagram", network: Network) -> None:
+        """Добавить сеть на диаграмму."""
+        self.__networks.append(network)
+
+    def get_images(self: "Diagram") -> tuple[Image]:
+        """Возвращает кортеж изображений."""
+        images: list[Image] = []
+        for fmt in (OutputFormats.PNG, OutputFormats.SVG):
+            images.append(
+                Image(
+                    filename=self.filename + "." + fmt.value,
+                    content=get_image(
+                        source=repr(self),
+                        diagram_type=DiagramTypes.NWDIAG,
+                        output_format=fmt,
+                    ),
+                ),
+            )
+        return tuple(images)
 
     def __repr__(self: "Diagram") -> str:
         """Represent string."""
@@ -140,23 +159,3 @@ class Diagram(BaseDiagram):
             out += repr(group)
         out += "}\n"
         return out
-
-    def add_network(self: "Diagram", network: Network) -> None:
-        """Добавить сеть на диаграмму."""
-        self.__networks.append(network)
-
-    def get_images(self: "Diagram") -> tuple[Image]:
-        """Возвращает кортеж изображений."""
-        images: list[Image] = []
-        for fmt in (OutputFormats.PNG, OutputFormats.SVG):
-            images.append(
-                Image(
-                    filename=self.__filename + "." + fmt.name.lower(),
-                    content=get_image(
-                        source=repr(self),
-                        diagram_type=DiagramTypes.NWDIAG,
-                        output_format=fmt,
-                    ),
-                ),
-            )
-        return tuple(images)

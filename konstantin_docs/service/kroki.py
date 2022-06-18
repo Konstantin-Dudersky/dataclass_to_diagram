@@ -10,15 +10,16 @@ URL = "https://kroki.io"
 class DiagramTypes(Enum):
     """Diagram types."""
 
-    GRAPHIZ = auto()
-    NWDIAG = auto()
+    GRAPHIZ = "graphiz"
+    NWDIAG = "nwdiag"
+    C4PLANTUML = "c4plantuml"
 
 
 class OutputFormats(Enum):
     """Output formats."""
 
-    PNG = auto()
-    SVG = auto()
+    PNG = "png"
+    SVG = "svg"
 
 
 def get_image(
@@ -32,8 +33,8 @@ def get_image(
         data=json.dumps(
             {
                 "diagram_source": source,
-                "diagram_type": diagram_type.name.lower(),
-                "output_format": output_format.name.lower(),
+                "diagram_type": diagram_type.value,
+                "output_format": output_format.value,
             },
         ),
     )

@@ -30,3 +30,10 @@ created:2022-06-18T07:50:04.689Z
 
 Добавить уровень логгирования
 </card>
+# [<!--](#TODO:-20)
+<card>
+created:2022-06-18T09:25:35.616Z
+-->
+
+flake8-class-attributes-order для template_fastapi
+</card>

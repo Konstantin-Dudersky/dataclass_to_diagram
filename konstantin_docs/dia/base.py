@@ -30,3 +30,4 @@ class BaseDiagram:
 
     def get_images(self: "BaseDiagram") -> tuple[Image]:
         """Возвращает изображение."""
+        raise NotImplementedError("Функция не определена.")

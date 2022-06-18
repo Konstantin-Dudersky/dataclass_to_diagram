@@ -10,14 +10,9 @@ poetry run poe docs
 
 ## Загрузить пакет в pypi
 
-Собрать пакет
+Собрать и опубликовать пакет
 ```sh
-poetry build
-```
-
-Опубликовать пакет
-```sh
-poetry publish
+poetry build && poetry publish
 ```
 
 Логин: konstantin-dudersky
