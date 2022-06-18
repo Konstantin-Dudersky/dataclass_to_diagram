@@ -59,9 +59,7 @@ class ModuleInfo:
 
     def __path_to_import_prefix(self: "ModuleInfo") -> str:
         """Путь до модуля в префикс для импорта модуля."""
-        return (
-            self.__path_module.replace(self.__path_src, "").replace("/", ".")
-        )[1:]
+        return self.__path_module.replace("/", ".")
 
 
 def __scan_folder_for_modules(

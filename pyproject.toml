@@ -26,10 +26,11 @@ flake8-return = "*"
 flake8-variables-names = "*"
 mypy = "*"
 pep8-naming = "*"
+poethepoet = "*"
 pylint = "*"
 
 [tool.poe.tasks]
-main = {script = "src.main:entry"}
+main = {script = "test.dia_src.main:main"}
 
 [tool.pylint.BASIC]
 good-names = 'db'

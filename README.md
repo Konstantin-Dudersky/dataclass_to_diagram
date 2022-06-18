@@ -11,3 +11,5 @@ poetry build
 ```
 poetry publish
 ```
+
+Логин: konstantin-dudersky

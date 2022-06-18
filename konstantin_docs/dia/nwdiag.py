@@ -122,7 +122,7 @@ class Diagram(BaseDiagram):
         groups: set[Group] = (),
     ) -> None:
         """Construct diagram."""
-        super().__init__()
+        super().__init__(filename)
         self.__filename = filename
         self.__networks = networks
         self.__peer_networks = peer_networks
