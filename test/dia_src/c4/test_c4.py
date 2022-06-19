@@ -120,6 +120,53 @@ dia3 = C4(
     ],
 )
 
+
+# ex 4 ------------------------------------------------------------------------
+# links
+
+admin = context.Person(
+    label="Administrator",
+    sprite=sprite.tupadr3.FontAwesome5(sprite.tupadr3.FontAwesome5Lib.USER),
+    link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md#hide_person_sprite-or-show_person_spritesprite",
+)
+web_app = container.Container(
+    label="Web Application",
+    techn="C#, ASP.NET Core 2.1 MVC",
+    descr="Allows users to compare multiple Twitter timelines",
+    link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md",
+)
+c1 = context.SystemBoundary(
+    label="Sample System",
+    link="https://github.com/plantuml-stdlib/C4-PlantUML",
+    links_container=[web_app],
+)
+twitter = context.System(
+    label="Twitter",
+    link="https://github.com/plantuml-stdlib/C4-PlantUML",
+)
+
+dia4 = C4(
+    filename="dia4",
+    title="",
+    links_context=[admin, c1, twitter],
+    links_rel=[
+        rel.Rel(
+            link_from=admin,
+            link_to=web_app,
+            label="Uses",
+            techn="HTTPS",
+            link="https://plantuml.com/link",
+        ),
+        rel.Rel(
+            link_from=web_app,
+            link_to=twitter,
+            label="Gets tweets from",
+            techn="HTTPS",
+            link="https://plantuml.com/link",
+        ),
+    ],
+)
+
 # ex 100 ----------------------------------------------------------------------
 
 

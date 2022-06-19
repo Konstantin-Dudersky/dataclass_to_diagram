@@ -30,4 +30,4 @@ with open(OUT_FILENAME, "w", encoding="utf-8") as stream:
 from .sprite_lib import tupadr3
 
 if __name__ == "__main__":
-    sprite = tupadr3.FontAwesome5(tupadr3.FontAwesome5Lib.AD)
+    _ = tupadr3.FontAwesome5(tupadr3.FontAwesome5Lib.AD)

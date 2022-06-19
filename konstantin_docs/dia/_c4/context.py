@@ -25,12 +25,14 @@ class BaseContext(_BaseC4Element):
         self: "BaseContext",
         label: str,
         sprite: _BaseSprite | None,
+        link: str | None,
         links_container: list[_BaseContainer] | None,
     ) -> None:
         """Создать BaseContext."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
         )
         self.__links_container = links_container
 
@@ -58,12 +60,14 @@ class Boundary(BaseContext):
         self: "Boundary",
         label: str,
         boundary_type: str = "",
+        link: str | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
         """Создать System."""
         super().__init__(
             label=label,
             sprite=None,
+            link=link,
             links_container=links_container,
         )
         self.__boundary_type = boundary_type
@@ -88,12 +92,14 @@ class Person(BaseContext):
         label: str,
         descr: str = "",
         sprite: _BaseSprite | None = None,
+        link: str | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
         """Создать Person."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
             links_container=links_container,
         )
         self.__descr = descr
@@ -119,12 +125,14 @@ class PersonExt(BaseContext):
         label: str,
         descr: str = "",
         sprite: _BaseSprite | None = None,
+        link: str | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
         """Создать Person."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
             links_container=links_container,
         )
         self.__descr = descr
@@ -149,12 +157,14 @@ class System(BaseContext):
         label: str,
         descr: str = "",
         sprite: _BaseSprite | None = None,
+        link: str | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
         """Создать Person."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
             links_container=links_container,
         )
         self.__descr = descr
@@ -177,12 +187,14 @@ class SystemBoundary(BaseContext):
     def __init__(
         self: "SystemBoundary",
         label: str,
+        link: str | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
         """Создать SystemBoundary."""
         super().__init__(
             label=label,
             sprite=None,
+            link=link,
             links_container=links_container,
         )
 
@@ -205,12 +217,14 @@ class SystemExt(BaseContext):
         label: str,
         descr: str = "",
         sprite: _BaseSprite | None = None,
+        link: str | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
         """Создать Person."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
             links_container=links_container,
         )
         self.__descr = descr

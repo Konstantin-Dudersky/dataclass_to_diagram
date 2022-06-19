@@ -1,20 +1,23 @@
 """Уровень 2 - container."""
 
-from konstantin_docs.dia._c4.base import BaseC4Element, BaseSprite
+from .base import BaseC4Element as _BaseC4Element
+from .base import BaseSprite as _BaseSprite
 
 
-class BaseContainer(BaseC4Element):
+class BaseContainer(_BaseC4Element):
     """Person."""
 
     def __init__(
         self: "BaseContainer",
         label: str,
-        sprite: BaseSprite | None,
+        sprite: _BaseSprite | None,
+        link: str | None,
     ) -> None:
         """Создать _BaseContainer."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
         )
 
     def __repr__(self: "BaseContainer") -> str:
@@ -30,12 +33,14 @@ class Container(BaseContainer):
         label: str,
         techn: str = "",
         descr: str = "",
-        sprite: BaseSprite | None = None,
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
     ) -> None:
         """Создать Container."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
         )
         self.__techn = techn
         self.__descr = descr
@@ -62,12 +67,14 @@ class ContainerDb(BaseContainer):
         label: str,
         techn: str = "",
         descr: str = "",
-        sprite: BaseSprite | None = None,
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
     ) -> None:
         """Создать Container."""
         super().__init__(
             label=label,
             sprite=sprite,
+            link=link,
         )
         self.__techn = techn
         self.__descr = descr

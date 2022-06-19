@@ -1,0 +1,20 @@
+@startuml
+
+!include C4_Container.puml
+!include <tupadr3/common>
+!include <tupadr3/font-awesome-5/user>
+
+
+Person(139805930565888, "Administrator", "", $sprite="user")
+System_Boundary(139805930565984, "Sample System"){
+    
+Container(139805930565936, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines", $sprite="")
+
+}
+System(139805930566032, "Twitter", "", $sprite="")
+
+
+Rel(139805930565888, 139805930565936, "Uses", "HTTPS", "", $link="https://plantuml.com/link")
+Rel(139805930565936, 139805930566032, "Gets tweets from", "HTTPS", "", $link="https://plantuml.com/link")
+SHOW_LEGEND()
+@enduml

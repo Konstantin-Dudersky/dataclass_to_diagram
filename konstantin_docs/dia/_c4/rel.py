@@ -1,6 +1,6 @@
 """Отношения."""
 
-from konstantin_docs.dia._c4.base import BaseC4Element
+from .base import BaseC4Element as _BaseC4Element
 
 
 class _RelationKinds:
@@ -19,11 +19,12 @@ class BaseRelation:
     def __init__(
         self: "BaseRelation",
         kind: str,
-        link_from: BaseC4Element,
-        link_to: BaseC4Element,
+        link_from: _BaseC4Element,
+        link_to: _BaseC4Element,
         label: str,
-        techn: str = "",
-        descr: str = "",
+        techn: str,
+        descr: str,
+        link: str | None,
     ) -> None:
         """Создает Relation."""
         self.__kind = kind
@@ -32,11 +33,19 @@ class BaseRelation:
         self.__label = label
         self.__techn = techn
         self.__descr = descr
+        self.__link = link
+
+    @property
+    def _repr_link(self: "BaseRelation") -> str:
+        """Представление ссылки."""
+        if self.__link is None:
+            return ""
+        return f', $link="{self.__link}"'
 
     def __repr__(self: "BaseRelation") -> str:
         """Return string representation."""
         template = """
-{kind}({link_from}, {link_to}, "{label}", "{techn}", "{descr}")"""
+{kind}({link_from}, {link_to}, "{label}", "{techn}", "{descr}"{link})"""
         return template.format(
             kind=self.__kind,
             link_from=self.__link_from.alias,
@@ -44,6 +53,7 @@ class BaseRelation:
             label=self.__label,
             techn=self.__techn,
             descr=self.__descr,
+            link=self._repr_link,
         )
 
 
@@ -52,11 +62,12 @@ class Rel(BaseRelation):
 
     def __init__(
         self: "Rel",
-        link_from: BaseC4Element,
-        link_to: BaseC4Element,
+        link_from: _BaseC4Element,
+        link_to: _BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
+        link: str | None = None,
     ) -> None:
         """Создает Relation."""
         super().__init__(
@@ -66,6 +77,7 @@ class Rel(BaseRelation):
             label=label,
             techn=techn,
             descr=descr,
+            link=link,
         )
 
 
@@ -74,11 +86,12 @@ class RelBack(BaseRelation):
 
     def __init__(
         self: "RelBack",
-        link_from: BaseC4Element,
-        link_to: BaseC4Element,
+        link_from: _BaseC4Element,
+        link_to: _BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
+        link: str | None = None,
     ) -> None:
         """Создает Relation."""
         super().__init__(
@@ -88,6 +101,7 @@ class RelBack(BaseRelation):
             label=label,
             techn=techn,
             descr=descr,
+            link=link,
         )
 
 
@@ -96,11 +110,12 @@ class RelNeighbor(BaseRelation):
 
     def __init__(
         self: "RelNeighbor",
-        link_from: BaseC4Element,
-        link_to: BaseC4Element,
+        link_from: _BaseC4Element,
+        link_to: _BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
+        link: str | None = None,
     ) -> None:
         """Создает Relation."""
         super().__init__(
@@ -110,6 +125,7 @@ class RelNeighbor(BaseRelation):
             label=label,
             techn=techn,
             descr=descr,
+            link=link,
         )
 
 
@@ -118,11 +134,12 @@ class RelR(BaseRelation):
 
     def __init__(
         self: "RelR",
-        link_from: BaseC4Element,
-        link_to: BaseC4Element,
+        link_from: _BaseC4Element,
+        link_to: _BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
+        link: str | None = None,
     ) -> None:
         """Создает RelR."""
         super().__init__(
@@ -132,4 +149,5 @@ class RelR(BaseRelation):
             label=label,
             techn=techn,
             descr=descr,
+            link=link,
         )

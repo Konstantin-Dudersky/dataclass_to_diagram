@@ -7,7 +7,7 @@
 import logging
 
 from konstantin_docs.dia.base import BaseDiagram as _BaseDiagram
-from konstantin_docs.dia.base import Image
+from konstantin_docs.dia.base import Image as _Image
 from konstantin_docs.service.kroki import (
     DiagramTypes,
     OutputFormats,
@@ -32,6 +32,7 @@ TEMPLATE_DIAGRAM = """@startuml
 {context}
 {container}
 {rels}
+SHOW_LEGEND()
 @enduml
 """
 
@@ -73,15 +74,15 @@ class C4(_BaseDiagram):
             out += "\n".join(common) + "\n" + "\n".join(sprites)
         return out
 
-    def get_images(self: "C4") -> tuple[Image]:
+    def get_images(self: "C4") -> tuple[_Image]:
         """Возвращает кортеж изображений."""
-        images: list[Image] = []
+        images: list[_Image] = []
         text = repr(self)
         images.append(self._get_text_file(".puml"))
         try:
             for fmt in (OutputFormats.PNG, OutputFormats.SVG):
                 images.append(
-                    Image(
+                    _Image(
                         filename=self.filename + "." + fmt.value,
                         content=get_image(
                             source=text,

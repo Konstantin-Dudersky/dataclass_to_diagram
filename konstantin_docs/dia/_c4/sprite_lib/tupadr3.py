@@ -38,7 +38,7 @@ class Devicons2(_Sprite):
         """Create sprite tupadr3."""
         super().__init__("tupadr3/devicons2", sprite)
         raise NotImplementedError(
-            "На дату 2022-06-19 эта библиотека не работает!!!"
+            "На дату 2022-06-19 эта библиотека не работает!!!",
         )
 
 

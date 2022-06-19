@@ -44,11 +44,13 @@ class BaseC4Element:
         self: "BaseC4Element",
         label: str,
         sprite: BaseSprite | None,
+        link: str | None,
     ) -> None:
         """Create BaseC4Element."""
         self.__alias = str(id(self)).replace("-", "_")
         self.__label = label
         self.__sprite = sprite
+        self.__link = link
 
     @property
     def alias(self: "BaseC4Element") -> str:
@@ -74,3 +76,10 @@ class BaseC4Element:
         if self.__sprite is None:
             return ""
         return self.__sprite.sprite_short
+
+    @property
+    def repr_link(self: "BaseC4Element") -> str:
+        """Ссылка."""
+        if self.__link is None:
+            return ""
+        return f'$link="{self.__link}"'
