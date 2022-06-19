@@ -1,0 +1,19 @@
+@startuml
+
+!include C4_Container.puml
+
+
+
+Person(139877788622976, "Customer", "People that need products")
+
+Container(139877788623120, "SPA", "angular", "The main interface that the customer interacts with")
+
+Container(139877788623168, "API", "java", "Handles all business logic")
+
+ContainerDb(139877788623264, "Database", "Microsoft SQL", "Holds product, order and invoice information")
+
+
+Rel(139877788622976, 139877788623120, "Uses", "https", "")
+Rel(139877788623120, 139877788623168, "Uses", "https", "")
+Rel_R(139877788623168, 139877788623264, "Reads/Writes", "", "")
+@enduml

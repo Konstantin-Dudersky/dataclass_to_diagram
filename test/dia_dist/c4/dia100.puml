@@ -1,0 +1,17 @@
+@startuml
+
+!include C4_Container.puml
+
+title System Context diagram for Internet Banking System
+
+Person(139877788623648, "Banking Customer", "A customer of the bank, with personal bank accounts.")
+System(139877788623744, "Internet Banking System", "Allows customers to check their accounts.")
+System_Ext(139877788623840, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+System_Ext(139877788623936, "Mainframe Banking System", "Stores all of the core banking information.")
+
+
+Rel(139877788623648, 139877788623744, "Uses", "", "")
+Rel_Back(139877788623648, 139877788623840, "Sends e-mails to", "", "")
+Rel_Neighbor(139877788623744, 139877788623840, "Sends e-mails", "SMTP", "")
+Rel(139877788623744, 139877788623936, "Uses", "", "")
+@enduml

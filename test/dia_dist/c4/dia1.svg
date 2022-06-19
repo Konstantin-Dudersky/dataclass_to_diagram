@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="581px" preserveAspectRatio="none" style="width:525px;height:581px;background:#FFFFFF;" version="1.1" viewBox="0 0 525 581" width="525px" zoomAndPan="magnify"><defs/><g><rect height="26.7999" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="377" x="67" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="367" x="72" y="23.9999">System Context diagram for Internet Banking System</text><!--MD5=[afe1e74725a6a8091c4b0750c111f643]
-entity 140196760078512--><g id="elem_140196760078512"><rect fill="#08427B" height="151.9999" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="203" x="172.5" y="44.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="250.5" y="66.8">«person»</text><image height="48" width="48" x="250" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="69.2"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="142" x="203" y="133.2001">Banking Customer</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="272" y="150.4"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="186.5" y="167.1999">A customer of the bank, with</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="198" y="183.9999">personal bank accounts.</text></g><!--MD5=[9f8bf02d62961d39cc841d6faebf91af]
-entity 140196760086336--><g id="elem_140196760086336"><rect fill="#1168BD" height="103.9999" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="220" x="7" y="272.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="93" y="294.8">«system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="187" x="23.5" y="313.2001">Internet Banking System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="115" y="330.4"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="21" y="347.1999">Allows customers to check their</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="87" y="363.9999">accounts.</text></g><!--MD5=[2b0ffb4c8d52d30d911eb2f877e01ed9]
-entity 140196758722672--><g id="elem_140196758722672"><rect fill="#999999" height="103.9999" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="174" x="345" y="272.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="98" x="383" y="294.8">«external_system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="106" x="379" y="313.2001">E-mail system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="430" y="330.4"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="365" y="347.1999">The internal Microsoft</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="355" y="363.9999">Exchange e-mail system.</text></g><!--MD5=[bf99d907260ee5fab50f7beb7f5e6c99]
-entity 140196758722816--><g id="elem_140196758722816"><rect fill="#999999" height="123.2" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="207" x="13.5" y="452.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="98" x="68" y="474.8">«external_system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="147" x="41.5" y="493.2001">Mainframe Banking</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="57" x="88.5" y="512.4001">System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="115" y="529.6"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="27.5" y="546.4">Stores all of the core banking</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="81" y="563.1999">information.</text></g><!--MD5=[080a895e0f3bf4e74bf206c082670a2a]
-link 140196760078512 to 140196760086336--><g id="link_140196760078512_140196760086336"><path d="M215.54,197.0199 C197.76,219.8899 178.52,244.6499 161.79,266.1699 " fill="none" id="140196760078512-to-140196760086336" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="156.68,272.7399,163.9547,268.2589,159.2145,264.5805,156.68,272.7399" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="192" y="239.8">Uses</text></g><!--MD5=[36b41e68bfd23e71d0ca84dd352f03d1]
-reverse link 140196760078512 to 140196758722672--><g id="link_140196760078512_140196758722672"><path d="M337.96,203.5699 C356.25,226.9599 375.66,251.7699 392.06,272.7399 " fill="none" id="140196760078512-backto-140196758722672" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="332.83,197.0199,335.3965,205.1694,340.1222,201.4724,332.83,197.0199" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="95" x="368" y="239.8">Sends e-mails to</text></g><!--MD5=[aa48bce54754ae3d4a90091b1311803c]
-link 140196760086336 to 140196758722672--><g id="link_140196760086336_140196758722672"><path d="M227.17,324.7999 C262.9,324.7999 302.2,324.7999 336.75,324.7999 " fill="none" id="140196760086336-to-140196758722672" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="344.96,324.7999,336.96,321.7999,336.96,327.7999,344.96,324.7999" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="81" x="245.5" y="304.8">Sends e-mails</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="39" x="266.5" y="319.2001">[SMTP]</text></g><!--MD5=[1a5c579550f736ff697bcbfb1709a379]
-link 140196760086336 to 140196758722816--><g id="link_140196760086336_140196758722816"><path d="M117,377.0399 C117,397.7999 117,422.0899 117,444.3699 " fill="none" id="140196760086336-to-140196758722816" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="117,452.4699,120,444.4699,114,444.4699,117,452.4699" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="118" y="419.8">Uses</text></g><!--MD5=[73b8233934c594cb5b9a47357b92aa94]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="339px" preserveAspectRatio="none" style="width:346px;height:339px;background:#FFFFFF;" version="1.1" viewBox="0 0 346 339" width="346px" zoomAndPan="magnify"><defs/><g><!--MD5=[0badf8eeca5033fcb6d287e4497dd5eb]
+entity 139877788621968--><g id="elem_139877788621968"><rect fill="#08427B" height="135.2" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="149" x="7" y="7"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="58" y="29.0001">«person»</text><image height="48" width="48" x="57.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="31.4001"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="42" x="60.5" y="95.4001">Label</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="79.5" y="112.6001"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="21" y="129.4">Optional Description</text></g><!--MD5=[b8d112947264289d6f307263073f8f17]
+entity 139877788622112--><g id="elem_139877788622112"><rect fill="#1168BD" height="87.2" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="149" x="191" y="31"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="241.5" y="53.0001">«system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="42" x="244.5" y="71.4001">Label</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="263.5" y="88.6001"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="205" y="105.4">Optional Description</text></g><!--MD5=[c559e57f0a5eeb75a54bc7c9890a2c98]
+entity 139877788622064--><g id="elem_139877788622064"><rect fill="#438DD5" height="101.6001" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="149" x="7" y="232"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59" x="52" y="254.0001">«container»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="42" x="60.5" y="272.4001">Label</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="68" x="47.5" y="287.6002">[Technology]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="79.5" y="304.0002"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="21" y="320.8001">Optional Description</text></g><!--MD5=[42c8232b3529649aa6adbd8f7609d73a]
+link 139877788621968 to 139877788622064--><g id="link_139877788621968_139877788622064"><path d="M81.5,142.26 C81.5,168.52 81.5,198.4 81.5,223.77 " fill="none" id="139877788621968-to-139877788622064" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="81.5,231.84,84.5,223.84,78.5,223.84,81.5,231.84" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="31" x="125" y="185.0001">Label</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="116" x="82.5" y="199.4002">[Optional Technology]</text></g><!--MD5=[6b844f4015ff48d6cf9d0ce850249435]
 @startuml
 
 ' C4-PlantUML
@@ -1533,25 +1529,15 @@ queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("ex
 Boundary($alias, $label, "Container", $tags, $link)
 !endprocedure
 
-title System Context diagram for Internet Banking System
-
-Person(140196760078512, "Banking Customer", "A customer of the bank, with personal bank accounts.")
-
-System(140196760086336, "Internet Banking System", "Allows customers to check their accounts.")
-
-System_Ext(140196758722672, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-
-System_Ext(140196758722816, "Mainframe Banking System", "Stores all of the core banking information.")
 
 
-Rel(140196760078512, 140196760086336, "Uses", "", "")
+Person(139877788621968, "Label", "Optional Description")
+System(139877788622112, "Label", "Optional Description")
 
-Rel_Back(140196760078512, 140196758722672, "Sends e-mails to", "", "")
+Container(139877788622064, "Label", "Technology", "Optional Description")
 
-Rel_Neighbor(140196760086336, 140196758722672, "Sends e-mails", "SMTP", "")
 
-Rel(140196760086336, 140196758722816, "Uses", "", "")
-
+Rel(139877788621968, 139877788622064, "Label", "Optional Technology", "")
 @enduml
 
 @startuml
@@ -2069,25 +2055,15 @@ skinparam person<<external_container>> {
 
 
 
-title System Context diagram for Internet Banking System
-
-rectangle "<$person>\n==Banking Customer\n\n A customer of the bank, with personal bank accounts." <<person>> as 140196760078512 
-
-rectangle "==Internet Banking System\n\n Allows customers to check their accounts." <<system>> as 140196760086336 
-
-rectangle "==E-mail system\n\n The internal Microsoft Exchange e-mail system." <<external_system>> as 140196758722672 
-
-rectangle "==Mainframe Banking System\n\n Stores all of the core banking information." <<external_system>> as 140196758722816 
 
 
-140196760078512 - ->> 140196760086336 : **Uses**
+rectangle "<$person>\n==Label\n\n Optional Description" <<person>> as 139877788621968 
+rectangle "==Label\n\n Optional Description" <<system>> as 139877788622112 
 
-140196760078512 <<- - 140196758722672 : **Sends e-mails to**
+rectangle "==Label\n//<size:12>[Technology]</size>//\n\n Optional Description" <<container>> as 139877788622064 
 
-140196760086336 ->> 140196758722672 : **Sends e-mails**\n//<size:12>[SMTP]</size>//
 
-140196760086336 - ->> 140196758722816 : **Uses**
-
+139877788621968 - ->> 139877788622064 : **Label**\n//<size:12>[Optional Technology]</size>//
 @enduml
 
 PlantUML version 1.2022.5(Sat Apr 30 10:55:52 GMT 2022)

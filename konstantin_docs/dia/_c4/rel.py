@@ -3,7 +3,7 @@
 from konstantin_docs.dia._c4.base import _BaseC4Element
 
 
-class _RelationKinds():
+class _RelationKinds:
     """NOTUSED."""
 
     BIREL = "BiRel"
@@ -36,8 +36,7 @@ class _BaseRelation:
     def __repr__(self: "_BaseRelation") -> str:
         """Return string representation."""
         template = """
-{kind}({link_from}, {link_to}, "{label}", "{techn}", "{descr}")
-"""
+{kind}({link_from}, {link_to}, "{label}", "{techn}", "{descr}")"""
         return template.format(
             kind=self.__kind,
             link_from=self.__link_from.alias,
@@ -106,6 +105,28 @@ class RelNeighbor(_BaseRelation):
         """Создает Relation."""
         super().__init__(
             kind="Rel_Neighbor",
+            link_from=link_from,
+            link_to=link_to,
+            label=label,
+            techn=techn,
+            descr=descr,
+        )
+
+
+class RelR(_BaseRelation):
+    """RelR."""
+
+    def __init__(
+        self: "RelR",
+        link_from: _BaseC4Element,
+        link_to: _BaseC4Element,
+        label: str,
+        techn: str = "",
+        descr: str = "",
+    ) -> None:
+        """Создает RelR."""
+        super().__init__(
+            kind="Rel_R",
             link_from=link_from,
             link_to=link_to,
             label=label,
