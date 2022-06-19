@@ -10,29 +10,29 @@ class Image(NamedTuple):
     content: bytes
 
 
-class _BaseDiagram:
+class BaseDiagram:
     """Базовая диаграмма.
 
     Все диаграммы должны наследовать от этого класса
     """
 
     def __init__(
-        self: "_BaseDiagram",
+        self: "BaseDiagram",
         filename: str,
     ) -> None:
         """Создать объект базовой диаграммы."""
         self.__filename = filename
 
     @property
-    def filename(self: "_BaseDiagram") -> str:
+    def filename(self: "BaseDiagram") -> str:
         """Возвращает имя файла (без расширения)."""
         return self.__filename
 
-    def get_images(self: "_BaseDiagram") -> tuple[Image]:
+    def get_images(self: "BaseDiagram") -> tuple[Image]:
         """Возвращает изображение."""
         raise NotImplementedError("Функция не определена.")
 
-    def _get_text_file(self: "_BaseDiagram", ext: str = ".puml") -> Image:
+    def _get_text_file(self: "BaseDiagram", ext: str = ".puml") -> Image:
         """Возвращает текстовый файл."""
         return Image(
             filename=self.filename + ext,

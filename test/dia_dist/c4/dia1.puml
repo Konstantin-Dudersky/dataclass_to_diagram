@@ -4,11 +4,11 @@
 
 
 
-Person(139877788621968, "Label", "Optional Description")
-System(139877788622112, "Label", "Optional Description")
+Person(139798767437760, "Label", "Optional Description", $sprite="")
+System(139798767510016, "Label", "Optional Description", $sprite="")
 
-Container(139877788622064, "Label", "Technology", "Optional Description")
+Container(139798767437328, "Label", "Technology", "Optional Description", $sprite="")
 
 
-Rel(139877788621968, 139877788622064, "Label", "Optional Technology", "")
+Rel(139798767437760, 139798767437328, "Label", "Optional Technology", "")
 @enduml

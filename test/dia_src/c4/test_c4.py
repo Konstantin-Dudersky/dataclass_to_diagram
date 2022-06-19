@@ -1,6 +1,6 @@
 """Тест диаграмм C4."""
 
-from konstantin_docs.dia.c4 import C4, container, context, rel
+from konstantin_docs.dia.c4 import C4, container, context, rel, sprite
 
 
 # ex 1 ------------------------------------------------------------------------
@@ -69,25 +69,30 @@ dia2 = C4(
 )
 
 # ex 3 ------------------------------------------------------------------------
+# icons/sprites
 
 user = context.Person(
     label="Customer",
     descr="People that need products",
+    sprite=sprite.tupadr3.FontAwesome5(sprite.tupadr3.FontAwesome5Lib.USERS),
 )
 spa = container.Container(
     label="SPA",
     techn="angular",
     descr="The main interface that the customer interacts with",
+    sprite=sprite.tupadr3.FontAwesome5(sprite.tupadr3.FontAwesome5Lib.ANGULAR),
 )
 api = container.Container(
     label="API",
     techn="java",
     descr="Handles all business logic",
+    sprite=sprite.tupadr3.FontAwesome5(sprite.tupadr3.FontAwesome5Lib.JAVA),
 )
 db = container.ContainerDb(
     label="Database",
     techn="Microsoft SQL",
     descr="Holds product, order and invoice information",
+    sprite=sprite.tupadr3.Devicons(sprite.tupadr3.DeviconsLib.MSQL_SERVER),
 )
 dia3 = C4(
     filename="dia3",
@@ -114,25 +119,6 @@ dia3 = C4(
         ),
     ],
 )
-
-# !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
-# !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
-# !include DEVICONS/angular.puml
-# !include DEVICONS/java.puml
-# !include DEVICONS/msql_server.puml
-# !include FONTAWESOME/users.puml
-
-# LAYOUT_WITH_LEGEND()
-
-# Person(user, "Customer", "People that need products", $sprite="users")
-# Container(spa, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
-# Container(api, "API", "java", "Handles all business logic", $sprite="java")
-# ContainerDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
-
-# Rel(user, spa, "Uses", "https")
-# Rel(spa, api, "Uses", "https")
-# Rel_R(api, db, "Reads/Writes")
-# @enduml
 
 # ex 100 ----------------------------------------------------------------------
 

@@ -1,6 +1,7 @@
 """Interaction with https://kroki.io."""
+
 import json
-from enum import Enum, auto
+from enum import Enum
 
 import requests
 

@@ -7,7 +7,7 @@ import shutil
 from importlib import import_module
 from types import ModuleType
 
-from konstantin_docs.dia.base import _BaseDiagram
+from konstantin_docs.dia.base import BaseDiagram
 
 
 logger = logging.getLogger(__name__)
@@ -88,11 +88,11 @@ def __scan_folder_for_modules(
     return modules
 
 
-def __dia_from_module(module: ModuleType) -> tuple[_BaseDiagram]:
+def __dia_from_module(module: ModuleType) -> tuple[BaseDiagram]:
     """Список диаграмм из модуля."""
-    dias: list[_BaseDiagram] = []
+    dias: list[BaseDiagram] = []
     for item in module.__dict__.values():
-        if isinstance(item, _BaseDiagram):
+        if isinstance(item, BaseDiagram):
             dias.append(item)
     return tuple(dias)
 

@@ -4,15 +4,15 @@
 
 
 
-Person(139877788622400, "Administrator", "")
-System_Boundary(139877788622592, "Sample System"){
+Person(139798767715568, "Administrator", "", $sprite="")
+System_Boundary(139798766070336, "Sample System"){
     
-Container(139877788622544, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+Container(139798766070240, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines", $sprite="")
 
 }
-System(139877788622736, "Twitter", "")
+System(139798766070480, "Twitter", "", $sprite="")
 
 
-Rel(139877788622400, 139877788622544, "Uses", "HTTPS", "")
-Rel(139877788622544, 139877788622736, "Gets tweets from", "HTTPS", "")
+Rel(139798767715568, 139798766070240, "Uses", "HTTPS", "")
+Rel(139798766070240, 139798766070480, "Gets tweets from", "HTTPS", "")
 @enduml

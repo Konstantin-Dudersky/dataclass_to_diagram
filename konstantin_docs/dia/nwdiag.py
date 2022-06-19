@@ -6,7 +6,7 @@
 from typing import NamedTuple
 
 
-from konstantin_docs.dia.base import _BaseDiagram, Image
+from konstantin_docs.dia.base import BaseDiagram, Image
 from konstantin_docs.service.kroki import (
     DiagramTypes,
     OutputFormats,
@@ -111,7 +111,7 @@ class Group:
         return out
 
 
-class Diagram(_BaseDiagram):
+class Diagram(BaseDiagram):
     """Общая диаграмма."""
 
     def __init__(

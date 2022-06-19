@@ -1,26 +1,28 @@
 """Уровень 2 - container."""
 
-from konstantin_docs.dia._c4.base import _BaseC4Element
+from konstantin_docs.dia._c4.base import BaseC4Element, BaseSprite
 
 
-class _BaseContainer(_BaseC4Element):
+class BaseContainer(BaseC4Element):
     """Person."""
 
     def __init__(
-        self: "_BaseContainer",
+        self: "BaseContainer",
         label: str,
+        sprite: BaseSprite | None,
     ) -> None:
         """Создать _BaseContainer."""
         super().__init__(
             label=label,
+            sprite=sprite,
         )
 
-    def __repr__(self: "_BaseContainer") -> str:
+    def __repr__(self: "BaseContainer") -> str:
         """Return string representation."""
         raise NotImplementedError("Метод не переопределен")
 
 
-class Container(_BaseContainer):
+class Container(BaseContainer):
     """Container."""
 
     def __init__(
@@ -28,10 +30,12 @@ class Container(_BaseContainer):
         label: str,
         techn: str = "",
         descr: str = "",
+        sprite: BaseSprite | None = None,
     ) -> None:
         """Создать Container."""
         super().__init__(
             label=label,
+            sprite=sprite,
         )
         self.__techn = techn
         self.__descr = descr
@@ -39,17 +43,18 @@ class Container(_BaseContainer):
     def __repr__(self: "Container") -> str:
         """Return string representation."""
         template = """
-Container({alias}, "{label}", "{techn}", "{descr}")
+Container({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}")
 """
         return template.format(
             alias=self.alias,
             label=self.label,
             techn=self.__techn,
             descr=self.__descr,
+            sprite=self.repr_sprite,
         )
 
 
-class ContainerDb(_BaseContainer):
+class ContainerDb(BaseContainer):
     """ContainerDb."""
 
     def __init__(
@@ -57,10 +62,12 @@ class ContainerDb(_BaseContainer):
         label: str,
         techn: str = "",
         descr: str = "",
+        sprite: BaseSprite | None = None,
     ) -> None:
         """Создать Container."""
         super().__init__(
             label=label,
+            sprite=sprite,
         )
         self.__techn = techn
         self.__descr = descr
@@ -68,11 +75,12 @@ class ContainerDb(_BaseContainer):
     def __repr__(self: "ContainerDb") -> str:
         """Return string representation."""
         template = """
-ContainerDb({alias}, "{label}", "{techn}", "{descr}")
+ContainerDb({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}")
 """
         return template.format(
             alias=self.alias,
             label=self.label,
             techn=self.__techn,
             descr=self.__descr,
+            sprite=self.repr_sprite,
         )

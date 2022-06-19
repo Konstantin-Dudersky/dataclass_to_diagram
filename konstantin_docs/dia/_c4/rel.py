@@ -1,6 +1,6 @@
 """Отношения."""
 
-from konstantin_docs.dia._c4.base import _BaseC4Element
+from konstantin_docs.dia._c4.base import BaseC4Element
 
 
 class _RelationKinds:
@@ -13,14 +13,14 @@ class _RelationKinds:
     REL_RIGHT = "Rel_Right"
 
 
-class _BaseRelation:
+class BaseRelation:
     """Базовый класс для отношений."""
 
     def __init__(
-        self: "_BaseRelation",
+        self: "BaseRelation",
         kind: str,
-        link_from: _BaseC4Element,
-        link_to: _BaseC4Element,
+        link_from: BaseC4Element,
+        link_to: BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
@@ -33,7 +33,7 @@ class _BaseRelation:
         self.__techn = techn
         self.__descr = descr
 
-    def __repr__(self: "_BaseRelation") -> str:
+    def __repr__(self: "BaseRelation") -> str:
         """Return string representation."""
         template = """
 {kind}({link_from}, {link_to}, "{label}", "{techn}", "{descr}")"""
@@ -47,13 +47,13 @@ class _BaseRelation:
         )
 
 
-class Rel(_BaseRelation):
+class Rel(BaseRelation):
     """Relation."""
 
     def __init__(
         self: "Rel",
-        link_from: _BaseC4Element,
-        link_to: _BaseC4Element,
+        link_from: BaseC4Element,
+        link_to: BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
@@ -69,13 +69,13 @@ class Rel(_BaseRelation):
         )
 
 
-class RelBack(_BaseRelation):
+class RelBack(BaseRelation):
     """RelBack."""
 
     def __init__(
         self: "RelBack",
-        link_from: _BaseC4Element,
-        link_to: _BaseC4Element,
+        link_from: BaseC4Element,
+        link_to: BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
@@ -91,13 +91,13 @@ class RelBack(_BaseRelation):
         )
 
 
-class RelNeighbor(_BaseRelation):
+class RelNeighbor(BaseRelation):
     """Rel_Neighbor."""
 
     def __init__(
         self: "RelNeighbor",
-        link_from: _BaseC4Element,
-        link_to: _BaseC4Element,
+        link_from: BaseC4Element,
+        link_to: BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",
@@ -113,13 +113,13 @@ class RelNeighbor(_BaseRelation):
         )
 
 
-class RelR(_BaseRelation):
+class RelR(BaseRelation):
     """RelR."""
 
     def __init__(
         self: "RelR",
-        link_from: _BaseC4Element,
-        link_to: _BaseC4Element,
+        link_from: BaseC4Element,
+        link_to: BaseC4Element,
         label: str,
         techn: str = "",
         descr: str = "",

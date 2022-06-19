@@ -1,19 +1,23 @@
 @startuml
 
 !include C4_Container.puml
+!include <tupadr3/common>
+!include <tupadr3/devicons/msql_server>
+!include <tupadr3/font-awesome-5/angular>
+!include <tupadr3/font-awesome-5/users>
+!include <tupadr3/font-awesome-5/java>
 
 
+Person(139798766070816, "Customer", "People that need products", $sprite="users")
 
-Person(139877788622976, "Customer", "People that need products")
+Container(139798766071008, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
 
-Container(139877788623120, "SPA", "angular", "The main interface that the customer interacts with")
+Container(139798766071200, "API", "java", "Handles all business logic", $sprite="java")
 
-Container(139877788623168, "API", "java", "Handles all business logic")
-
-ContainerDb(139877788623264, "Database", "Microsoft SQL", "Holds product, order and invoice information")
+ContainerDb(139798766071392, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
 
 
-Rel(139877788622976, 139877788623120, "Uses", "https", "")
-Rel(139877788623120, 139877788623168, "Uses", "https", "")
-Rel_R(139877788623168, 139877788623264, "Reads/Writes", "", "")
+Rel(139798766070816, 139798766071008, "Uses", "https", "")
+Rel(139798766071008, 139798766071200, "Uses", "https", "")
+Rel_R(139798766071200, 139798766071392, "Reads/Writes", "", "")
 @enduml
