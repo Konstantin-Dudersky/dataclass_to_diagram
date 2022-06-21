@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="645px" preserveAspectRatio="none" style="width:525px;height:645px;background:#FFFFFF;" version="1.1" viewBox="0 0 525 645" width="525px" zoomAndPan="magnify"><defs/><g><rect height="26.7999" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="377" x="67" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="367" x="72" y="23.9999">System Context diagram for Internet Banking System</text><!--MD5=[137f5cd92eaec9ae53babee1513ae4f1]
-entity 139642328489344--><g id="elem_139642328489344"><rect fill="#08427B" height="137.5998" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="203" x="172.5" y="44.7999"/><image height="48" width="48" x="250" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="54.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="142" x="203" y="118.8">Banking Customer</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="272" y="135.9999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="186.5" y="152.7998">A customer of the bank, with</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="198" y="169.5998">personal bank accounts.</text></g><!--MD5=[8ef7ef2f00a7c11f8713a04d29ac6034]
-entity 139642328489392--><g id="elem_139642328489392"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="220" x="7" y="258.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="187" x="23.5" y="284.8">Internet Banking System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="115" y="301.9999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="21" y="318.7998">Allows customers to check their</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="87" y="335.5998">accounts.</text></g><!--MD5=[81922995c53c2390606916958329d6da]
-entity 139642328489440--><g id="elem_139642328489440"><rect fill="#999999" height="89.5998" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="174" x="345" y="258.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="106" x="379" y="284.8">E-mail system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="430" y="301.9999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="365" y="318.7998">The internal Microsoft</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="355" y="335.5998">Exchange e-mail system.</text></g><!--MD5=[0789e74ce45134f22e2931b54a4d53c6]
-entity 139642328489488--><g id="elem_139642328489488"><rect fill="#999999" height="108.7999" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="207" x="13.5" y="424.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="147" x="41.5" y="450.8">Mainframe Banking</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="57" x="88.5" y="470">System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="115" y="487.1999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="27.5" y="503.9999">Stores all of the core banking</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="81" y="520.7998">information.</text></g><!--MD5=[ddb5073d6ac93f6906e7a1b0df8296e1]
-link 139642328489344 to 139642328489392--><g id="link_139642328489344_139642328489392"><path d="M217.1,182.9399 C197.93,205.8899 176.9,231.0799 159.08,252.4099 " fill="none" id="139642328489344-to-139642328489392" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="153.9,258.6099,161.33,254.3915,156.7242,250.5462,153.9,258.6099" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="192" y="225.8">Uses</text></g><!--MD5=[8ac2d7b1e25fad02bcb852946416199a]
-reverse link 139642328489344 to 139642328489440--><g id="link_139642328489344_139642328489440"><path d="M336.52,189.1899 C356.28,212.6999 377.47,237.9199 394.86,258.6099 " fill="none" id="139642328489344-backto-139642328489440" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="331.27,182.9399,334.1145,190.9965,338.7106,187.1397,331.27,182.9399" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="95" x="368" y="225.8">Sends e-mails to</text></g><!--MD5=[6893045e375add079b846c94b41decb0]
-link 139642328489392 to 139642328489440--><g id="link_139642328489392_139642328489440"><path d="M227.17,303.7999 C262.9,303.7999 302.2,303.7999 336.75,303.7999 " fill="none" id="139642328489392-to-139642328489440" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="344.96,303.7999,336.96,300.7999,336.96,306.7999,344.96,303.7999" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="81" x="245.5" y="283.8">Sends e-mails</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="39" x="266.5" y="298.2001">[SMTP]</text></g><!--MD5=[2e5ce46d16ccf3fae982d5737905576b]
-link 139642328489392 to 139642328489488--><g id="link_139642328489392_139642328489488"><path d="M117,349.0299 C117,369.5099 117,394.1799 117,416.4599 " fill="none" id="139642328489392-to-139642328489488" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="117,424.5499,120,416.5499,114,416.5499,117,424.5499" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="118" y="391.8">Uses</text></g><rect height="83.1997" rx="7.5" ry="7.5" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="143" x="360" y="546.5998"/><rect height="16.7999" style="stroke:none;stroke-width:1.0;fill:none;" width="131" x="366" y="554.5998"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="52" x="366" y="568.5997">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="418" y="568.5997"> </text><rect fill="#08427B" height="16.7999" style="stroke:none;stroke-width:1.0;" width="131" x="366" y="571.3997"/><text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="370" y="585.3997">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="381" y="585.3997"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="389" y="585.3997">person</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="435" y="585.3997"> </text><rect fill="#1168BD" height="16.7999" style="stroke:none;stroke-width:1.0;" width="131" x="366" y="588.1996"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="370" y="602.1996">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="381" y="602.1996"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="389" y="602.1996">system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="436" y="602.1996"> </text><rect fill="#999999" height="16.7999" style="stroke:none;stroke-width:1.0;" width="131" x="366" y="604.9996"/><text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="370" y="618.9995">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="381" y="618.9995"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="389" y="618.9995">external_system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="493" y="618.9995"> </text><line style="stroke:#00000000;stroke-width:1.0;" x1="366" x2="497" y1="554.5998" y2="554.5998"/><line style="stroke:#00000000;stroke-width:1.0;" x1="366" x2="497" y1="571.3997" y2="571.3997"/><line style="stroke:#00000000;stroke-width:1.0;" x1="366" x2="497" y1="588.1996" y2="588.1996"/><line style="stroke:#00000000;stroke-width:1.0;" x1="366" x2="497" y1="604.9996" y2="604.9996"/><line style="stroke:#00000000;stroke-width:1.0;" x1="366" x2="497" y1="621.7995" y2="621.7995"/><line style="stroke:#00000000;stroke-width:1.0;" x1="366" x2="366" y1="554.5998" y2="621.7995"/><line style="stroke:#00000000;stroke-width:1.0;" x1="497" x2="497" y1="554.5998" y2="621.7995"/><!--MD5=[dea95fc957c263180de5896ce5fec4b0]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="645px" preserveAspectRatio="none" style="width:538px;height:645px;background:#FFFFFF;" version="1.1" viewBox="0 0 538 645" width="538px" zoomAndPan="magnify"><defs/><g><rect height="26.7999" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="377" x="73.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="367" x="78.5" y="23.9999">System Context diagram for Internet Banking System</text><!--MD5=[619a2aa16adfef119ba71cdcedf99151]
+entity 139981077439216--><g id="elem_139981077439216"><rect fill="#08427B" height="137.5998" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="203" x="178.5" y="44.7999"/><image height="48" width="48" x="256" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="54.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="142" x="209" y="118.8">Banking Customer</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="278" y="135.9999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="192.5" y="152.7998">A customer of the bank, with</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="204" y="169.5998">personal bank accounts.</text></g><!--MD5=[ac35722f86f55a44d2735fa76f241d51]
+entity 139981077439264--><g id="elem_139981077439264"><rect fill="#1168BD" height="89.5998" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="220" x="7" y="258.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="187" x="23.5" y="284.8">Internet Banking System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="115" y="301.9999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="21" y="318.7998">Allows customers to check their</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="87" y="335.5998">accounts.</text></g><!--MD5=[1b4816e8aff727098dd83f1281ed376c]
+entity 139981077439312--><g id="elem_139981077439312"><rect fill="#999999" height="89.5998" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="174" x="358" y="258.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="106" x="392" y="284.8">E-mail system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="443" y="301.9999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="378" y="318.7998">The internal Microsoft</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="368" y="335.5998">Exchange e-mail system.</text></g><!--MD5=[3df1049aaf6f0039765d58c8767cc385]
+entity 139981077439360--><g id="elem_139981077439360"><rect fill="#999999" height="108.7999" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="207" x="13.5" y="424.7999"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="147" x="41.5" y="450.8">Mainframe Banking</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="57" x="88.5" y="470">System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="115" y="487.1999"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="27.5" y="503.9999">Stores all of the core banking</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="81" y="520.7998">information.</text></g><!--MD5=[9a148b80335e812d78493b86314cb32c]
+link 139981077439216 to 139981077439264--><g id="link_139981077439216_139981077439264"><path d="M220.92,182.9399 C201.02,205.8899 179.19,231.0799 160.69,252.4099 " fill="none" id="139981077439216-to-139981077439264" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="155.31,258.6099,162.8187,254.5333,158.2867,250.6012,155.31,258.6099" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="43" x="195" y="225.8">1: Uses</text></g><!--MD5=[f349f39763e60ce0e49f44a3c35fb8ac]
+reverse link 139981077439216 to 139981077439312--><g id="link_139981077439216_139981077439312"><path d="M345.29,189.1899 C365.92,212.6999 388.06,237.9199 406.22,258.6099 " fill="none" id="139981077439216-backto-139981077439312" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="339.8,182.9399,342.8277,190.9295,347.3346,186.9686,339.8,182.9399" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="108" x="378" y="225.8">2: Sends e-mails to</text></g><!--MD5=[c8e99db5d5d0a210688b8e5917fa3fdd]
+link 139981077439264 to 139981077439312--><g id="link_139981077439264_139981077439312"><path d="M227.13,303.7999 C266.92,303.7999 311.47,303.7999 349.86,303.7999 " fill="none" id="139981077439264-to-139981077439312" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="357.96,303.7999,349.96,300.7999,349.96,306.7999,357.96,303.7999" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="94" x="245.5" y="283.8">3: Sends e-mails</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="39" x="273" y="298.2001">[SMTP]</text></g><!--MD5=[8f8d85e97d281e2b7a6075dc85c5e3dd]
+link 139981077439264 to 139981077439360--><g id="link_139981077439264_139981077439360"><path d="M117,349.0299 C117,369.5099 117,394.1799 117,416.4599 " fill="none" id="139981077439264-to-139981077439360" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="117,424.5499,120,416.5499,114,416.5499,117,424.5499" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="43" x="118" y="391.8">4: Uses</text></g><rect height="83.1997" rx="7.5" ry="7.5" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="143" x="373" y="546.5998"/><rect height="16.7999" style="stroke:none;stroke-width:1.0;fill:none;" width="131" x="379" y="554.5998"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="52" x="379" y="568.5997">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="431" y="568.5997"> </text><rect fill="#08427B" height="16.7999" style="stroke:none;stroke-width:1.0;" width="131" x="379" y="571.3997"/><text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="383" y="585.3997">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="394" y="585.3997"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="402" y="585.3997">person</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="448" y="585.3997"> </text><rect fill="#1168BD" height="16.7999" style="stroke:none;stroke-width:1.0;" width="131" x="379" y="588.1996"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="383" y="602.1996">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="394" y="602.1996"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="402" y="602.1996">system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="449" y="602.1996"> </text><rect fill="#999999" height="16.7999" style="stroke:none;stroke-width:1.0;" width="131" x="379" y="604.9996"/><text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="383" y="618.9995">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="394" y="618.9995"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="402" y="618.9995">external_system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="506" y="618.9995"> </text><line style="stroke:#00000000;stroke-width:1.0;" x1="379" x2="510" y1="554.5998" y2="554.5998"/><line style="stroke:#00000000;stroke-width:1.0;" x1="379" x2="510" y1="571.3997" y2="571.3997"/><line style="stroke:#00000000;stroke-width:1.0;" x1="379" x2="510" y1="588.1996" y2="588.1996"/><line style="stroke:#00000000;stroke-width:1.0;" x1="379" x2="510" y1="604.9996" y2="604.9996"/><line style="stroke:#00000000;stroke-width:1.0;" x1="379" x2="510" y1="621.7995" y2="621.7995"/><line style="stroke:#00000000;stroke-width:1.0;" x1="379" x2="379" y1="554.5998" y2="621.7995"/><line style="stroke:#00000000;stroke-width:1.0;" x1="510" x2="510" y1="554.5998" y2="621.7995"/><!--MD5=[dcfef1aeaa8f1ec0ea8090083f4276d7]
 @startuml
 
 ' C4-PlantUML
@@ -1531,21 +1531,260 @@ queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("ex
 
 !unquoted procedure Container_Boundary($alias, $label, $tags="", $link="")
 Boundary($alias, $label, "Container", $tags, $link)
+!endprocedure' Scope: A single container.
+' Primary elements: Components within the container in scope.
+' Supporting elements: Containers (within the software system in scope) plus people and software systems directly connected to the components.
+' Intended audience: Software architects and developers.
+
+' Colors
+' ##################################
+
+!global $COMPONENT_FONT_COLOR = "#000000"
+
+!global $COMPONENT_BG_COLOR = "#85BBF0"
+!global $COMPONENT_BORDER_COLOR = "#78A8D8"
+!global $EXTERNAL_COMPONENT_BG_COLOR = "#CCCCCC"
+!global $EXTERNAL_COMPONENT_BORDER_COLOR = "#BFBFBF"
+
+' Styling
+' ##################################
+
+UpdateElementStyle("component", $COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $COMPONENT_BORDER_COLOR)
+UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONENT_FONT_COLOR, $EXTERNAL_COMPONENT_BORDER_COLOR)
+
+' shortcuts with default colors
+!unquoted procedure AddComponentTag($tagStereo, $bgColor=$COMPONENT_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$COMPONENT_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite)
+!endprocedure
+!unquoted procedure AddExternalComponentTag($tagStereo, $bgColor=$EXTERNAL_COMPONENT_BG_COLOR, $fontColor=$ELEMENT_FONT_COLOR, $borderColor=$EXTERNAL_COMPONENT_BORDER_COLOR, $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="")
+  AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite)
+!endprocedure
+
+' Layout
+' ##################################
+
+SetDefaultLegendEntries("person\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
+
+!procedure LAYOUT_WITH_LEGEND()
+hide stereotype
+legend right
+|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$PERSON_BG_COLOR> person |
+|<$SYSTEM_BG_COLOR> system |
+|<$CONTAINER_BG_COLOR> container |
+|<$COMPONENT_BG_COLOR> component |
+|<$EXTERNAL_PERSON_BG_COLOR> external person |
+|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+|<$EXTERNAL_CONTAINER_BG_COLOR> external container |
+|<$EXTERNAL_COMPONENT_BG_COLOR> external component |
+endlegend
+!endprocedure
+
+' Elements
+' ##################################
+
+!function $getComponent($label, $techn, $descr, $sprite)
+!if ($descr == "") && ($sprite == "")
+!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
+!endif
+!if ($descr == "") && ($sprite != "")
+!return $getSprite($sprite)+'\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
+!endif
+!if ($descr != "") && ($sprite == "")
+!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
+!endif
+!if ($descr != "") && ($sprite != "")
+!return $getSprite($sprite)+'\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
+!endif
+!endfunction
+
+!unquoted procedure Component($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "component")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "component")
+rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("component",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ComponentDb($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "component")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "component")
+database "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("component",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ComponentQueue($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "component")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "component")
+queue "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("component",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure Component_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_component")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_component")
+rectangle "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ComponentDb_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_component")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_component")
+database "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+!endprocedure
+
+!unquoted procedure ComponentQueue_Ext($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+!$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", "external_component")
+!$techn=$toElementArg($techn, $tags, "ElementTagTechn", "external_component")
+queue "$getComponent($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_component",$tags) as $alias $getLink($link)
+!endprocedure' Scope: Interactions in an enterprise, software system or container.
+' Primary and supporting elements: Depends on the diagram scope -
+'     enterprise - people and software systems Related to the enterprise in scope
+'     software system - see system context or container diagrams,
+'     container - see component diagram.
+' Intended audience: Technical and non-technical people, inside and outside of the software development team.
+
+' Dynamic diagram introduces (automatically) numbered interactions:
+'     (lowercase) increment($offset=1): increase current index (procedure which has no direct output)
+'     (lowercase) setIndex($new_index): set the new index (procedure which has no direct output)
+'
+'     (Uppercase) LastIndex(): return the last used index (function which can be used as argument)
+'     (Uppercase) Index($offset=1): returns current index and calculates next index (function which can be used as argument)
+'     (Uppercase) SetIndex($new_index): returns new set index and calculates next index (function which can be used as argument)
+
+' Index
+' ##################################
+
+!$lastIndex = 0
+!$index = 1
+
+!procedure increment($offset=1)
+  !$lastIndex = $index
+  !$index = $index + $offset
+!endprocedure
+
+!procedure setIndex($new_index)
+  !$lastIndex = $index
+  !$index = $new_index
+!endprocedure
+
+!function Index($offset=1)
+  !$lastIndex = $index
+  !$index = $lastIndex + $offset
+  !return $lastIndex
+!endfunction
+
+!function LastIndex()
+  !return $lastIndex
+!endfunction
+
+!function SetIndex($new_index, $offset=1)
+  !$lastIndex = $new_index
+  !$index = $new_index + $offset
+  !return $lastIndex
+!endfunction
+
+' Relationship override
+' ##################################
+
+' Relationship
+' ##################################
+
+!unquoted procedure Rel_($e_index, $alias1, $alias2, $label, $direction)
+$alias1 $direction $alias2 : **$e_index: $label**
+!endprocedure
+!unquoted procedure Rel_($e_index, $alias1, $alias2, $label, $techn, $direction)
+$alias1 $direction $alias2 : **$e_index: $label**\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//
+!endprocedure
+
+!unquoted procedure Rel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("- ->>", $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("- ->>", $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_Back($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<- -", $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Back($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<- -", $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_Neighbor($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("->>", $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Neighbor($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("->>", $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_Back_Neighbor($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<-", $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Back_Neighbor($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<-", $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_D($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Down($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_D($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Down($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_U($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Up($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_U($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Up($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_L($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Left($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_L($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Left($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Rel_R($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Rel_Right($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("-","->>"), $from, $to, Index() + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_R($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure RelIndex_Right($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("-","->>"), $from, $to, $e_index + ": " + $label, $techn, $descr, $sprite, $tags, $link)
 !endprocedure
 
 title System Context diagram for Internet Banking System
 
-Person(139642328489344, $label="Banking Customer", $descr="A customer of the bank, with personal bank accounts.")
-System(139642328489392, $label="Internet Banking System", $descr="Allows customers to check their accounts.")
-System_Ext(139642328489440, $label="E-mail system", $descr="The internal Microsoft Exchange e-mail system.")
-System_Ext(139642328489488, $label="Mainframe Banking System", $descr="Stores all of the core banking information.")
+Person(139981077439216, $label="Banking Customer", $descr="A customer of the bank, with personal bank accounts.")
+System(139981077439264, $label="Internet Banking System", $descr="Allows customers to check their accounts.")
+System_Ext(139981077439312, $label="E-mail system", $descr="The internal Microsoft Exchange e-mail system.")
+System_Ext(139981077439360, $label="Mainframe Banking System", $descr="Stores all of the core banking information.")
 
 
 
-Rel(139642328489344, 139642328489392, "Uses", "", "")
-Rel_Back(139642328489344, 139642328489440, "Sends e-mails to", "", "")
-Rel_Neighbor(139642328489392, 139642328489440, "Sends e-mails", "SMTP", "")
-Rel(139642328489392, 139642328489488, "Uses", "", "")
+Rel(139981077439216, 139981077439264, "Uses", "", "")
+Rel_Back(139981077439216, 139981077439312, "Sends e-mails to", "", "")
+Rel_Neighbor(139981077439264, 139981077439312, "Sends e-mails", "SMTP", "")
+Rel(139981077439264, 139981077439360, "Uses", "", "")
 SHOW_LEGEND()
 @enduml
 
@@ -2064,19 +2303,119 @@ skinparam person<<external_container>> {
 
 
 
+
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam database<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam queue<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam actor<<component>> {
+    StereotypeFontColor #85BBF0
+    FontColor #85BBF0
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam person<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+
+
+skinparam rectangle<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam database<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam queue<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam actor<<external_component>> {
+    StereotypeFontColor #CCCCCC
+    FontColor #CCCCCC
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam person<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 title System Context diagram for Internet Banking System
 
-rectangle "<$person>\n==Banking Customer\n\n A customer of the bank, with personal bank accounts." <<person>> as 139642328489344 
-rectangle "==Internet Banking System\n\n Allows customers to check their accounts." <<system>> as 139642328489392 
-rectangle "==E-mail system\n\n The internal Microsoft Exchange e-mail system." <<external_system>> as 139642328489440 
-rectangle "==Mainframe Banking System\n\n Stores all of the core banking information." <<external_system>> as 139642328489488 
+rectangle "<$person>\n==Banking Customer\n\n A customer of the bank, with personal bank accounts." <<person>> as 139981077439216 
+rectangle "==Internet Banking System\n\n Allows customers to check their accounts." <<system>> as 139981077439264 
+rectangle "==E-mail system\n\n The internal Microsoft Exchange e-mail system." <<external_system>> as 139981077439312 
+rectangle "==Mainframe Banking System\n\n Stores all of the core banking information." <<external_system>> as 139981077439360 
 
 
 
-139642328489344 - ->> 139642328489392 : **Uses**
-139642328489344 <<- - 139642328489440 : **Sends e-mails to**
-139642328489392 ->> 139642328489440 : **Sends e-mails**\n//<size:12>[SMTP]</size>//
-139642328489392 - ->> 139642328489488 : **Uses**
+139981077439216 - ->> 139981077439264 : **1: Uses**
+139981077439216 <<- - 139981077439312 : **2: Sends e-mails to**
+139981077439264 ->> 139981077439312 : **3: Sends e-mails**\n//<size:12>[SMTP]</size>//
+139981077439264 - ->> 139981077439360 : **4: Uses**
 hide stereotype
 legend right
 <#00000000,#00000000>|<color:#000000>**Legend**</color> |

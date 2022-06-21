@@ -4,6 +4,7 @@ from enum import Enum as _Enum
 
 from konstantin_docs.dia._c4.base import BaseC4Element as _BaseC4Element
 from konstantin_docs.dia._c4.base import BaseSprite as _BaseSprite
+from konstantin_docs.dia._c4.base import BaseTag as _BaseTag
 from konstantin_docs.dia._c4.container import BaseContainer as _BaseContainer
 from konstantin_docs.dia._c4.tag import ElementTag as _ElementTag
 
@@ -65,6 +66,34 @@ class BaseContext(_BaseC4Element):
             type=self._repr_if_not_none("type", self.__boundary_type),
             links_container=self._format_links_container,
         )
+
+    @_BaseC4Element.all_sprites.getter
+    def all_sprites(self: "BaseContext") -> list[_BaseSprite]:
+        """Возвращает все спрайты."""
+        sprites: list[_BaseSprite] = []
+        sprites = super().all_sprites
+        sprites.extend(
+            [
+                all_sprites
+                for link in self.__links_container or []
+                for all_sprites in link.all_sprites
+            ],
+        )
+        return sprites
+
+    @_BaseC4Element.all_tags.getter
+    def all_tags(self: "BaseContext") -> list[_BaseTag]:
+        """Возвращает все теги."""
+        tags: list[_BaseTag] = []
+        tags = super().all_tags
+        tags.extend(
+            [
+                tags
+                for link in self.__links_container or []
+                for tags in link.all_tags
+            ],
+        )
+        return tags
 
     def __repr__(self: "BaseContext") -> str:
         """Return string representation."""

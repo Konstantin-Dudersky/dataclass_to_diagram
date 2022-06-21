@@ -24,7 +24,7 @@ logger.addHandler(logging.StreamHandler())
 
 TEMPLATE_DIAGRAM = """@startuml
 
-!include C4_Container.puml
+!include C4_Dynamic.puml
 {sprites}
 {title}
 {tag}

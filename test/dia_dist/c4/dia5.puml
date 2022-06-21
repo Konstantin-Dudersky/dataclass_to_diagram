@@ -1,26 +1,26 @@
 @startuml
 
-!include C4_Container.puml
+!include C4_Dynamic.puml
 
 
-AddElementTag("v1.1", $fontColor="#d73027")
-AddElementTag("backup", $fontColor="orange")
 AddElementTag("v1.0", $borderColor="#d73027")
-Person(139642328488528, $label="Customer", $descr="People that need products")
-Person(139642328488624, $label="Administrator", $descr="People that administrates the products via the new v1.1 components", $tags="v1.1")
+AddElementTag("backup", $fontColor="orange")
+AddElementTag("v1.1", $fontColor="#d73027")
+Person(139981077438400, $label="Customer", $descr="People that need products")
+Person(139981077438496, $label="Administrator", $descr="People that administrates the products via the new v1.1 components", $tags="v1.1")
 
-Container(139642328488672, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with via v1.0", $tags="v1.0")
-Container(139642328488720, $label="Admin SPA", $techn="angular", $descr="The administrator interface that the customer interacts with via new v1.1", $tags="v1.1")
-Container(139642328488768, $label="API", $techn="java", $descr="Handles all business logic (incl. new v1.1 extensions)", $tags="v1.0+v1.1")
-ContainerDb(139642328488816, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information")
-Container(139642328488864, $label="Archive", $techn="Audit logging", $descr="Stores 5 years", $tags="backup")
+Container(139981077438544, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with via v1.0", $tags="v1.0")
+Container(139981077438592, $label="Admin SPA", $techn="angular", $descr="The administrator interface that the customer interacts with via new v1.1", $tags="v1.1")
+Container(139981077438640, $label="API", $techn="java", $descr="Handles all business logic (incl. new v1.1 extensions)", $tags="v1.0+v1.1")
+ContainerDb(139981077438688, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information")
+Container(139981077438736, $label="Archive", $techn="Audit logging", $descr="Stores 5 years", $tags="backup")
 
 
-Rel(139642328488528, 139642328488672, "Uses", "https", "")
-Rel(139642328488672, 139642328488768, "Uses", "https", "")
-Rel_R(139642328488768, 139642328488816, "Reads/Writes", "", "")
-Rel(139642328488624, 139642328488720, "Uses", "https", "")
-Rel(139642328488720, 139642328488768, "Uses", "https", "")
-Rel_L(139642328488768, 139642328488864, "Writes", "messages", "", $tags="backup")
+Rel(139981077438400, 139981077438544, "Uses", "https", "")
+Rel(139981077438544, 139981077438640, "Uses", "https", "")
+Rel_R(139981077438640, 139981077438688, "Reads/Writes", "", "")
+Rel(139981077438496, 139981077438592, "Uses", "https", "")
+Rel(139981077438592, 139981077438640, "Uses", "https", "")
+Rel_L(139981077438640, 139981077438736, "Writes", "messages", "", $tags="backup")
 SHOW_LEGEND()
 @enduml

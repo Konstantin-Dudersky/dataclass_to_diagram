@@ -1,19 +1,19 @@
 @startuml
 
-!include C4_Container.puml
+!include C4_Dynamic.puml
 
 title System Context diagram for Internet Banking System
 
-Person(139642328489344, $label="Banking Customer", $descr="A customer of the bank, with personal bank accounts.")
-System(139642328489392, $label="Internet Banking System", $descr="Allows customers to check their accounts.")
-System_Ext(139642328489440, $label="E-mail system", $descr="The internal Microsoft Exchange e-mail system.")
-System_Ext(139642328489488, $label="Mainframe Banking System", $descr="Stores all of the core banking information.")
+Person(139981077439216, $label="Banking Customer", $descr="A customer of the bank, with personal bank accounts.")
+System(139981077439264, $label="Internet Banking System", $descr="Allows customers to check their accounts.")
+System_Ext(139981077439312, $label="E-mail system", $descr="The internal Microsoft Exchange e-mail system.")
+System_Ext(139981077439360, $label="Mainframe Banking System", $descr="Stores all of the core banking information.")
 
 
 
-Rel(139642328489344, 139642328489392, "Uses", "", "")
-Rel_Back(139642328489344, 139642328489440, "Sends e-mails to", "", "")
-Rel_Neighbor(139642328489392, 139642328489440, "Sends e-mails", "SMTP", "")
-Rel(139642328489392, 139642328489488, "Uses", "", "")
+Rel(139981077439216, 139981077439264, "Uses", "", "")
+Rel_Back(139981077439216, 139981077439312, "Sends e-mails to", "", "")
+Rel_Neighbor(139981077439264, 139981077439312, "Sends e-mails", "SMTP", "")
+Rel(139981077439264, 139981077439360, "Uses", "", "")
 SHOW_LEGEND()
 @enduml

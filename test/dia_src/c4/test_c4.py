@@ -1,6 +1,13 @@
 """Тест диаграмм C4."""
 
-from konstantin_docs.dia.c4 import C4, container, context, rel, sprite, tag
+from konstantin_docs.dia.c4 import (
+    C4,
+    container,
+    context,
+    rel,
+    sprite,
+    tag,
+)
 
 # ex 1 ------------------------------------------------------------------------
 person_alias = context.Person(

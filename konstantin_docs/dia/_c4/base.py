@@ -89,18 +89,16 @@ class BaseC4Element:
     @property
     def all_sprites(self: "BaseC4Element") -> list[BaseSprite]:
         """Возвращает все спрайты."""
-        # DOING:10 по вложенным элементам
         sprites: list[BaseSprite] = []
         if self.__sprite is not None:
-            sprites.append(self.__sprite)
+            sprites.append(self.__sprite or None)
         return sprites
 
     @property
     def all_tags(self: "BaseC4Element") -> list[BaseTag]:
         """Возвращает список всех тегов."""
         tags: list[BaseTag] = []
-        if self.__tags is not None:
-            tags.extend(self.__tags)
+        tags.extend(self.__tags or [])
         return tags
 
     @property

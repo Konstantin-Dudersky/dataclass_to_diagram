@@ -1,22 +1,22 @@
 @startuml
 
-!include C4_Container.puml
+!include C4_Dynamic.puml
 !include <tupadr3/common>
-!include <tupadr3/font-awesome-5/angular>
+!include <tupadr3/font-awesome-5/java>
 !include <tupadr3/devicons/msql_server>
 !include <tupadr3/font-awesome-5/users>
-!include <tupadr3/font-awesome-5/java>
+!include <tupadr3/font-awesome-5/angular>
 
 
-Person(139642328487088, $label="Customer", $descr="People that need products", $sprite="users")
+Person(139981077436960, $label="Customer", $descr="People that need products", $sprite="users")
 
-Container(139642328487232, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with", $sprite="angular")
-Container(139642328487376, $label="API", $techn="java", $descr="Handles all business logic", $sprite="java")
-ContainerDb(139642328487520, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information", $sprite="msql_server")
+Container(139981077437104, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with", $sprite="angular")
+Container(139981077437248, $label="API", $techn="java", $descr="Handles all business logic", $sprite="java")
+ContainerDb(139981077437392, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information", $sprite="msql_server")
 
 
-Rel(139642328487088, 139642328487232, "Uses", "https", "")
-Rel(139642328487232, 139642328487376, "Uses", "https", "")
-Rel_R(139642328487376, 139642328487520, "Reads/Writes", "", "")
+Rel(139981077436960, 139981077437104, "Uses", "https", "")
+Rel(139981077437104, 139981077437248, "Uses", "https", "")
+Rel_R(139981077437248, 139981077437392, "Reads/Writes", "", "")
 SHOW_LEGEND()
 @enduml
