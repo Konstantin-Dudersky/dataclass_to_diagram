@@ -10,7 +10,7 @@ from konstantin_docs.dia.base import BaseDiagram as _BaseDiagram
 from konstantin_docs.dia.base import Image as _Image
 from konstantin_docs.service import kroki as _kroki
 
-from ._c4 import container, context, rel, sprite, tag
+from ._c4 import component, container, context, rel, sprite, tag
 from ._c4.base import BaseRelation as _BaseRelation
 from ._c4.base import BaseSprite as _BaseSprite
 from ._c4.base import BaseTag as _BaseTag
@@ -45,6 +45,7 @@ class C4(_BaseDiagram):
         title: str = "Diagram title",
         links_context: list[context.BaseContext] | None = None,
         links_container: list[container.BaseContainer] | None = None,
+        links_component: list[component.BaseComponent] | None = None,
         links_rel: list[_BaseRelation] | None = None,
     ) -> None:
         """Создает объект диаграммы."""
@@ -52,20 +53,37 @@ class C4(_BaseDiagram):
         self.__title = title
         self.__links_context = links_context
         self.__links_container = links_container
+        self.__links_component = links_component
         self.__link_rels = links_rel
-        # get all sprites
-        self.__sprites: list[_BaseSprite] = []
-        for link in self.__links_context or []:
-            self.__sprites.extend(link.all_sprites)
-        for link in self.__links_container or []:
-            self.__sprites.extend(link.all_sprites)
 
     @property
-    def _repr_sprites(self: "C4") -> str:
+    def _format_sprites(self: "C4") -> str:
         """Возвращает все спрайты."""
+        all_sprites: list[_BaseSprite] = []
+        all_sprites.extend(
+            [
+                all_sprites
+                for link in self.__links_context or []
+                for all_sprites in link.all_sprites
+            ],
+        )
+        all_sprites.extend(
+            [
+                all_sprites
+                for link in self.__links_container or []
+                for all_sprites in link.all_sprites
+            ],
+        )
+        all_sprites.extend(
+            [
+                all_sprites
+                for link in self.__links_component or []
+                for all_sprites in link.all_sprites
+            ],
+        )
         common: set[str] = set()
         sprites: set[str] = set()
-        for spr in self.__sprites:
+        for spr in all_sprites:
             common.add(spr.common)
             sprites.add(spr.sprite_full)
         out = ""
@@ -74,17 +92,32 @@ class C4(_BaseDiagram):
         return out
 
     @property
-    def _repr_tags(self: "C4") -> str:
+    def _format_tags(self: "C4") -> str:
         """Возвращает объявление для всех тегов."""
         # находим все теги
-        tags: list[_BaseTag] = []
-        for link in self.__links_context or []:
-            tags.extend(link.all_tags)
-        for link in self.__links_container or []:
-            tags.extend(link.all_tags)
-        for link in self.__link_rels or []:
-            tags.extend(link.all_tags)
-        repr_tags: set[str] = set([t.repr_declaration() for t in tags])
+        all_tags: list[_BaseTag] = []
+        all_tags.extend(
+            [
+                all_tags
+                for link in self.__links_context or []
+                for all_tags in link.all_tags
+            ],
+        )
+        all_tags.extend(
+            [
+                all_tags
+                for link in self.__links_container or []
+                for all_tags in link.all_tags
+            ],
+        )
+        all_tags.extend(
+            [
+                all_tags
+                for link in self.__links_component or []
+                for all_tags in link.all_tags
+            ],
+        )
+        repr_tags: set[str] = set([t.repr_declaration() for t in all_tags])
         out = ""
         if len(repr_tags) > 0:
             out += "\n".join(repr_tags)
@@ -114,8 +147,8 @@ class C4(_BaseDiagram):
     def __repr__(self: "C4") -> str:
         """Return string representation."""
         return TEMPLATE_DIAGRAM.format(
-            tag=self._repr_tags,
-            sprites=self._repr_sprites,
+            tag=self._format_tags,
+            sprites=self._format_sprites,
             title=f"title {self.__title}" if self.__title != "" else "",
             context="".join(
                 [repr(context) for context in (self.__links_context or [])],

@@ -1,15 +1,15 @@
-"""Уровень 2 - container."""
+"""Уровень 3 - conmponent."""
 
 from .base import BaseC4Element as _BaseC4Element
 from .base import BaseSprite as _BaseSprite
 from .tag import ElementTag as _ElementTag
 
 
-class BaseContainer(_BaseC4Element):
-    """BaseContainer."""
+class BaseComponent(_BaseC4Element):
+    """BaseComponent."""
 
     def __init__(
-        self: "BaseContainer",
+        self: "BaseComponent",
         label: str,
         techn: str | None,
         descr: str | None,
@@ -17,7 +17,7 @@ class BaseContainer(_BaseC4Element):
         tags: tuple[_ElementTag, ...] | None,
         link: str | None,
     ) -> None:
-        """Создать BaseContainer."""
+        """Создать BaseComponent."""
         super().__init__(
             label=label,
             sprite=sprite,
@@ -28,9 +28,8 @@ class BaseContainer(_BaseC4Element):
         self.__descr = descr
 
     @property
-    def _repr_inside_pths(self: "BaseContainer") -> str:
-        """Возвращает содержимое внутри скобок + вложенные компоненты."""
-        # DOING:-70 - вложенные компоненты
+    def _repr_inside_pths(self: "BaseComponent") -> str:
+        """Возвращает содержимое внутри скобок."""
         return "({alias}{label}{techn}{descr}{sprite}{tags}{link})\n".format(
             alias=self.format_alias,
             label=self._format_label,
@@ -41,16 +40,16 @@ class BaseContainer(_BaseC4Element):
             link=self._format_link,
         )
 
-    def __repr__(self: "BaseContainer") -> str:
+    def __repr__(self: "BaseComponent") -> str:
         """Return string representation."""
         raise NotImplementedError("Метод не переопределен")
 
 
-class Container(BaseContainer):
-    """Container."""
+class Component(BaseComponent):
+    """Component."""
 
     def __init__(
-        self: "Container",
+        self: "Component",
         label: str,
         techn: str = "",
         descr: str = "",
@@ -58,7 +57,7 @@ class Container(BaseContainer):
         tags: tuple[_ElementTag, ...] | None = None,
         link: str | None = None,
     ) -> None:
-        """Создать Container."""
+        """Создать Component."""
         super().__init__(
             label=label,
             techn=techn,
@@ -68,165 +67,141 @@ class Container(BaseContainer):
             tags=tags,
         )
 
-    def __repr__(self: "Container") -> str:
+    def __repr__(self: "Component") -> str:
         """Return string representation."""
-        return f"Container{self._repr_inside_pths}"
+        return f"Component{self._repr_inside_pths}"
 
 
-class ContainerDb(BaseContainer):
-    """ContainerDb."""
+class ComponentDb(BaseComponent):
+    """ComponentDb."""
 
     def __init__(
-        self: "ContainerDb",
+        self: "ComponentDb",
         label: str,
         techn: str = "",
         descr: str = "",
         sprite: _BaseSprite | None = None,
-        tags: tuple[_ElementTag] | None = None,
+        tags: tuple[_ElementTag, ...] | None = None,
         link: str | None = None,
     ) -> None:
-        """Создать ContainerDb."""
+        """Создать ComponentDb."""
         super().__init__(
             label=label,
-            descr=descr,
             techn=techn,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
         )
 
-    def __repr__(self: "ContainerDb") -> str:
+    def __repr__(self: "ComponentDb") -> str:
         """Return string representation."""
-        return f"ContainerDb{self._repr_inside_pths}"
+        return f"ComponentDb{self._repr_inside_pths}"
 
 
-class ContainerQueue(BaseContainer):
-    """ContainerQueue."""
+class ComponentQueue(BaseComponent):
+    """ComponentQueue."""
 
     def __init__(
-        self: "ContainerQueue",
+        self: "ComponentQueue",
         label: str,
         techn: str = "",
         descr: str = "",
         sprite: _BaseSprite | None = None,
-        tags: tuple[_ElementTag] | None = None,
+        tags: tuple[_ElementTag, ...] | None = None,
         link: str | None = None,
     ) -> None:
-        """Создать ContainerQueue."""
+        """Создать ComponentQueue."""
         super().__init__(
             label=label,
-            descr=descr,
             techn=techn,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
         )
 
-    def __repr__(self: "ContainerQueue") -> str:
+    def __repr__(self: "ComponentQueue") -> str:
         """Return string representation."""
-        return f"ContainerQueue{self._repr_inside_pths}"
+        return f"ComponentQueue{self._repr_inside_pths}"
 
 
-class ContainerExt(BaseContainer):
-    """ContainerExt."""
+class ComponentExt(BaseComponent):
+    """ComponentExt."""
 
     def __init__(
-        self: "ContainerExt",
+        self: "ComponentExt",
         label: str,
         techn: str = "",
         descr: str = "",
         sprite: _BaseSprite | None = None,
-        tags: tuple[_ElementTag] | None = None,
+        tags: tuple[_ElementTag, ...] | None = None,
         link: str | None = None,
     ) -> None:
-        """Создать ContainerExt."""
+        """Создать ComponentExt."""
         super().__init__(
             label=label,
-            descr=descr,
             techn=techn,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
         )
 
-    def __repr__(self: "ContainerExt") -> str:
+    def __repr__(self: "ComponentExt") -> str:
         """Return string representation."""
-        return f"Container_Ext{self._repr_inside_pths}"
+        return f"Component_Ext{self._repr_inside_pths}"
 
 
-class ContainerDbExt(BaseContainer):
-    """ContainerDbExt."""
+class ComponentDbExt(BaseComponent):
+    """ComponentDbExt."""
 
     def __init__(
-        self: "ContainerDbExt",
+        self: "ComponentDbExt",
         label: str,
         techn: str = "",
         descr: str = "",
         sprite: _BaseSprite | None = None,
-        tags: tuple[_ElementTag] | None = None,
+        tags: tuple[_ElementTag, ...] | None = None,
         link: str | None = None,
     ) -> None:
-        """Создать ContainerDbExt."""
+        """Создать ComponentDbExt."""
         super().__init__(
             label=label,
-            descr=descr,
             techn=techn,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
         )
 
-    def __repr__(self: "ContainerDbExt") -> str:
+    def __repr__(self: "ComponentDbExt") -> str:
         """Return string representation."""
-        return f"ContainerDb_Ext{self._repr_inside_pths}"
+        return f"ComponentDb_Ext{self._repr_inside_pths}"
 
 
-class ContainerQueueExt(BaseContainer):
-    """ContainerQueueExt."""
+class ComponentQueueExt(BaseComponent):
+    """ComponentDbExt."""
 
     def __init__(
-        self: "ContainerQueueExt",
+        self: "ComponentQueueExt",
         label: str,
         techn: str = "",
         descr: str = "",
         sprite: _BaseSprite | None = None,
-        tags: tuple[_ElementTag] | None = None,
+        tags: tuple[_ElementTag, ...] | None = None,
         link: str | None = None,
     ) -> None:
-        """Создать ContainerQueueExt."""
+        """Создать ComponentQueueExt."""
         super().__init__(
             label=label,
-            descr=descr,
             techn=techn,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
         )
 
-    def __repr__(self: "ContainerQueueExt") -> str:
+    def __repr__(self: "ComponentQueueExt") -> str:
         """Return string representation."""
-        return f"ContainerQueue_Ext{self._repr_inside_pths}"
-
-
-class ContainerBoundary(BaseContainer):
-    """ContainerBoundary."""
-
-    def __init__(
-        self: "ContainerBoundary",
-        label: str,
-        tags: tuple[_ElementTag] | None = None,
-        link: str | None = None,
-    ) -> None:
-        """Создать ContainerBoundary."""
-        super().__init__(
-            label=label,
-            descr=None,
-            techn=None,
-            sprite=None,
-            link=link,
-            tags=tags,
-        )
-
-    def __repr__(self: "ContainerBoundary") -> str:
-        """Return string representation."""
-        return f"Container_Boundary{self._repr_inside_pths}"
+        return f"ComponentQueue_Ext{self._repr_inside_pths}"

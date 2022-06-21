@@ -8,15 +8,15 @@
 !include <tupadr3/font-awesome-5/java>
 
 
-Person(139666996414640, $label="Customer", $descr="People that need products", $sprite="users")
+Person(139642328487088, $label="Customer", $descr="People that need products", $sprite="users")
 
-Container(139666996414784, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with", $sprite="angular")
-Container(139666996414928, $label="API", $techn="java", $descr="Handles all business logic", $sprite="java")
-ContainerDb(139666996415072, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information", $sprite="msql_server")
+Container(139642328487232, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with", $sprite="angular")
+Container(139642328487376, $label="API", $techn="java", $descr="Handles all business logic", $sprite="java")
+ContainerDb(139642328487520, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information", $sprite="msql_server")
 
 
-Rel(139666996414640, 139666996414784, "Uses", "https", "")
-Rel(139666996414784, 139666996414928, "Uses", "https", "")
-Rel_R(139666996414928, 139666996415072, "Reads/Writes", "", "")
+Rel(139642328487088, 139642328487232, "Uses", "https", "")
+Rel(139642328487232, 139642328487376, "Uses", "https", "")
+Rel_R(139642328487376, 139642328487520, "Reads/Writes", "", "")
 SHOW_LEGEND()
 @enduml

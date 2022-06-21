@@ -89,7 +89,7 @@ class BaseC4Element:
     @property
     def all_sprites(self: "BaseC4Element") -> list[BaseSprite]:
         """Возвращает все спрайты."""
-        # TODO по вложенным элементам
+        # DOING:10 по вложенным элементам
         sprites: list[BaseSprite] = []
         if self.__sprite is not None:
             sprites.append(self.__sprite)
