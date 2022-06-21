@@ -1,0 +1,32 @@
+@startuml
+
+!include C4_Container.puml
+
+
+AddElementTag("v1.0", $borderColor="#d73027")
+AddRelTag("backup", $textColor="orange", $lineColor="orange", $lineStyle="DashedLine()")
+AddElementTag("backup", $fontColor="orange")
+AddElementTag("v1.1", $fontColor="#d73027")
+
+Person(140486188859152, "Customer", "People that need products", $sprite="")
+Person(140486188859248, "Administrator", "People that administrates the products via the new v1.1 components", $sprite="", $tags="v1.1")
+
+Container(140486188859296, "SPA", "angular", "The main interface that the customer interacts with via v1.0", $sprite="", $tags="v1.0")
+
+Container(140486188859344, "Admin SPA", "angular", "The administrator interface that the customer interacts with via new v1.1", $sprite="", $tags="v1.1")
+
+Container(140486188892224, "API", "java", "Handles all business logic (incl. new v1.1 extensions)", $sprite="", $tags="v1.0+v1.1")
+
+ContainerDb(140486188892272, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="")
+
+Container(140486188892320, "Archive", "Audit logging", "Stores 5 years", $sprite="", $tags="backup")
+
+
+Rel(140486188859152, 140486188859296, "Uses", "https", "")
+Rel(140486188859296, 140486188892224, "Uses", "https", "")
+Rel_R(140486188892224, 140486188892272, "Reads/Writes", "", "")
+Rel(140486188859248, 140486188859344, "Uses", "https", "")
+Rel(140486188859344, 140486188892224, "Uses", "https", "")
+Rel_L(140486188892224, 140486188892320, "Writes", "messages", "", $tags="backup")
+SHOW_LEGEND()
+@enduml

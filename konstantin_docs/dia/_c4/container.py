@@ -2,6 +2,7 @@
 
 from .base import BaseC4Element as _BaseC4Element
 from .base import BaseSprite as _BaseSprite
+from .tag import ElementTag as _ElementTag
 
 
 class BaseContainer(_BaseC4Element):
@@ -12,12 +13,14 @@ class BaseContainer(_BaseC4Element):
         label: str,
         sprite: _BaseSprite | None,
         link: str | None,
+        tags: tuple[_ElementTag, ...] | None,
     ) -> None:
         """Создать _BaseContainer."""
         super().__init__(
             label=label,
             sprite=sprite,
             link=link,
+            tags=tags,
         )
 
     def __repr__(self: "BaseContainer") -> str:
@@ -35,12 +38,14 @@ class Container(BaseContainer):
         descr: str = "",
         sprite: _BaseSprite | None = None,
         link: str | None = None,
+        tags: tuple[_ElementTag, ...] | None = None,
     ) -> None:
         """Создать Container."""
         super().__init__(
             label=label,
             sprite=sprite,
             link=link,
+            tags=tags,
         )
         self.__techn = techn
         self.__descr = descr
@@ -48,7 +53,7 @@ class Container(BaseContainer):
     def __repr__(self: "Container") -> str:
         """Return string representation."""
         template = """
-Container({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}")
+Container({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}"{tag})
 """
         return template.format(
             alias=self.alias,
@@ -56,6 +61,7 @@ Container({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}")
             techn=self.__techn,
             descr=self.__descr,
             sprite=self.repr_sprite,
+            tag=self.repr_tags,
         )
 
 
@@ -69,12 +75,14 @@ class ContainerDb(BaseContainer):
         descr: str = "",
         sprite: _BaseSprite | None = None,
         link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
     ) -> None:
         """Создать Container."""
         super().__init__(
             label=label,
             sprite=sprite,
             link=link,
+            tags=tags,
         )
         self.__techn = techn
         self.__descr = descr
@@ -82,7 +90,7 @@ class ContainerDb(BaseContainer):
     def __repr__(self: "ContainerDb") -> str:
         """Return string representation."""
         template = """
-ContainerDb({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}")
+ContainerDb({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}"{tag})
 """
         return template.format(
             alias=self.alias,
@@ -90,4 +98,5 @@ ContainerDb({alias}, "{label}", "{techn}", "{descr}", $sprite="{sprite}")
             techn=self.__techn,
             descr=self.__descr,
             sprite=self.repr_sprite,
+            tag=self.repr_tags,
         )

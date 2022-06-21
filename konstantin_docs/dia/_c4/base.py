@@ -3,6 +3,38 @@
 from enum import Enum
 
 
+class BaseTag:
+    """Базовый класс для тегов."""
+
+    def __init__(
+        self: "BaseTag",
+        tag_stereo: str,
+    ) -> None:
+        """Create base tag."""
+        self.__tagStereo = tag_stereo
+
+    def repr_declaration(self: "BaseTag") -> str:
+        """Объявление тега в начале файла."""
+        raise NotImplementedError("Метод не переопределен.")
+
+    def repr_func_param(self: "BaseTag") -> str:
+        """Представление тега для параметра функции."""
+        return f'$tags="{self.__tagStereo}"'
+
+    def repr_tag(self: "BaseTag") -> str:
+        """Только имя тега."""
+        return f"{self.__tagStereo}"
+
+    @staticmethod
+    def _repr_if_not_none(
+        value: str | None,
+        text: str,
+    ) -> str:
+        if value is None:
+            return ""
+        return f', ${text}="{value}"'
+
+
 class BaseSprites(Enum):
     """Базовая библиотека."""
 
@@ -45,12 +77,14 @@ class BaseC4Element:
         label: str,
         sprite: BaseSprite | None,
         link: str | None,
+        tags: tuple[BaseTag] | None,
     ) -> None:
         """Create BaseC4Element."""
         self.__alias = str(id(self)).replace("-", "_")
         self.__label = label
         self.__sprite = sprite
         self.__link = link
+        self.__tags = tags
 
     @property
     def alias(self: "BaseC4Element") -> str:
@@ -65,10 +99,19 @@ class BaseC4Element:
     @property
     def all_sprites(self: "BaseC4Element") -> list[BaseSprite]:
         """Возвращает все спрайты."""
+        # TODO по вложенным элементам
         sprites: list[BaseSprite] = []
         if self.__sprite is not None:
             sprites.append(self.__sprite)
         return sprites
+
+    @property
+    def all_tags(self: "BaseC4Element") -> list[BaseTag]:
+        """Возвращает список всех тегов."""
+        tags: list[BaseTag] = []
+        if self.__tags is not None:
+            tags.extend(self.__tags)
+        return tags
 
     @property
     def repr_sprite(self: "BaseC4Element") -> str:
@@ -83,3 +126,71 @@ class BaseC4Element:
         if self.__link is None:
             return ""
         return f'$link="{self.__link}"'
+
+    @property
+    def repr_tags(self: "BaseC4Element") -> str:
+        """Тег."""
+        if self.__tags is None:
+            return ""
+
+        return f', $tags="{"+".join([t.repr_tag() for t in self.__tags])}"'
+
+
+class BaseRelation:
+    """Базовый класс для отношений."""
+
+    def __init__(
+        self: "BaseRelation",
+        kind: str,
+        links: tuple[BaseC4Element, BaseC4Element],
+        label: str,
+        techn: str,
+        descr: str,
+        link: str | None,
+        tags: tuple[BaseTag, ...] | None,
+    ) -> None:
+        """Создает Relation."""
+        self.__kind = kind
+        self.__links = links
+        self.__label = label
+        self.__techn = techn
+        self.__descr = descr
+        self.__link = link
+        self.__tags = tags
+
+    @property
+    def _repr_link(self: "BaseRelation") -> str:
+        """Представление ссылки."""
+        if self.__link is None:
+            return ""
+        return f', $link="{self.__link}"'
+
+    def __repr__(self: "BaseRelation") -> str:
+        """Return string representation."""
+        template = """
+{kind}({link_from}, {link_to}, "{label}", "{techn}", "{descr}"{link}{tags})"""
+        return template.format(
+            kind=self.__kind,
+            link_from=self.__links[0].alias,
+            link_to=self.__links[1].alias,
+            label=self.__label,
+            techn=self.__techn,
+            descr=self.__descr,
+            link=self._repr_link,
+            tags=self.repr_tags,
+        )
+
+    @property
+    def repr_tags(self: "BaseRelation") -> str:
+        """Тег."""
+        if self.__tags is None:
+            return ""
+        return f', $tags="{"+".join([t.repr_tag() for t in self.__tags])}"'
+
+    @property
+    def all_tags(self: "BaseRelation") -> list[BaseTag]:
+        """Возвращает список всех тегов."""
+        tags: list[BaseTag] = []
+        if self.__tags is not None:
+            tags.extend(self.__tags)
+        return tags

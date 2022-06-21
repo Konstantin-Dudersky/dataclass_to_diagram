@@ -75,14 +75,13 @@ created:2022-06-19T14:13:02.377Z
 
 nwdiag - add text file
 </card>
-# [<!--](#TEST:-20)
+# [<!--](#DONE:-30)
 <card>
-created:2022-06-19T14:49:08.883Z
--->
+created:2022-06-19T14:49:08.883Z completed:2022-06-20T12:25:41.182Z -->
 
 links
 </card>
-# [<!--](#DOING:-60)
+# [<!--](#TEST:-10)
 created:2022-06-19T15:35:08.132Z
 -->
 tags

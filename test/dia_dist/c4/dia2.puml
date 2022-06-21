@@ -4,16 +4,17 @@
 
 
 
-Person(139805930564688, "Administrator", "", $sprite="")
-System_Boundary(139805930564736, "Sample System"){
+
+Person(140486188857328, "Administrator", "", $sprite="")
+System_Boundary(140486188857376, "Sample System"){
     
-Container(139805930564640, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines", $sprite="")
+Container(140486188857280, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines", $sprite="")
 
 }
-System(139805930564832, "Twitter", "", $sprite="")
+System(140486188857424, "Twitter", "", $sprite="")
 
 
-Rel(139805930564688, 139805930564640, "Uses", "HTTPS", "")
-Rel(139805930564640, 139805930564832, "Gets tweets from", "HTTPS", "")
+Rel(140486188857328, 140486188857280, "Uses", "HTTPS", "")
+Rel(140486188857280, 140486188857424, "Gets tweets from", "HTTPS", "")
 SHOW_LEGEND()
 @enduml

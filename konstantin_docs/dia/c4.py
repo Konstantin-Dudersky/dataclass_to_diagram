@@ -8,14 +8,12 @@ import logging
 
 from konstantin_docs.dia.base import BaseDiagram as _BaseDiagram
 from konstantin_docs.dia.base import Image as _Image
-from konstantin_docs.service.kroki import (
-    DiagramTypes,
-    OutputFormats,
-    get_image,
-)
+from konstantin_docs.service import kroki as _kroki
 
-from ._c4 import container, context, rel, sprite
+from ._c4 import container, context, rel, sprite, tag
+from ._c4.base import BaseRelation as _BaseRelation
 from ._c4.base import BaseSprite as _BaseSprite
+from ._c4.base import BaseTag as _BaseTag
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -29,6 +27,7 @@ TEMPLATE_DIAGRAM = """@startuml
 !include C4_Container.puml
 {sprites}
 {title}
+{tag}
 {context}
 {container}
 {rels}
@@ -46,7 +45,7 @@ class C4(_BaseDiagram):
         title: str = "Diagram title",
         links_context: list[context.BaseContext] | None = None,
         links_container: list[container.BaseContainer] | None = None,
-        links_rel: list[rel.BaseRelation] | None = None,
+        links_rel: list[_BaseRelation] | None = None,
     ) -> None:
         """Создает объект диаграммы."""
         super().__init__(filename)
@@ -74,19 +73,36 @@ class C4(_BaseDiagram):
             out += "\n".join(common) + "\n" + "\n".join(sprites)
         return out
 
+    @property
+    def _repr_tags(self: "C4") -> str:
+        """Возвращает объявление для всех тегов."""
+        # находим все теги
+        tags: list[_BaseTag] = []
+        for link in self.__links_context or []:
+            tags.extend(link.all_tags)
+        for link in self.__links_container or []:
+            tags.extend(link.all_tags)
+        for link in self.__link_rels or []:
+            tags.extend(link.all_tags)
+        repr_tags: set[str] = set([t.repr_declaration() for t in tags])
+        out = ""
+        if len(repr_tags) > 0:
+            out += "\n".join(repr_tags)
+        return out
+
     def get_images(self: "C4") -> tuple[_Image]:
         """Возвращает кортеж изображений."""
         images: list[_Image] = []
         text = repr(self)
         images.append(self._get_text_file(".puml"))
         try:
-            for fmt in (OutputFormats.PNG, OutputFormats.SVG):
+            for fmt in (_kroki.OutputFormats.PNG, _kroki.OutputFormats.SVG):
                 images.append(
                     _Image(
                         filename=self.filename + "." + fmt.value,
-                        content=get_image(
+                        content=_kroki.get_image(
                             source=text,
-                            diagram_type=DiagramTypes.C4PLANTUML,
+                            diagram_type=_kroki.DiagramTypes.C4PLANTUML,
                             output_format=fmt,
                         ),
                     ),
@@ -97,7 +113,8 @@ class C4(_BaseDiagram):
 
     def __repr__(self: "C4") -> str:
         """Return string representation."""
-        dia = TEMPLATE_DIAGRAM.format(
+        return TEMPLATE_DIAGRAM.format(
+            tag=self._repr_tags,
             sprites=self._repr_sprites,
             title=f"title {self.__title}" if self.__title != "" else "",
             context="".join(
@@ -109,11 +126,13 @@ class C4(_BaseDiagram):
                     for container in (self.__links_container or [])
                 ],
             ),
-            rels="".join([repr(rel) for rel in (self.__link_rels or [])]),
+            rels="".join([repr(r) for r in (self.__link_rels or [])]),
         )
-        # logger.debug(dia)
-        return dia
 
 
 if __name__ == "__main__":
     _ = sprite.tupadr3.FontAwesome5(sprite.tupadr3.FontAwesome5Lib.AD)
+    _ = tag.ElementTag(
+        tag_stereo="123",
+    )
+    _ = rel.Rel(label="", links=(context.System("1"), context.System("2")))

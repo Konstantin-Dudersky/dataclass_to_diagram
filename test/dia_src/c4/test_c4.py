@@ -1,7 +1,6 @@
 """Тест диаграмм C4."""
 
-from konstantin_docs.dia.c4 import C4, container, context, rel, sprite
-
+from konstantin_docs.dia.c4 import C4, container, context, rel, sprite, tag
 
 # ex 1 ------------------------------------------------------------------------
 person_alias = context.Person(
@@ -24,8 +23,7 @@ dia1 = C4(
     links_container=[container_alias],
     links_rel=[
         rel.Rel(
-            link_from=person_alias,
-            link_to=container_alias,
+            links=(person_alias, container_alias),
             label="Label",
             techn="Optional Technology",
         ),
@@ -54,14 +52,12 @@ dia2 = C4(
     links_context=[admin, c1, twitter],
     links_rel=[
         rel.Rel(
-            link_from=admin,
-            link_to=web_app,
+            links=(admin, web_app),
             label="Uses",
             techn="HTTPS",
         ),
         rel.Rel(
-            link_from=web_app,
-            link_to=twitter,
+            links=(web_app, twitter),
             label="Gets tweets from",
             techn="HTTPS",
         ),
@@ -101,20 +97,17 @@ dia3 = C4(
     links_container=[spa, api, db],
     links_rel=[
         rel.Rel(
-            link_from=user,
-            link_to=spa,
+            links=(user, spa),
             label="Uses",
             techn="https",
         ),
         rel.Rel(
-            link_from=spa,
-            link_to=api,
+            links=(spa, api),
             label="Uses",
             techn="https",
         ),
         rel.RelR(
-            link_from=api,
-            link_to=db,
+            links=(api, db),
             label="Reads/Writes",
         ),
     ],
@@ -127,13 +120,19 @@ dia3 = C4(
 admin = context.Person(
     label="Administrator",
     sprite=sprite.tupadr3.FontAwesome5(sprite.tupadr3.FontAwesome5Lib.USER),
-    link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md#hide_person_sprite-or-show_person_spritesprite",
+    link=(
+        "https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/"
+        "LayoutOptions.md#hide_person_sprite-or-show_person_spritesprite"
+    ),
 )
 web_app = container.Container(
     label="Web Application",
     techn="C#, ASP.NET Core 2.1 MVC",
     descr="Allows users to compare multiple Twitter timelines",
-    link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md",
+    link=(
+        "https://github.com/plantuml-stdlib/C4-PlantUML/blob/master"
+        "LayoutOptions.md"
+    ),
 )
 c1 = context.SystemBoundary(
     label="Sample System",
@@ -151,21 +150,113 @@ dia4 = C4(
     links_context=[admin, c1, twitter],
     links_rel=[
         rel.Rel(
-            link_from=admin,
-            link_to=web_app,
+            links=(admin, web_app),
             label="Uses",
             techn="HTTPS",
             link="https://plantuml.com/link",
         ),
         rel.Rel(
-            link_from=web_app,
-            link_to=twitter,
+            links=(web_app, twitter),
             label="Gets tweets from",
             techn="HTTPS",
             link="https://plantuml.com/link",
         ),
     ],
 )
+
+# ex 5 ------------------------------------------------------------------------
+# tags
+tag_v_1_0 = tag.ElementTag("v1.0", border_color="#d73027")
+tag_v_1_1 = tag.ElementTag("v1.1", font_color="#d73027")
+backup = tag.ElementTag("backup", font_color="orange")
+backup_rel = tag.RelTag(
+    "backup",
+    text_color="orange",
+    line_color="orange",
+    line_style="DashedLine()",
+)
+
+user = context.Person("Customer", "People that need products")
+admin = context.Person(
+    label="Administrator",
+    descr="People that administrates the products via the new v1.1 components",
+    tags=(tag_v_1_1,),
+)
+spa = container.Container(
+    label="SPA",
+    techn="angular",
+    descr="The main interface that the customer interacts with via v1.0",
+    tags=(tag_v_1_0,),
+)
+spa_admin = container.Container(
+    label="Admin SPA",
+    techn="angular",
+    descr=(
+        "The administrator interface that the customer interacts "
+        "with via new v1.1"
+    ),
+    tags=(tag_v_1_1,),
+)
+api = container.Container(
+    label="API",
+    techn="java",
+    descr="Handles all business logic (incl. new v1.1 extensions)",
+    tags=(tag_v_1_0, tag_v_1_1),
+)
+db = container.ContainerDb(
+    label="Database",
+    techn="Microsoft SQL",
+    descr="Holds product, order and invoice information",
+)
+archive = container.Container(
+    label="Archive",
+    techn="Audit logging",
+    descr="Stores 5 years",
+    tags=(backup,),
+)
+dia5 = C4(
+    filename="dia5",
+    title="",
+    links_context=[user, admin],
+    links_container=[spa, spa_admin, api, db, archive],
+    links_rel=[
+        rel.Rel(
+            links=(user, spa),
+            label="Uses",
+            techn="https",
+        ),
+        rel.Rel(
+            links=(spa, api),
+            label="Uses",
+            techn="https",
+        ),
+        rel.RelR(
+            links=(api, db),
+            label="Reads/Writes",
+        ),
+        rel.Rel(
+            links=(admin, spa_admin),
+            label="Uses",
+            techn="https",
+        ),
+        rel.Rel(
+            links=(spa_admin, api),
+            label="Uses",
+            techn="https",
+        ),
+        rel.RelL(
+            links=(api, archive),
+            label="Writes",
+            techn="messages",
+            tags=(backup_rel,),
+        ),
+    ],
+)
+"""
+
+Rel_L(api, archive, "Writes", "messages", $tags="backup")
+
+@enduml"""
 
 # ex 100 ----------------------------------------------------------------------
 
@@ -195,24 +286,20 @@ dia100 = C4(
     links_context=[customer, banking_system, mail_system, mainframe],
     links_rel=[
         rel.Rel(
-            link_from=customer,
-            link_to=banking_system,
+            links=(customer, banking_system),
             label="Uses",
         ),
         rel.RelBack(
-            link_from=customer,
-            link_to=mail_system,
+            links=(customer, mail_system),
             label="Sends e-mails to",
         ),
         rel.RelNeighbor(
-            link_from=banking_system,
-            link_to=mail_system,
+            links=(banking_system, mail_system),
             label="Sends e-mails",
             techn="SMTP",
         ),
         rel.Rel(
-            link_from=banking_system,
-            link_to=mainframe,
+            links=(banking_system, mainframe),
             label="Uses",
         ),
     ],
