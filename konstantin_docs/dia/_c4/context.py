@@ -11,9 +11,6 @@ from konstantin_docs.dia._c4.tag import ElementTag as _ElementTag
 class SystemKinds(_Enum):
     """NOTUSED."""
 
-    SYSTEMDB = "SystemDb"
-    SYSTEMQUEUE = "SystemQueue"
-    SYSTEMDB_EXT = "SystemDb_Ext"
     SYSTEMQUEUE_EXT = "SystemQueue_Ext"
     ENTERPRISE_BOUNDARY = "Enterprise_Boundary"
 
@@ -24,9 +21,11 @@ class BaseContext(_BaseC4Element):
     def __init__(
         self: "BaseContext",
         label: str,
+        descr: str | None,
         sprite: _BaseSprite | None,
         link: str | None,
         tags: tuple[_ElementTag] | None,
+        boundary_type: str | None,
         links_container: list[_BaseContainer] | None,
     ) -> None:
         """Создать BaseContext."""
@@ -36,57 +35,40 @@ class BaseContext(_BaseC4Element):
             link=link,
             tags=tags,
         )
+        self.__descr = descr
+        self.__boundary_type = boundary_type
         self.__links_container = links_container
 
     @property
-    def links_container(self: "BaseContext") -> str:
+    def _format_links_container(self: "BaseContext") -> str:
         """Возвращает список вложенных контейнеров в виде строки."""
         if self.__links_container is None:
             return ""
         links_container_str = "".join(
             [repr(container) for container in self.__links_container],
         )
-        return f"""{{
-    {links_container_str}
-}}"""
+        return f"{{\n\t{links_container_str}\n}}"
+
+    @property
+    def _repr_inside_pths(self: "BaseContext") -> str:
+        """Возвращает содержимое внутри скобок + вложенные контейнеры."""
+        return (
+            "({alias}{label}{descr}{sprite}{tags}{link}{type})"
+            "{links_container}\n"
+        ).format(
+            alias=self.format_alias,
+            label=self._format_label,
+            descr=self._repr_if_not_none("descr", self.__descr),
+            sprite=self._format_sprite,
+            tags=self._format_tags,
+            link=self._format_link,
+            type=self._repr_if_not_none("type", self.__boundary_type),
+            links_container=self._format_links_container,
+        )
 
     def __repr__(self: "BaseContext") -> str:
         """Return string representation."""
         raise NotImplementedError("Метод не переопределен")
-
-
-class Boundary(BaseContext):
-    """System."""
-
-    def __init__(
-        self: "Boundary",
-        label: str,
-        boundary_type: str = "",
-        link: str | None = None,
-        tags: tuple[_ElementTag] | None = None,
-        links_container: list[_BaseContainer] | None = None,
-    ) -> None:
-        """Создать System."""
-        super().__init__(
-            label=label,
-            sprite=None,
-            link=link,
-            tags=tags,
-            links_container=links_container,
-        )
-        self.__boundary_type = boundary_type
-
-    def __repr__(self: "Boundary") -> str:
-        """Return string representation."""
-        template = """
-Boundary({alias}, "{label}", "{type}"{tag}){{{links_container}"""
-        return template.format(
-            alias=self.alias,
-            label=self.label,
-            type=self.__boundary_type,
-            tag=self.repr_tags,
-            links_container=self.links_container,
-        )
 
 
 class Person(BaseContext):
@@ -104,25 +86,17 @@ class Person(BaseContext):
         """Создать Person."""
         super().__init__(
             label=label,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
+            boundary_type=None,
             links_container=links_container,
         )
-        self.__descr = descr
 
     def __repr__(self: "Person") -> str:
         """Return string representation."""
-        template = """
-Person({alias}, "{label}", "{descr}", $sprite="{sprite}"{tag}){links_container}"""
-        return template.format(
-            alias=self.alias,
-            label=self.label,
-            descr=self.__descr,
-            sprite=self.repr_sprite,
-            tag=self.repr_tags,
-            links_container=self.links_container,
-        )
+        return f"Person{self._repr_inside_pths}"
 
 
 class PersonExt(BaseContext):
@@ -137,27 +111,20 @@ class PersonExt(BaseContext):
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
-        """Создать Person."""
+        """Создать PersonExt."""
         super().__init__(
             label=label,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
+            boundary_type=None,
             links_container=links_container,
         )
-        self.__descr = descr
 
     def __repr__(self: "PersonExt") -> str:
         """Return string representation."""
-        template = """
-Person_Ext({alias}, "{label}", "{descr}", $sprite=""{tag}){links_container}"""
-        return template.format(
-            alias=self.alias,
-            label=self.label,
-            descr=self.__descr,
-            tag=self.repr_tags,
-            links_container=self.links_container,
-        )
+        return f"Person_Ext{self._repr_inside_pths}"
 
 
 class System(BaseContext):
@@ -172,27 +139,214 @@ class System(BaseContext):
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
     ) -> None:
-        """Создать Person."""
+        """Создать System."""
         super().__init__(
             label=label,
+            descr=descr,
             sprite=sprite,
             link=link,
             tags=tags,
+            boundary_type=None,
             links_container=links_container,
         )
-        self.__descr = descr
 
     def __repr__(self: "System") -> str:
         """Return string representation."""
-        template = """
-System({alias}, "{label}", "{descr}", $sprite=""{tag}){links_container}"""
-        return template.format(
-            alias=self.alias,
-            label=self.label,
-            descr=self.__descr,
-            tag=self.repr_tags,
-            links_container=self.links_container,
+        return f"System{self._repr_inside_pths}"
+
+
+class SystemDb(BaseContext):
+    """SystemDb."""
+
+    def __init__(
+        self: "SystemDb",
+        label: str,
+        descr: str = "",
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать System."""
+        super().__init__(
+            label=label,
+            descr=descr,
+            sprite=sprite,
+            link=link,
+            tags=tags,
+            boundary_type=None,
+            links_container=links_container,
         )
+
+    def __repr__(self: "SystemDb") -> str:
+        """Return string representation."""
+        return f"SystemDb{self._repr_inside_pths}"
+
+
+class SystemQueue(BaseContext):
+    """SystemQueue."""
+
+    def __init__(
+        self: "SystemQueue",
+        label: str,
+        descr: str = "",
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать System."""
+        super().__init__(
+            label=label,
+            descr=descr,
+            sprite=sprite,
+            link=link,
+            tags=tags,
+            boundary_type=None,
+            links_container=links_container,
+        )
+
+    def __repr__(self: "SystemQueue") -> str:
+        """Return string representation."""
+        return f"SystemQueue{self._repr_inside_pths}"
+
+
+class SystemExt(BaseContext):
+    """SystemExt."""
+
+    def __init__(
+        self: "SystemExt",
+        label: str,
+        descr: str = "",
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать SystemExt."""
+        super().__init__(
+            label=label,
+            descr=descr,
+            sprite=sprite,
+            link=link,
+            tags=tags,
+            boundary_type=None,
+            links_container=links_container,
+        )
+
+    def __repr__(self: "SystemExt") -> str:
+        """Return string representation."""
+        return f"System_Ext{self._repr_inside_pths}"
+
+
+class SystemDbExt(BaseContext):
+    """SystemDbExt."""
+
+    def __init__(
+        self: "SystemDbExt",
+        label: str,
+        descr: str = "",
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать SystemDbExt."""
+        super().__init__(
+            label=label,
+            descr=descr,
+            sprite=sprite,
+            link=link,
+            tags=tags,
+            boundary_type=None,
+            links_container=links_container,
+        )
+
+    def __repr__(self: "SystemDbExt") -> str:
+        """Return string representation."""
+        return f"SystemDb_Ext{self._repr_inside_pths}"
+
+
+class SystemQueueExt(BaseContext):
+    """SystemQueueExt."""
+
+    def __init__(
+        self: "SystemQueueExt",
+        label: str,
+        descr: str = "",
+        sprite: _BaseSprite | None = None,
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать SystemQueueExt."""
+        super().__init__(
+            label=label,
+            descr=descr,
+            sprite=sprite,
+            link=link,
+            tags=tags,
+            boundary_type=None,
+            links_container=links_container,
+        )
+
+    def __repr__(self: "SystemQueueExt") -> str:
+        """Return string representation."""
+        return f"SystemQueue_Ext{self._repr_inside_pths}"
+
+
+class Boundary(BaseContext):
+    """System."""
+
+    def __init__(
+        self: "Boundary",
+        label: str,
+        boundary_type: str = "",
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать System."""
+        super().__init__(
+            label=label,
+            descr=None,
+            sprite=None,
+            link=link,
+            tags=tags,
+            boundary_type=boundary_type,
+            links_container=links_container,
+        )
+        self.__boundary_type = boundary_type
+
+    def __repr__(self: "Boundary") -> str:
+        """Return string representation."""
+        return f"Boundary{self._repr_inside_pths}"
+
+
+class EnterpriseBoundary(BaseContext):
+    """EnterpriseBoundary."""
+
+    def __init__(
+        self: "EnterpriseBoundary",
+        label: str,
+        link: str | None = None,
+        tags: tuple[_ElementTag] | None = None,
+        links_container: list[_BaseContainer] | None = None,
+    ) -> None:
+        """Создать EnterpriseBoundary."""
+        super().__init__(
+            label=label,
+            descr=None,
+            sprite=None,
+            link=link,
+            tags=tags,
+            boundary_type=None,
+            links_container=links_container,
+        )
+
+    def __repr__(self: "EnterpriseBoundary") -> str:
+        """Return string representation."""
+        return f"Enterprise_Boundary{self._repr_inside_pths}"
 
 
 class SystemBoundary(BaseContext):
@@ -208,54 +362,14 @@ class SystemBoundary(BaseContext):
         """Создать SystemBoundary."""
         super().__init__(
             label=label,
+            descr=None,
             sprite=None,
             link=link,
             tags=tags,
+            boundary_type=None,
             links_container=links_container,
         )
 
     def __repr__(self: "SystemBoundary") -> str:
         """Return string representation."""
-        template = """
-System_Boundary({alias}, "{label}"{tag}){links_container}"""
-        return template.format(
-            alias=self.alias,
-            label=self.label,
-            tag=self.repr_tags,
-            links_container=self.links_container,
-        )
-
-
-class SystemExt(BaseContext):
-    """SystemExt."""
-
-    def __init__(
-        self: "SystemExt",
-        label: str,
-        descr: str = "",
-        sprite: _BaseSprite | None = None,
-        link: str | None = None,
-        tags: tuple[_ElementTag] | None = None,
-        links_container: list[_BaseContainer] | None = None,
-    ) -> None:
-        """Создать Person."""
-        super().__init__(
-            label=label,
-            sprite=sprite,
-            link=link,
-            tags=tags,
-            links_container=links_container,
-        )
-        self.__descr = descr
-
-    def __repr__(self: "SystemExt") -> str:
-        """Return string representation."""
-        template = """
-System_Ext({alias}, "{label}", "{descr}", $sprite=""{tag}){links_container}"""
-        return template.format(
-            alias=self.alias,
-            label=self.label,
-            descr=self.__descr,
-            tag=self.repr_tags,
-            links_container=self.links_container,
-        )
+        return f"System_Boundary{self._repr_inside_pths}"

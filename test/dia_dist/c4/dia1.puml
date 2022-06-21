@@ -4,13 +4,12 @@
 
 
 
+Person(139666997773120, $label="Label", $descr="Optional Description")
+System(139666997772688, $label="Label", $descr="Optional Description")
 
-Person(140486190006224, "Label", "Optional Description", $sprite="")
-System(140486190236096, "Label", "Optional Description", $sprite="")
-
-Container(140486190006128, "Label", "Technology", "Optional Description", $sprite="")
+Container(139666997772736, $label="Label", $techn="Technology", $descr="Optional Description")
 
 
-Rel(140486190006224, 140486190006128, "Label", "Optional Technology", "")
+Rel(139666997773120, 139666997772736, "Label", "Optional Technology", "")
 SHOW_LEGEND()
 @enduml

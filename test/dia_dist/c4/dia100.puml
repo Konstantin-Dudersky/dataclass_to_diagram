@@ -4,16 +4,16 @@
 
 title System Context diagram for Internet Banking System
 
+Person(139666996416896, $label="Banking Customer", $descr="A customer of the bank, with personal bank accounts.")
+System(139666996416944, $label="Internet Banking System", $descr="Allows customers to check their accounts.")
+System_Ext(139666996416992, $label="E-mail system", $descr="The internal Microsoft Exchange e-mail system.")
+System_Ext(139666996417040, $label="Mainframe Banking System", $descr="Stores all of the core banking information.")
 
-Person(140486188892800, "Banking Customer", "A customer of the bank, with personal bank accounts.", $sprite="")
-System(140486188892848, "Internet Banking System", "Allows customers to check their accounts.", $sprite="")
-System_Ext(140486188892896, "E-mail system", "The internal Microsoft Exchange e-mail system.", $sprite="")
-System_Ext(140486188892944, "Mainframe Banking System", "Stores all of the core banking information.", $sprite="")
 
 
-Rel(140486188892800, 140486188892848, "Uses", "", "")
-Rel_Back(140486188892800, 140486188892896, "Sends e-mails to", "", "")
-Rel_Neighbor(140486188892848, 140486188892896, "Sends e-mails", "SMTP", "")
-Rel(140486188892848, 140486188892944, "Uses", "", "")
+Rel(139666996416896, 139666996416944, "Uses", "", "")
+Rel_Back(139666996416896, 139666996416992, "Sends e-mails to", "", "")
+Rel_Neighbor(139666996416944, 139666996416992, "Sends e-mails", "SMTP", "")
+Rel(139666996416944, 139666996417040, "Uses", "", "")
 SHOW_LEGEND()
 @enduml

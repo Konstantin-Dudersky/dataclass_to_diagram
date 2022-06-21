@@ -5,17 +5,16 @@
 !include <tupadr3/font-awesome-5/user>
 
 
-
-Person(140486188858480, "Administrator", "", $sprite="user")
-System_Boundary(140486188858576, "Sample System"){
-    
-Container(140486188858528, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines", $sprite="")
+Person(139666996415408, $label="Administrator", $descr="", $sprite="user", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md#hide_person_sprite-or-show_person_spritesprite")
+System_Boundary(139666996415504, $label="Sample System", $link="https://github.com/plantuml-stdlib/C4-PlantUML"){
+	Container(139666996415456, $label="Web Application", $techn="C#, ASP.NET Core 2.1 MVC", $descr="Allows users to compare multiple Twitter timelines", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/masterLayoutOptions.md")
 
 }
-System(140486188858624, "Twitter", "", $sprite="")
+System(139666996415552, $label="Twitter", $descr="", $link="https://github.com/plantuml-stdlib/C4-PlantUML")
 
 
-Rel(140486188858480, 140486188858528, "Uses", "HTTPS", "", $link="https://plantuml.com/link")
-Rel(140486188858528, 140486188858624, "Gets tweets from", "HTTPS", "", $link="https://plantuml.com/link")
+
+Rel(139666996415408, 139666996415456, "Uses", "HTTPS", "", $link="https://plantuml.com/link")
+Rel(139666996415456, 139666996415552, "Gets tweets from", "HTTPS", "", $link="https://plantuml.com/link")
 SHOW_LEGEND()
 @enduml

@@ -85,3 +85,13 @@ links
 created:2022-06-19T15:35:08.132Z
 -->
 tags
+# [<!--](#DOING:0)
+<card>
+created:2022-06-21T04:56:50.858Z
+-->
+
+добавить остальные классы
+- [x] Context
+- [ ] Container
+- [ ] Component
+</card>
