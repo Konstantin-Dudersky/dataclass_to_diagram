@@ -37,9 +37,6 @@ class Devicons2(_Sprite):
     def __init__(self: "Devicons2", sprite: Devicons2Lib) -> None:
         """Create sprite tupadr3."""
         super().__init__("tupadr3/devicons2", sprite)
-        raise NotImplementedError(
-            "На дату 2022-06-19 эта библиотека не работает!!!",
-        )
 
 
 class FontAwesome5(_Sprite):

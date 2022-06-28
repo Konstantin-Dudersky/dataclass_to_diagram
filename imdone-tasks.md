@@ -30,10 +30,9 @@ created:2022-06-18T07:50:04.689Z
 
 Добавить уровень логгирования
 </card>
-# [<!--](#TODO:-20)
+# [<!--](#DONE:-70)
 <card>
-created:2022-06-18T09:25:35.616Z
--->
+created:2022-06-18T09:25:35.616Z completed:2022-06-22T05:29:57.399Z -->
 
 flake8-class-attributes-order для template_fastapi
 </card>
@@ -82,13 +81,25 @@ links
 # [<!--](#DONE:-40)
 created:2022-06-19T15:35:08.132Z completed:2022-06-21T07:11:58.930Z -->
 tags
-# [<!--](#TEST:0)
+# [<!--](#DONE:-80)
 <card>
-created:2022-06-21T04:56:50.858Z
--->
+created:2022-06-21T04:56:50.858Z completed:2022-06-28T17:07:07.268Z -->
 
 добавить остальные классы
 - [x] Context
 - [x] Container
 - [x] Component
+</card>
+# [<!--](#DONE:-90)
+<card>
+created:2022-06-21T08:41:33.596Z completed:2022-06-28T17:07:09.740Z -->
+
+devicons2
+</card>
+# [<!--](#TEST:-60)
+<card>
+created:2022-06-21T09:22:27.707Z
+-->
+
+Все отношения
 </card>

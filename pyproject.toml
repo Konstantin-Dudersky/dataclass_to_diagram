@@ -2,7 +2,7 @@
 authors = ["Konstantin-Dudersky <Konstantin.Dudersky@gmail.com>"]
 description = ""
 name = "konstantin_docs"
-version = "0.0.5"
+version = "0.0.7"
 
 [tool.poetry.dependencies]
 python = "^3.10"
