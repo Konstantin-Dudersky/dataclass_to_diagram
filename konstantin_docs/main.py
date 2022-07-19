@@ -18,6 +18,8 @@ logger.addHandler(logging.StreamHandler())
 class ModuleInfo:
     """Модуль для импорта."""
 
+    __imported_module: ModuleType | None = None
+
     def __init__(
         self: "ModuleInfo",
         path_module: str,
@@ -28,12 +30,11 @@ class ModuleInfo:
         """Create ModuleInfo."""
         self.__path_module = path_module
         self.__filename = filename
-        self.__imported_module = None
         self.__path_src = path_src
         self.__path_dist = path_dist
 
     @property
-    def imported(self: "ModuleInfo") -> ModuleType:
+    def imported(self: "ModuleInfo") -> ModuleType | None:
         """Возвращает импортированный модуль."""
         return self.__imported_module
 

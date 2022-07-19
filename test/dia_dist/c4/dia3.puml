@@ -2,21 +2,21 @@
 
 !include C4_Dynamic.puml
 !include <tupadr3/common>
-!include <tupadr3/font-awesome-5/java>
 !include <tupadr3/devicons/msql_server>
 !include <tupadr3/font-awesome-5/users>
 !include <tupadr3/font-awesome-5/angular>
+!include <tupadr3/font-awesome-5/java>
 
 
-Person(139981077436960, $label="Customer", $descr="People that need products", $sprite="users")
+Person(140523039150416, $label="Customer", $descr="People that need products", $sprite="users")
 
-Container(139981077437104, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with", $sprite="angular")
-Container(139981077437248, $label="API", $techn="java", $descr="Handles all business logic", $sprite="java")
-ContainerDb(139981077437392, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information", $sprite="msql_server")
+Container(140523039150560, $label="SPA", $techn="angular", $descr="The main interface that the customer interacts with", $sprite="angular")
+Container(140523039150704, $label="API", $techn="java", $descr="Handles all business logic", $sprite="java")
+ContainerDb(140523039150848, $label="Database", $techn="Microsoft SQL", $descr="Holds product, order and invoice information", $sprite="msql_server")
 
 
-Rel(139981077436960, 139981077437104, "Uses", "https", "")
-Rel(139981077437104, 139981077437248, "Uses", "https", "")
-Rel_R(139981077437248, 139981077437392, "Reads/Writes", "", "")
+Rel(140523039150416, 140523039150560, "Uses", "https", "")
+Rel(140523039150560, 140523039150704, "Uses", "https", "")
+Rel_R(140523039150704, 140523039150848, "Reads/Writes", "", "")
 SHOW_LEGEND()
 @enduml
