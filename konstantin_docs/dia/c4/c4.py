@@ -7,22 +7,22 @@
 import logging
 
 from konstantin_docs.dia.base import BaseDiagram as _BaseDiagram
-from konstantin_docs.dia.base import Image as _Image
+from konstantin_docs.dia.base import Image
 from konstantin_docs.service import kroki as _kroki
 
-from ._c4 import component, container, context, rel, sprite, tag
-from ._c4.base import BaseRelation as _BaseRelation
-from ._c4.base import BaseSprite as _BaseSprite
-from ._c4.base import BaseTag as _BaseTag
+from . import component, container, context, rel, sprite, tag
+from .base import BaseRelation as _BaseRelation
+from .base import BaseSprite as _BaseSprite
+from .base import BaseTag as _BaseTag
 
-logger = logging.getLogger(__name__)
+logger: logging.Logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 logger.addHandler(logging.StreamHandler())
 
 
 # Diagram ---------------------------------------------------------------------
 
-TEMPLATE_DIAGRAM = """@startuml
+TEMPLATE_DIAGRAM: str = """@startuml
 
 !include C4_Dynamic.puml
 {sprites}
@@ -39,6 +39,12 @@ SHOW_LEGEND()
 class C4(_BaseDiagram):
     """Диаграмма C4."""
 
+    __title: str
+    __links_context: list[context.BaseContext] | None
+    __links_container: list[container.BaseContainer] | None
+    __links_component: list[component.BaseComponent] | None
+    __link_rels: list[_BaseRelation] | None
+
     def __init__(
         self: "C4",
         filename: str,
@@ -48,7 +54,11 @@ class C4(_BaseDiagram):
         links_component: list[component.BaseComponent] | None = None,
         links_rel: list[_BaseRelation] | None = None,
     ) -> None:
-        """Создает объект диаграммы."""
+        """Создает объект диаграммы.
+
+        :param filename: имя файла, без расширения
+        :param title: заголовок диаграммы
+        """
         super().__init__(filename)
         self.__title = title
         self.__links_context = links_context
@@ -58,7 +68,10 @@ class C4(_BaseDiagram):
 
     @property
     def _format_sprites(self: "C4") -> str:
-        """Возвращает все спрайты."""
+        """Возвращает все спрайты.
+
+        :return: форматированные спрайты
+        """
         all_sprites: list[_BaseSprite] = []
         all_sprites.extend(
             [
@@ -86,15 +99,17 @@ class C4(_BaseDiagram):
         for spr in all_sprites:
             common.add(spr.common)
             sprites.add(spr.sprite_full)
-        out = ""
+        out: str = ""
         if len(common) > 0:
             out += "\n".join(common) + "\n" + "\n".join(sprites)
         return out
 
     @property
     def _format_tags(self: "C4") -> str:
-        """Возвращает объявление для всех тегов."""
-        # находим все теги
+        """Возвращает объявление для всех тегов.
+
+        :return:  форматированные теги
+        """
         all_tags: list[_BaseTag] = []
         all_tags.extend(
             [
@@ -118,20 +133,23 @@ class C4(_BaseDiagram):
             ],
         )
         repr_tags: set[str] = set([t.repr_declaration() for t in all_tags])
-        out = ""
+        out: str = ""
         if len(repr_tags) > 0:
             out += "\n".join(repr_tags)
         return out
 
-    def get_images(self: "C4") -> tuple[_Image]:
-        """Возвращает кортеж изображений."""
-        images: list[_Image] = []
-        text = repr(self)
+    def get_images(self: "C4") -> tuple[Image]:
+        """Возвращает кортеж файлов.
+
+        :return: кортеж файлов
+        """
+        images: list[Image] = []
+        text: str = repr(self)
         images.append(self._get_text_file(".puml"))
         try:
             for fmt in (_kroki.OutputFormats.PNG, _kroki.OutputFormats.SVG):
                 images.append(
-                    _Image(
+                    Image(
                         filename=self.filename + "." + fmt.value,
                         content=_kroki.get_image(
                             source=text,
@@ -145,7 +163,10 @@ class C4(_BaseDiagram):
         return tuple(images)
 
     def __repr__(self: "C4") -> str:
-        """Return string representation."""
+        """Return string representation.
+
+        :return: string representation
+        """
         return TEMPLATE_DIAGRAM.format(
             tag=self._format_tags,
             sprites=self._format_sprites,

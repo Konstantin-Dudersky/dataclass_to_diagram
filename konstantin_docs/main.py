@@ -104,7 +104,11 @@ def __ignore_files(directory: str, files: list[str]) -> list[str]:
 
 
 def generate_images(path_src: str, path_dist: str) -> None:
-    """Основная функция для генерации изображений."""
+    """Основная функция для генерации изображений.
+
+    :param path_src: путь к папке с текстовым описанием диаграмм
+    :param path_dist: путь к папке, куда будут сохраняться изображения
+    """
     # удаляем целевую папку
     shutil.rmtree(path=path_dist, ignore_errors=True)
     # копируем структуру папок
@@ -113,6 +117,11 @@ def generate_images(path_src: str, path_dist: str) -> None:
         dst=path_dist,
         ignore=__ignore_files,
     )
+    with open(
+        f"{path_dist}/__this_folder_is_automatically_generated__",
+        "w",
+    ) as f:
+        f.write("")
     # сканируем файлы в исходной папке и находим потенциальные модули
     imports = __scan_folder_for_modules(path_src, path_dist)
     # попытка импортировать модули
@@ -126,6 +135,8 @@ def generate_images(path_src: str, path_dist: str) -> None:
             continue
     # генерируем диаграммы
     for mod, _path in [(mod.imported, mod.path_image) for mod in imported]:
+        if mod is None:
+            continue
         dias_in_module = __dia_from_module(mod)
         logger.debug(
             "В модуле %s найдено диаграмм: %s",

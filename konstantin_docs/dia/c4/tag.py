@@ -1,14 +1,15 @@
 """Поддержка тегов."""
 
-from .base import BaseTag as _BaseTag
 from .base import BaseSprite as _BaseSprite
-
-# AddElementTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite):
-# AddRelTag(tagStereo, ?textColor, ?lineColor, ?lineStyle, ?sprite, ?techn, ?legendText, ?legendSprite):
+from .base import BaseTag as _BaseTag
 
 
 class ElementTag(_BaseTag):
     """Тег для элементов."""
+
+    __bg_color: str | None
+    __font_color: str | None
+    __border_color: str | None
 
     def __init__(
         self: "ElementTag",

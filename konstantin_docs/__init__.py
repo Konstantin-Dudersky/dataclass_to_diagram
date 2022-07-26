@@ -1,5 +1,8 @@
 """konstantin_docs package."""
 
-from .dia import mermaid_er
+from .dia import c4, mermaid_er
 
-__all__ = ["mermaid_er"]
+__all__: list[str] = [
+    "c4",
+    "mermaid_er",
+]

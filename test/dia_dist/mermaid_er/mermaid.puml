@@ -18,26 +18,17 @@ erDiagram
         datetime timestamp  
     }
 
-    state {
-        int state_id PK 
-        int pack_id FK 
-        int pallete_id FK 
-        int batch_id FK "Запущенная партия"
-        int max_unit_in_pack  
-        int max_pack_in_pallet  
-        int max_pallet_in_batch  
-    }
-
-    pallet {
-        int pallet_id PK 
-        int batch_id FK 
-        str barcode  "Код без скобок, для печати кода на принтере"
-        str barcode_human  "Код со скобками"
-        int mass  
-        int seat_number  
+    batch {
+        int batch_id PK 
+        int batch_number  
+        int bbd_period  "Срок годности в днях"
+        str docid  
+        bool exported  
+        str gtin  
+        datetime manufacture_ts  
         datetime start_ts  
         datetime end_ts  
-        bool need_validate  "Необходимо валидировать сканером"
+        int unit_mass  
     }
 
     pack {
@@ -52,17 +43,26 @@ erDiagram
         bool need_validate  "Необходимо валидировать сканером"
     }
 
-    batch {
-        int batch_id PK 
-        int batch_number  
-        int bbd_period  "Срок годности в днях"
-        str docid  
-        bool exported  
-        str gtin  
-        datetime manufacture_ts  
+    pallet {
+        int pallet_id PK 
+        int batch_id FK 
+        str barcode  "Код без скобок, для печати кода на принтере"
+        str barcode_human  "Код со скобками"
+        int mass  
+        int seat_number  
         datetime start_ts  
         datetime end_ts  
-        int unit_mass  
+        bool need_validate  "Необходимо валидировать сканером"
+    }
+
+    state {
+        int state_id PK 
+        int pack_id FK 
+        int pallete_id FK 
+        int batch_id FK "Запущенная партия"
+        int max_unit_in_pack  
+        int max_pack_in_pallet  
+        int max_pallet_in_batch  
     }
 
 

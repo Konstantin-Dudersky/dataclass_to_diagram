@@ -1,29 +1,24 @@
 """Уровень 1 - context."""
 
-from enum import Enum as _Enum
-
-from konstantin_docs.dia._c4.base import BaseC4Element as _BaseC4Element
-from konstantin_docs.dia._c4.base import BaseSprite as _BaseSprite
-from konstantin_docs.dia._c4.base import BaseTag as _BaseTag
-from konstantin_docs.dia._c4.container import BaseContainer as _BaseContainer
-from konstantin_docs.dia._c4.tag import ElementTag as _ElementTag
-
-
-class SystemKinds(_Enum):
-    """NOTUSED."""
-
-    SYSTEMQUEUE_EXT = "SystemQueue_Ext"
-    ENTERPRISE_BOUNDARY = "Enterprise_Boundary"
+from .base import BaseC4Element as _BaseC4Element
+from .base import BaseSprite
+from .base import BaseTag
+from .container import BaseContainer as _BaseContainer
+from .tag import ElementTag as _ElementTag
 
 
 class BaseContext(_BaseC4Element):
     """BaseContext."""
 
+    __descr: str | None
+    __boundary_type: str | None
+    __links_container: list[_BaseContainer] | None
+
     def __init__(
         self: "BaseContext",
         label: str,
         descr: str | None,
-        sprite: _BaseSprite | None,
+        sprite: BaseSprite | None,
         link: str | None,
         tags: tuple[_ElementTag] | None,
         boundary_type: str | None,
@@ -45,7 +40,7 @@ class BaseContext(_BaseC4Element):
         """Возвращает список вложенных контейнеров в виде строки."""
         if self.__links_container is None:
             return ""
-        links_container_str = "".join(
+        links_container_str: str = "".join(
             [repr(container) for container in self.__links_container],
         )
         return f"{{\n\t{links_container_str}\n}}"
@@ -68,10 +63,9 @@ class BaseContext(_BaseC4Element):
         )
 
     @_BaseC4Element.all_sprites.getter
-    def all_sprites(self: "BaseContext") -> list[_BaseSprite]:
+    def all_sprites(self: "BaseContext") -> list[BaseSprite]:
         """Возвращает все спрайты."""
-        sprites: list[_BaseSprite] = []
-        sprites = super().all_sprites
+        sprites: list[BaseSprite] = super().all_sprites
         sprites.extend(
             [
                 all_sprites
@@ -82,10 +76,12 @@ class BaseContext(_BaseC4Element):
         return sprites
 
     @_BaseC4Element.all_tags.getter
-    def all_tags(self: "BaseContext") -> list[_BaseTag]:
-        """Возвращает все теги."""
-        tags: list[_BaseTag] = []
-        tags = super().all_tags
+    def all_tags(self: "BaseContext") -> list[BaseTag]:
+        """Возвращает все теги.
+
+        :return: список тегов
+        """
+        tags: list[BaseTag] = super().all_tags
         tags.extend(
             [
                 tags
@@ -96,7 +92,10 @@ class BaseContext(_BaseC4Element):
         return tags
 
     def __repr__(self: "BaseContext") -> str:
-        """Return string representation."""
+        """Return string representation.
+
+        :raises NotImplementedError: метод не переопределен
+        """
         raise NotImplementedError("Метод не переопределен")
 
 
@@ -107,7 +106,7 @@ class Person(BaseContext):
         self: "Person",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -135,7 +134,7 @@ class PersonExt(BaseContext):
         self: "PersonExt",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -163,7 +162,7 @@ class System(BaseContext):
         self: "System",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -191,7 +190,7 @@ class SystemDb(BaseContext):
         self: "SystemDb",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -219,7 +218,7 @@ class SystemQueue(BaseContext):
         self: "SystemQueue",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -247,7 +246,7 @@ class SystemExt(BaseContext):
         self: "SystemExt",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -275,7 +274,7 @@ class SystemDbExt(BaseContext):
         self: "SystemDbExt",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -303,7 +302,7 @@ class SystemQueueExt(BaseContext):
         self: "SystemQueueExt",
         label: str,
         descr: str = "",
-        sprite: _BaseSprite | None = None,
+        sprite: BaseSprite | None = None,
         link: str | None = None,
         tags: tuple[_ElementTag] | None = None,
         links_container: list[_BaseContainer] | None = None,
@@ -326,6 +325,8 @@ class SystemQueueExt(BaseContext):
 
 class Boundary(BaseContext):
     """System."""
+
+    __boundary_type: str
 
     def __init__(
         self: "Boundary",
