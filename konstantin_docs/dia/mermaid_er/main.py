@@ -14,20 +14,20 @@ logger.setLevel(logging.DEBUG)
 logger.addHandler(logging.StreamHandler())
 
 
-TEMPLATE = """%%{{init: {{'theme':'neutral'}}}}%%
+TEMPLATE: str = """%%{{init: {{'theme':'neutral'}}}}%%
 erDiagram
 {rels}
 {entities}
 """
 
-TEMPLATE_REL = (
+TEMPLATE_REL: str = (
     "    {entity_left} {entity_left_card}--{entity_right_card}"
     " {entity_right} : {label}\n"
 )
 
-TEMPLATE_ATTR = "        {type} {name} {key} {comment}"
+TEMPLATE_ATTR: str = "        {type} {name} {key} {comment}"
 
-TEMPLATE_ENTITY = """    {name} {{
+TEMPLATE_ENTITY: str = """    {name} {{
 {attr}
     }}
 

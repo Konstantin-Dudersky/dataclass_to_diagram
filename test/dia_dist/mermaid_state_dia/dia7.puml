@@ -1,0 +1,10 @@
+stateDiagram-v2
+State1
+note right of State1
+Important information! You can write
+end note
+State2
+note left of State2
+This is the note to the left.
+end note
+State1 --> State2 

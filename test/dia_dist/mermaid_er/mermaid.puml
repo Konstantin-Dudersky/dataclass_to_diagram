@@ -9,26 +9,14 @@ erDiagram
     state ||--o| pallet : pallet_id
     state ||--o| batch : batch_id
 
-    unit {
-        int unit_id PK 
+    state {
+        int state_id PK 
         int pack_id FK 
-        int pallet_id FK 
-        int batch_id FK 
-        str barcode  
-        datetime timestamp  
-    }
-
-    batch {
-        int batch_id PK 
-        int batch_number  
-        int bbd_period  "Срок годности в днях"
-        str docid  
-        bool exported  
-        str gtin  
-        datetime manufacture_ts  
-        datetime start_ts  
-        datetime end_ts  
-        int unit_mass  
+        int pallete_id FK 
+        int batch_id FK "Запущенная партия"
+        int max_unit_in_pack  
+        int max_pack_in_pallet  
+        int max_pallet_in_batch  
     }
 
     pack {
@@ -55,14 +43,26 @@ erDiagram
         bool need_validate  "Необходимо валидировать сканером"
     }
 
-    state {
-        int state_id PK 
+    batch {
+        int batch_id PK 
+        int batch_number  
+        int bbd_period  "Срок годности в днях"
+        str docid  
+        bool exported  
+        str gtin  
+        datetime manufacture_ts  
+        datetime start_ts  
+        datetime end_ts  
+        int unit_mass  
+    }
+
+    unit {
+        int unit_id PK 
         int pack_id FK 
-        int pallete_id FK 
-        int batch_id FK "Запущенная партия"
-        int max_unit_in_pack  
-        int max_pack_in_pallet  
-        int max_pallet_in_batch  
+        int pallet_id FK 
+        int batch_id FK 
+        str barcode  
+        datetime timestamp  
     }
 
 

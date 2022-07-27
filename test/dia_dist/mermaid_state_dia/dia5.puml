@@ -1,0 +1,9 @@
+stateDiagram-v2
+IsPositive
+state IfState <<choice>>
+False
+True
+[*] --> IsPositive 
+IsPositive --> IfState 
+IfState --> False : if n < 0
+IfState --> True : if n > 0

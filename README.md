@@ -1,46 +1,50 @@
 # kroki-python
 
-Lib for interaction with https://kroki.io
+Библиотека для генерации диаграмм из текстового описания.
 
-## Запустить тест:
+Диаграммы описываются объектами python. Далее геренируются изображения с помощью https://kroki.io.
 
-```sh
-poetry run poe docs
-```
+## Как использовать
 
-Или запусить task в vs code - F1 -> Task: Run task -> docs
+1. Создать две папки:
 
-## Загрузить пакет в pypi
+   - dia_src - папка с исходным описанием
+   - dia_dist - папка со сгенерированными изображениями
 
-Собрать и опубликовать пакет
+2. В папке dia_src создаются py-файлы. Названия файлов - произвольные. Можно создавать подкаталоги - структура каталогов будет скопирована в целевую папку dia_dist. Примеры создания можно посмотреть в тестовых диаграммах [пакета](https://github.com/Konstantin-Dudersky/konstantin_docs/tree/main/test).
 
-```sh
-poetry build && poetry publish
-```
+3. Для генерации можно создать задачу poetepoet. Прописать в файле pyproject.toml:
 
-Логин: konstantin-dudersky
+   ```toml
+   [tool.poetry.dependencies]
+   konstantin_docs = "*"
+   poethepoet = "*"
+   
+   [tool.poe.tasks]
+   docs = {script = "konstantin_docs.main:generate_images('dia_src', 'dia_dist')"}
+   ```
 
-## Задача poe
+4. Запустить командой:
 
-Дописать в файл pyproject.toml:
+    ```sh
+    poetry run poe docs
+    ```
 
-```toml
-docs = {script = "konstantin_docs.main:generate_images(path_src='test/dia_src', path_dist='test/dia_dist')"}
-```
+5. Дополнительно можно создать задачу в vscode. Для этого в файле .vscode/tasks.json:
 
-## Создать задачу vscode
+   ```json
+   {
+     "version": "2.0.0",
+     "tasks": [
+       {
+         "label": "docs",
+         "type": "shell",
+         "command": "poetry run poe docs"
+       }
+     ]
+   }
+   ```
 
-В файле .vscode/tasks.json:
+   Запускать командой F1 -> Task: Run task -> docs
 
-```json
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "docs",
-      "type": "shell",
-      "command": "poetry run poe docs"
-    }
-  ]
-}
-```
+
