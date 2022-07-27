@@ -1,4 +1,4 @@
-[![PyPI version](README.assets/konstantin-docs.svg+xml)](https://badge.fury.io/py/konstantin-docs)
+[![PyPI version](https://badge.fury.io/py/konstantin-docs.svg)](https://badge.fury.io/py/konstantin-docs)
 
 # kroki-python
 
