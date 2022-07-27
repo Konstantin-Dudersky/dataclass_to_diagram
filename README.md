@@ -1,3 +1,5 @@
+[![PyPI version](README.assets/konstantin-docs.svg+xml)](https://badge.fury.io/py/konstantin-docs)
+
 # kroki-python
 
 Библиотека для генерации диаграмм из текстового описания.
@@ -46,5 +48,4 @@
    ```
 
    Запускать командой F1 -> Task: Run task -> docs
-
 
