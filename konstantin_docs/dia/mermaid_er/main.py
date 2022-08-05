@@ -51,6 +51,7 @@ class Attr:
         STR = "str"
         DATETIME = "datetime"
         BOOL = "bool"
+        REAL = "real"
 
     __ty: Types
     __name: str
