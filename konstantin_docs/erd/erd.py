@@ -3,10 +3,6 @@
 from dataclasses import dataclass, field
 from typing import Iterable, Literal, TypeAlias
 
-DATATYPES: TypeAlias = Literal[
-    "integer",
-    "varchar",
-]
 REL_TYPES: TypeAlias = Literal["<", ">", "-", "<>"]
 REL_CONFIG: TypeAlias = Literal[
     "cascade",
@@ -31,6 +27,31 @@ class ProjectDefinition(object):
     project_name: str
     database_type: str = "PostgreSQL"
     note: Note | None = None
+
+
+@dataclass
+class EnumValue(object):
+    """Одно значение в перечислении."""
+
+    enum_value: str
+    note: Note | None = None
+
+
+@dataclass
+class Enum(object):
+    """Перечисление."""
+
+    name: str
+    enum_values: Iterable[EnumValue]
+
+
+DATATYPES: TypeAlias = (
+    Enum
+    | Literal[
+        "integer",
+        "varchar",
+    ]
+)
 
 
 @dataclass
@@ -77,6 +98,7 @@ class Relation(object):
 class Database(object):
     """Описание схемы БД."""
 
-    tables: Iterable[Table]
-    relations: Iterable[Relation] | None = None
     project_definition: ProjectDefinition | None = None
+    enums: Iterable[Enum] | None = None
+    tables: Iterable[Table] | None = None
+    relations: Iterable[Relation] | None = None

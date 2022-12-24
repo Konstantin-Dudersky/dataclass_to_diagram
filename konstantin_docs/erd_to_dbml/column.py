@@ -1,10 +1,18 @@
-from typing import Final
+from typing import Any, Final
 
-from konstantin_docs.erd import Column
+from konstantin_docs.erd import Column, Enum
 
 from .note import note_to_dbml
 
 TEMPLATE: Final[str] = "{name} {datatype} [{settings}]"
+
+
+def _datatype_to_dbml(datatype: Any) -> str:
+    if isinstance(datatype, Enum):
+        out_datatype = datatype.name
+    else:
+        out_datatype = datatype
+    return '"{0}"'.format(out_datatype)
 
 
 def column_to_dbml(column: Column) -> str:
@@ -26,6 +34,6 @@ def column_to_dbml(column: Column) -> str:
 
     return TEMPLATE.format(
         name=column.name,
-        datatype='"{0}"'.format(column.datatype),
+        datatype=_datatype_to_dbml(column.datatype),
         settings=", ".join(settings),
     )
