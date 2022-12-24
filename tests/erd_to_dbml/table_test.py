@@ -8,7 +8,8 @@ def test_empty():
     dbml = """Table table_name {
 
 
-}"""
+}
+"""
     assert table_to_dbml(table) == dbml
 
 
@@ -22,7 +23,8 @@ def test_columns():
     dbml = """Table table_name {
     id "integer" [null]
 
-}"""
+}
+"""
     assert table_to_dbml(table) == dbml
 
 
@@ -38,7 +40,8 @@ content"""
 
     Note: '''note
 content'''
-}"""
+}
+"""
     assert table_to_dbml(table) == dbml
 
 
@@ -58,5 +61,6 @@ content"""
     desc "varchar" [null]
     Note: '''note
 content'''
-}"""
+}
+"""
     assert table_to_dbml(table) == dbml

@@ -1,14 +1,15 @@
-from konstantin_docs.erd import Database, Column, Table
+from konstantin_docs.erd import Database, Column, Relation, Table
 
 
-def test_db():
-    db = Database(
+def test_column_ref_to_table():
+    Database(
         tables=[
-            t1 := Table(
+            table1 := Table(
                 "table_name",
                 columns=[
-                    f1 := Column("id", "integer"),
+                    col1 := Column("id", "integer"),
                 ],
             ),
         ],
     )
+    assert col1.table == table1

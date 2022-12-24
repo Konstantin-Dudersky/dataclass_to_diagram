@@ -21,16 +21,16 @@
    [tool.poetry.dependencies]
    konstantin_docs = "*"
    poethepoet = "*"
-   
+
    [tool.poe.tasks]
    docs = {script = "konstantin_docs.main:generate_images('dia_src', 'dia_dist')"}
    ```
 
 4. Запустить командой:
 
-    ```sh
-    poetry run poe docs
-    ```
+   ```sh
+   poetry run poe docs
+   ```
 
 5. Дополнительно можно создать задачу в vscode. Для этого в файле .vscode/tasks.json:
 
@@ -49,3 +49,8 @@
 
    Запускать командой F1 -> Task: Run task -> docs
 
+ERD
+
+```bash
+npm install -g @softwaretechnik/dbml-renderer
+```

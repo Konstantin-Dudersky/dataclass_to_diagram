@@ -26,7 +26,6 @@ typing_extensions = "*"
 black = "*"
 poethepoet = "*"
 pytest = "*"
-# pytest-pretty-terminal = "*"
 wemake-python-styleguide = "0.17.0"
 
 

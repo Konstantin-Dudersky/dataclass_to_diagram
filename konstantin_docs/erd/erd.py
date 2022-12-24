@@ -1,9 +1,19 @@
+"""Датаклассы для определения схемы БД."""
+
 from dataclasses import dataclass, field
 from typing import Iterable, Literal, TypeAlias
 
 DATATYPES: TypeAlias = Literal[
     "integer",
     "varchar",
+]
+REL_TYPES: TypeAlias = Literal["<", ">", "-", "<>"]
+REL_CONFIG: TypeAlias = Literal[
+    "cascade",
+    "restrict",
+    "set null",
+    "set default",
+    "no action",
 ]
 
 
@@ -47,8 +57,20 @@ class Table(object):
     note: Note | None = None
 
     def __post_init__(self) -> None:
+        """Задать ссылки из столбцов на таблицу."""
         for column in self.columns:
             column.table = self
+
+
+@dataclass
+class Relation(object):
+    """Связи между таблицами."""
+
+    column1: Column
+    relation: REL_TYPES
+    column2: Column
+    config_update: REL_CONFIG | None = None
+    config_delete: REL_CONFIG | None = None
 
 
 @dataclass
@@ -56,4 +78,5 @@ class Database(object):
     """Описание схемы БД."""
 
     tables: Iterable[Table]
+    relations: Iterable[Relation] | None = None
     project_definition: ProjectDefinition | None = None

@@ -10,7 +10,8 @@ TEMPLATE: Final[
 ] = """Table {name} {{
 {columns}
 {note}
-}}"""
+}}
+"""
 
 
 def table_to_dbml(table: Table) -> str:

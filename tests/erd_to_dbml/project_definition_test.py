@@ -14,7 +14,8 @@ def test() -> None:
     dbml = """Project project_name {
     database_type: 'SQLite'
     
-}"""  # noqa: W293
+}
+"""  # noqa: W293
     assert project_definition_to_dbml(proj_def) == dbml
 
 
@@ -32,5 +33,6 @@ note"""
     Note: '''very
 long
 note'''
-}"""
+}
+"""
     assert project_definition_to_dbml(proj_def) == dbml

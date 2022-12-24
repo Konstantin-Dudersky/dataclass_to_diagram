@@ -9,7 +9,8 @@ TEMPLATE: Final[
 ] = """Project {project_name} {{
     {database_type}
     {note}
-}}"""
+}}
+"""
 
 DATABASE_TYPE: Final[str] = "database_type: '{database_type}'"
 
