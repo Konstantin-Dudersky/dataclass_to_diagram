@@ -25,13 +25,17 @@ def test_relation():
             rel4 := Relation(table1_id, "-", table2_id),
         ],
     )
-    dbml1: str = """Ref: table_name1.id > table_name2.id []"""
+    dbml1: str = """Ref: table_name1.id > table_name2.id []
+"""
     assert relation_to_dbml(rel1) == dbml1
-    dbml2: str = """Ref: table_name1.id < table_name2.id []"""
+    dbml2: str = """Ref: table_name1.id < table_name2.id []
+"""
     assert relation_to_dbml(rel2) == dbml2
-    dbml3: str = """Ref: table_name1.id <> table_name2.id []"""
+    dbml3: str = """Ref: table_name1.id <> table_name2.id []
+"""
     assert relation_to_dbml(rel3) == dbml3
-    dbml4: str = """Ref: table_name1.id - table_name2.id []"""
+    dbml4: str = """Ref: table_name1.id - table_name2.id []
+"""
     assert relation_to_dbml(rel4) == dbml4
 
 
@@ -64,11 +68,15 @@ def test_relation_config():
             rel4 := Relation(table1_id, "-", table2_id, None, "no action"),
         ],
     )
-    dbml1: str = """Ref: table_name1.id > table_name2.id [update: cascade, delete: no action]"""
+    dbml1: str = """Ref: table_name1.id > table_name2.id [update: cascade, delete: no action]
+"""
     assert relation_to_dbml(rel1) == dbml1
-    dbml2: str = """Ref: table_name1.id < table_name2.id [update: set null, delete: set default]"""
+    dbml2: str = """Ref: table_name1.id < table_name2.id [update: set null, delete: set default]
+"""
     assert relation_to_dbml(rel2) == dbml2
-    dbml3: str = """Ref: table_name1.id <> table_name2.id [update: no action]"""
+    dbml3: str = """Ref: table_name1.id <> table_name2.id [update: no action]
+"""
     assert relation_to_dbml(rel3) == dbml3
-    dbml4: str = """Ref: table_name1.id - table_name2.id [delete: no action]"""
+    dbml4: str = """Ref: table_name1.id - table_name2.id [delete: no action]
+"""
     assert relation_to_dbml(rel4) == dbml4

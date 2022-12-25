@@ -4,7 +4,8 @@ from konstantin_docs.erd import Relation
 
 TEMPLATE: Final[
     str
-] = "Ref: {table1}.{col1} {relation} {table2}.{col2} [{config}]"
+] = """Ref: {table1}.{col1} {relation} {table2}.{col2} [{config}]
+"""
 
 
 def relation_to_dbml(relation: Relation) -> str:

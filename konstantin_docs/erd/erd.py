@@ -75,12 +75,21 @@ class Table(object):
 
     name: str
     columns: Iterable[Column]
+    table_group: str | None = None
     note: Note | None = None
 
     def __post_init__(self) -> None:
         """Задать ссылки из столбцов на таблицу."""
         for column in self.columns:
             column.table = self
+
+
+@dataclass
+class TableGroup(object):
+    """Группа таблиц."""
+
+    name: str
+    tables: list[Table]
 
 
 @dataclass
@@ -102,3 +111,31 @@ class Database(object):
     enums: Iterable[Enum] | None = None
     tables: Iterable[Table] | None = None
     relations: Iterable[Relation] | None = None
+    table_groups: Iterable[TableGroup] | None = field(default=None, init=False)
+
+    def __post_init__(self) -> None:
+        """После инициализации полей."""
+        self.__find_table_groups()
+
+    def __find_table_groups(self) -> None:
+        """Найти группы таблиц.
+
+        Принадлежность таблиц группе задается в конструкторе Table.
+        Нужно собрать все значения и сохранить в поле класса Database.
+        """
+        if self.tables is None:
+            return
+        table_groups: dict[str, list[Table]] = {}
+        for table in self.tables:
+            if table.table_group is None:
+                continue
+            tg = table_groups.get(table.table_group)
+            if tg is None:
+                table_groups[table.table_group] = [table]
+            else:
+                table_groups[table.table_group].append(table)
+        if not table_groups:
+            return
+        self.table_groups = []
+        for table_group_name, tables in table_groups.items():
+            self.table_groups.append(TableGroup(table_group_name, tables))

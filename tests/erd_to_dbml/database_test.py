@@ -20,24 +20,29 @@ def test_empty():
 
 
 def test_database():
+    """Тестирование полной конфигурации.
+
+    Отлаживать после работы остальных тестов.
+    """
     db = Database(
         project_definition=ProjectDefinition("test_project"),
         enums=[
-            test_enum := Enum(
-                "test_enum",
+            user_status := Enum(
+                "user_status",
                 [
-                    EnumValue("enum_value_1"),
-                    EnumValue("enum_value_2"),
+                    EnumValue("active"),
+                    EnumValue("inactive"),
                 ],
             ),
         ],
         tables=[
             Table(
-                "table1",
+                "user",
                 columns=[
-                    table1_id := Column("id", "integer"),
-                    Column("state", test_enum),
+                    user_id := Column("id", "integer"),
+                    Column("status", user_status),
                 ],
+                table_group="users",
             ),
             Table(
                 "table2",
@@ -47,8 +52,8 @@ def test_database():
             ),
         ],
         relations=[
-            Relation(table1_id, ">", table2_id),
-            Relation(table1_id, "<", table2_id),
+            Relation(user_id, ">", table2_id),
+            Relation(user_id, "<", table2_id),
         ],
     )
     dbml: str = """
@@ -57,14 +62,14 @@ Project test_project {
     
 }
 
-enum "test_enum" {
-    enum_value_1
-    enum_value_2
+enum "user_status" {
+    active
+    inactive
 }
 
-Table table1 {
+Table user {
     id "integer" [null]
-    state "test_enum" [null]
+    status "user_status" [null]
 
 }
 
@@ -73,8 +78,14 @@ Table table2 {
 
 }
 
-Ref: table1.id > table2.id []
+Ref: user.id > table2.id []
 
-Ref: table1.id < table2.id []
+Ref: user.id < table2.id []
+
+TableGroup users {
+    user
+}
+
 """  # noqa: W293
+    print(database_to_dbml(db))
     assert database_to_dbml(db) == dbml
