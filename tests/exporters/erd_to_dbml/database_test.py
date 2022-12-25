@@ -1,7 +1,7 @@
-from konstantin_docs.erd.erd import Relation
-from konstantin_docs.erd_to_dbml.database import database_to_dbml
+from konstantin_docs.models.erd import Relation
+from konstantin_docs.exporters.erd_to_dbml.database import database_to_dbml
 
-from konstantin_docs.erd import (
+from konstantin_docs.models.erd import (
     Column,
     Database,
     Enum,
@@ -87,5 +87,4 @@ TableGroup users {
 }
 
 """  # noqa: W293
-    print(database_to_dbml(db))
     assert database_to_dbml(db) == dbml

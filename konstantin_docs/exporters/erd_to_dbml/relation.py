@@ -1,6 +1,6 @@
 from typing import Final
 
-from konstantin_docs.erd import Relation
+from konstantin_docs.models.erd import Relation
 
 TEMPLATE: Final[
     str

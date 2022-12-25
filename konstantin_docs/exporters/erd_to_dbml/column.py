@@ -1,6 +1,6 @@
 from typing import Any, Final
 
-from konstantin_docs.erd import Column, Enum
+from konstantin_docs.models.erd import Column, Enum
 
 from .note import note_to_dbml
 

@@ -1,6 +1,6 @@
 from typing import Final
 
-from konstantin_docs.erd import Table
+from konstantin_docs.models.erd import Table
 
 from .column import column_to_dbml
 from .note import note_to_dbml

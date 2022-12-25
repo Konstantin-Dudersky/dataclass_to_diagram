@@ -3,6 +3,8 @@
 from dataclasses import dataclass, field
 from typing import Iterable, Literal, TypeAlias
 
+from ..base_model import BaseModel
+
 REL_TYPES: TypeAlias = Literal["<", ">", "-", "<>"]
 REL_CONFIG: TypeAlias = Literal[
     "cascade",
@@ -104,7 +106,7 @@ class Relation(object):
 
 
 @dataclass
-class Database(object):
+class Database(BaseModel):
     """Описание схемы БД."""
 
     project_definition: ProjectDefinition | None = None

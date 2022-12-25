@@ -1,6 +1,6 @@
 from typing import Final
 
-from konstantin_docs.erd import ProjectDefinition
+from konstantin_docs.models.erd import ProjectDefinition
 
 from .note import note_to_dbml
 

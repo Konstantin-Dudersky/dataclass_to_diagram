@@ -1,5 +1,7 @@
-from konstantin_docs.erd_to_dbml.table_group import table_group_to_dbml
-from konstantin_docs.erd import Database, Table
+from konstantin_docs.exporters.erd_to_dbml.table_group import (
+    table_group_to_dbml,
+)
+from konstantin_docs.models.erd import Database, Table
 
 
 def test():

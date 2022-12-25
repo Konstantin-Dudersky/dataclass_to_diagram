@@ -1,5 +1,5 @@
-from konstantin_docs.erd_to_dbml.note import note_to_dbml
-from konstantin_docs.erd import Note
+from konstantin_docs.exporters.erd_to_dbml.note import note_to_dbml
+from konstantin_docs.models.erd import Note
 
 import pytest
 

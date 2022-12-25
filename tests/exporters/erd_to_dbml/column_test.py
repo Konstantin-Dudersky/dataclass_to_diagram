@@ -1,6 +1,6 @@
-from konstantin_docs.erd_to_dbml.column import Column, column_to_dbml
+from konstantin_docs.exporters.erd_to_dbml.column import Column, column_to_dbml
 
-from konstantin_docs.erd import Note
+from konstantin_docs.models.erd import Note
 
 
 def test_default():

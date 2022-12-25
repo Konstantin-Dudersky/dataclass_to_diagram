@@ -4,14 +4,14 @@
 
 from typing import Final, Iterable
 
-from konstantin_docs.erd import (
+from konstantin_docs.models.erd import (
     Database,
     Enum,
     ProjectDefinition,
     Relation,
     Table,
 )
-from konstantin_docs.erd.erd import TableGroup
+from konstantin_docs.models.erd.erd import TableGroup
 
 from .enum import enum_to_dbml
 from .project_definition import project_definition_to_dbml

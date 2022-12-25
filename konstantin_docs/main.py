@@ -2,7 +2,6 @@
 
 import logging
 import os
-import os.path
 import shutil
 from importlib import import_module
 from types import ModuleType
@@ -15,13 +14,13 @@ logger.setLevel(logging.DEBUG)
 logger.addHandler(logging.StreamHandler())
 
 
-class ModuleInfo:
+class ModuleInfo(object):
     """Модуль для импорта."""
 
     __imported_module: ModuleType | None = None
 
     def __init__(
-        self: "ModuleInfo",
+        self,
         path_module: str,
         filename: str,
         path_src: str,
@@ -34,17 +33,17 @@ class ModuleInfo:
         self.__path_dist = path_dist
 
     @property
-    def imported(self: "ModuleInfo") -> ModuleType | None:
+    def imported(self) -> ModuleType | None:
         """Возвращает импортированный модуль."""
         return self.__imported_module
 
     @property
-    def path_module(self: "ModuleInfo") -> str:
+    def path_module(self) -> str:
         """Возвращает путь до исходной папки с модулем."""
         return self.__path_module
 
     @property
-    def path_image(self: "ModuleInfo") -> str:
+    def path_image(self) -> str:
         """Возвращает путь до целевой папки с изображениями."""
         return self.__path_module.replace(self.__path_src, self.__path_dist)
 
