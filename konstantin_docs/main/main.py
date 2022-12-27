@@ -12,7 +12,6 @@ from .scan_source_folder_for_modules import scan_source_folder_for_modules
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
-log.addHandler(logging.StreamHandler())
 
 
 def __dia_from_module(module: ModuleType) -> tuple[BaseModel]:
