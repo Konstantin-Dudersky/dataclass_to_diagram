@@ -1,0 +1,30 @@
+
+Project test_project {
+    database_type: 'PostgreSQL'
+    
+}
+
+enum "user_status" {
+    active
+    inactive
+}
+
+Table user {
+    id "integer" [null]
+    status "user_status" [null]
+
+}
+
+Table table2 {
+    id "integer" [null]
+
+}
+
+Ref: user.id > table2.id []
+
+Ref: user.id < table2.id []
+
+TableGroup users {
+    user
+}
+

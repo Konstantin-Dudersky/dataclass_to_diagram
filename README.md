@@ -2,6 +2,8 @@
 
 # dataclass_to_diagram
 
+Создание диаграмм из датаклассов python
+
 
 
 Состоит из пакетов:
@@ -56,24 +58,26 @@ npm install -g @softwaretechnik/dbml-renderer
 
 2. В папке dia_src создаются py-файлы. Названия файлов - произвольные. Можно создавать подкаталоги - структура каталогов будет скопирована в целевую папку dia_dist. Примеры создания можно посмотреть в тестовых диаграммах [пакета](https://github.com/Konstantin-Dudersky/konstantin_docs/tree/main/test).
 
-3. Для генерации можно создать задачу poetepoet. Прописать в файле pyproject.toml:
+3. В одном файл должна быть только одна диаграмма. Название файла будет названием диаграммы.
+
+4. Для генерации можно создать задачу poetepoet. Прописать в файле pyproject.toml:
 
    ```toml
    [tool.poetry.dependencies]
    konstantin_docs = "*"
    poethepoet = "*"
-
+   
    [tool.poe.tasks]
    docs = {script = "konstantin_docs.main:generate_images('dia_src', 'dia_dist')"}
    ```
 
-4. Запустить командой:
+5. Запустить командой:
 
    ```sh
    poetry run poe docs
    ```
 
-5. Дополнительно можно создать задачу в vscode. Для этого в файле .vscode/tasks.json:
+6. Дополнительно можно создать задачу в vscode. Для этого в файле .vscode/tasks.json:
 
    ```json
    {
@@ -95,3 +99,14 @@ ERD
 ```bash
 npm install -g @softwaretechnik/dbml-renderer
 ```
+
+
+
+## Разработка
+
+```bash
+poetry build && poetry publish
+```
+
+
+

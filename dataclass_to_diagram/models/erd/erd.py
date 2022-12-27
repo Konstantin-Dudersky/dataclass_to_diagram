@@ -3,7 +3,7 @@
 from dataclasses import dataclass, field
 from typing import Iterable, Literal, TypeAlias
 
-from ..base_model import BaseModel
+from ..base_model import BaseModel, ModelTypes
 
 REL_TYPES: TypeAlias = Literal["<", ">", "-", "<>"]
 REL_CONFIG: TypeAlias = Literal[
@@ -117,6 +117,7 @@ class Database(BaseModel):
 
     def __post_init__(self) -> None:
         """После инициализации полей."""
+        super().__init__(ModelTypes.erd)
         self.__find_table_groups()
 
     def __find_table_groups(self) -> None:

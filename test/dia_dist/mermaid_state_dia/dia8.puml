@@ -1,9 +1,0 @@
-stateDiagram-v2
-state active {
-NumLockOff
-NumLockOn
-[*] --> NumLockOff 
-NumLockOff --> NumLockOn 
-NumLockOn --> NumLockOff 
-}
-[*] --> active 

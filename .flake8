@@ -17,6 +17,7 @@ ignore =
     WPS348, # Found a line that starts with a dot
     WPS410, # Found wrong metadata variable: __all__
     WPS412, # Found `__init__.py` module with logic
+    WPS421,
 inline-quotes = double
 max-arguments = 10
 max-complexity = 10

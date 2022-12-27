@@ -1,5 +1,6 @@
 import logging
 from importlib import import_module
+from pathlib import Path
 from types import ModuleType
 
 log = logging.getLogger(__name__)
@@ -11,10 +12,10 @@ class ModuleInfo(object):
 
     def __init__(
         self,
-        path_module: str,
+        path_module: Path,
         filename: str,
-        path_source: str,
-        path_target: str,
+        path_source: Path,
+        path_target: Path,
     ) -> None:
         """Create ModuleInfo."""
         self.__path_module = path_module
@@ -29,16 +30,17 @@ class ModuleInfo(object):
         return self.__imported_module
 
     @property
-    def path_module(self) -> str:
+    def path_module(self) -> Path:
         """Возвращает путь до исходной папки с модулем."""
         return self.__path_module
 
     @property
-    def path_image(self) -> str:
+    def path_inside_target(self) -> Path:
         """Возвращает путь до целевой папки с изображениями."""
-        return self.__path_module.replace(
-            self.__path_source, self.__path_target
+        path_module: str = str(
+            self.__path_module.relative_to(self.__path_source),
         )
+        return self.__path_target.absolute() / path_module
 
     def try_import(self: "ModuleInfo") -> None:
         """Попытка импортировать модуль."""
@@ -52,4 +54,4 @@ class ModuleInfo(object):
 
     def __path_to_import_prefix(self: "ModuleInfo") -> str:
         """Путь до модуля в префикс для импорта модуля."""
-        return self.__path_module.replace("/", ".")
+        return str(self.__path_module.relative_to(".")).replace("/", ".")

@@ -9,17 +9,19 @@ line-length = 80
 
 [tool.poetry]
 authors = ["konstantin-dudersky <konstantin.dudersky@gmail.com>"]
-description = "Генерация документации"
+description = "Создание диаграмм из датаклассов python"
+homepage = "https://github.com/Konstantin-Dudersky/dataclass_to_diagram.git"
 name = "dataclass_to_diagram"
 readme = "README.md"
-repository = "https://github.com/Konstantin-Dudersky/konstantin_docs"
-version = "0.0.15"
+repository = "https://github.com/Konstantin-Dudersky/dataclass_to_diagram.git"
+version = "0.0.1"
 
 
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "*"
-typing_extensions = "*"
+typer = { extras = ["all"], version = "^0.7.0" }
+typing_extensions = "*"                          # delete
 
 
 [tool.poetry.group.dev.dependencies]
@@ -30,7 +32,7 @@ wemake-python-styleguide = "0.17.0"
 
 
 [tool.poetry.scripts]
-dataclass_to_diagram = "dataclass_to_diagram.__main__:start"
+dtd = "dataclass_to_diagram.__main__:main"
 
 
 [tool.poe.tasks]
