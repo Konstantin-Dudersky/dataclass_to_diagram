@@ -1,6 +1,6 @@
 """Тест диаграмм C4."""
 
-from konstantin_docs import c4
+from dataclass_to_diagram import c4
 
 # ex 1 ------------------------------------------------------------------------
 dia1: c4.C4 = c4.C4(

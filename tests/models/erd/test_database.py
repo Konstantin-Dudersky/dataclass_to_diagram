@@ -1,4 +1,4 @@
-from konstantin_docs.models.erd import Database, Column, Table
+from dataclass_to_diagram.models.erd import Database, Column, Table
 
 
 def test_column_ref_to_table():

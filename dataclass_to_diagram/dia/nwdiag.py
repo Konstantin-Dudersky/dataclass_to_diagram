@@ -6,8 +6,8 @@
 from typing import NamedTuple
 
 
-from konstantin_docs.dia.base import BaseDiagram, Image
-from konstantin_docs.service.kroki import (
+from dataclass_to_diagram.dia.base import BaseDiagram, Image
+from dataclass_to_diagram.service.kroki import (
     DiagramTypes,
     OutputFormats,
     get_image,

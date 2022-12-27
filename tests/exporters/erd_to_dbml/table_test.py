@@ -1,6 +1,9 @@
-from konstantin_docs.exporters.erd_to_dbml.table import Table, table_to_dbml
+from dataclass_to_diagram.exporters.erd_to_dbml.table import (
+    Table,
+    table_to_dbml,
+)
 
-from konstantin_docs.models.erd import Column, Note
+from dataclass_to_diagram.models.erd import Column, Note
 
 
 def test_empty():

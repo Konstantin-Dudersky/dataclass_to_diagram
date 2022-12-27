@@ -1,6 +1,6 @@
 """Диаграммы nwdiag."""
 
-from konstantin_docs.dia.nwdiag import (
+from dataclass_to_diagram.dia.nwdiag import (
     Diagram,
     Group,
     Network,
@@ -83,7 +83,7 @@ internal.add_node(db01)
 # groups
 web = Group(name="", nodes=(web01, web02, db01), color="#FF7777")
 dia4 = Diagram(
-    filename='nwdiag4',
+    filename="nwdiag4",
     networks=(dmz, internal),
     groups=(web,),
 )
@@ -101,7 +101,7 @@ nw.add_node(web01)
 nw.add_node(web02)
 peer_net = PeerNetwork(inet, router)
 dia5 = Diagram(
-    filename='nwdiag5',
+    filename="nwdiag5",
     networks=(nw,),
     peer_networks=(peer_net,),
 )

@@ -1,6 +1,6 @@
 """Тестовые диаграммы для mermaid er."""
 
-from konstantin_docs import mermaid_er as er
+from dataclass_to_diagram import mermaid_er as er
 
 card = er.Relation.Cardinalities
 ty = er.Attr.Types

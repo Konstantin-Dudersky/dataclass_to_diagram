@@ -2,7 +2,7 @@
 
 from typing import Final
 
-from konstantin_docs.models.erd import Enum, EnumValue
+from dataclass_to_diagram.models.erd import Enum, EnumValue
 
 from .note import note_to_dbml
 

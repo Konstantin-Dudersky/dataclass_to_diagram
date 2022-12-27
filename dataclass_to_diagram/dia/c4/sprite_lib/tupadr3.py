@@ -1,7 +1,7 @@
 """tupadr3 lib."""
 
-from konstantin_docs.dia.c4.base import BaseSprite as _BaseSprite
-from konstantin_docs.dia.c4.base import BaseSprites as _BaseSprites
+from dataclass_to_diagram.dia.c4.base import BaseSprite as _BaseSprite
+from dataclass_to_diagram.dia.c4.base import BaseSprites as _BaseSprites
 
 from .tupadr3_lib.devicons import DeviconsLib
 from .tupadr3_lib.devicons2 import Devicons2Lib

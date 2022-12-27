@@ -1,6 +1,6 @@
 """devicons lib."""
 
-from konstantin_docs.dia.c4.base import BaseSprites
+from dataclass_to_diagram.dia.c4.base import BaseSprites
 
 
 class DeviconsLib(BaseSprites):

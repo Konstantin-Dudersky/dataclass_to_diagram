@@ -6,7 +6,7 @@ import shutil
 from importlib import import_module
 from types import ModuleType
 
-from konstantin_docs.dia.base import BaseDiagram
+from dataclass_to_diagram.dia.base import BaseDiagram
 
 
 logger = logging.getLogger(__name__)

@@ -1,7 +1,7 @@
-from konstantin_docs.models.erd import Relation
-from konstantin_docs.exporters.erd_to_dbml.database import database_to_dbml
+from dataclass_to_diagram.models.erd import Relation
+from dataclass_to_diagram.exporters.erd_to_dbml.database import database_to_dbml
 
-from konstantin_docs.models.erd import (
+from dataclass_to_diagram.models.erd import (
     Column,
     Database,
     Enum,

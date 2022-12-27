@@ -6,9 +6,9 @@
 
 import logging
 
-from konstantin_docs.dia.base import BaseDiagram as _BaseDiagram
-from konstantin_docs.dia.base import Image
-from konstantin_docs.service import kroki as _kroki
+from dataclass_to_diagram.dia.base import BaseDiagram as _BaseDiagram
+from dataclass_to_diagram.dia.base import Image
+from dataclass_to_diagram.service import kroki as _kroki
 
 from . import component, container, context, rel, sprite, tag
 from .base import BaseRelation as _BaseRelation

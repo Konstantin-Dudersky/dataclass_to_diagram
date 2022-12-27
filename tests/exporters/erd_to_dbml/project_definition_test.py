@@ -1,8 +1,8 @@
-from konstantin_docs.exporters.erd_to_dbml.project_definition import (
+from dataclass_to_diagram.exporters.erd_to_dbml.project_definition import (
     ProjectDefinition,
     project_definition_to_dbml,
 )
-from konstantin_docs.models.erd import Note
+from dataclass_to_diagram.models.erd import Note
 
 
 def test() -> None:

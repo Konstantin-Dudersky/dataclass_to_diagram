@@ -1,5 +1,5 @@
 """State for mermaid state diagram."""
-from konstantin_docs.dia.mermaid_state.mermaid_state import (
+from dataclass_to_diagram.dia.mermaid_state.mermaid_state import (
     Diagram,
     Note,
     State,

@@ -1,5 +1,5 @@
-from konstantin_docs.models.erd import Column, Database, Relation, Table
-from konstantin_docs.exporters.erd_to_dbml.relation import relation_to_dbml
+from dataclass_to_diagram.models.erd import Column, Database, Relation, Table
+from dataclass_to_diagram.exporters.erd_to_dbml.relation import relation_to_dbml
 
 
 def test_relation():

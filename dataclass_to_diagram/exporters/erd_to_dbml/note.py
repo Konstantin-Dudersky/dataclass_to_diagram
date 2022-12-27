@@ -2,7 +2,7 @@
 
 from typing import Final, Literal
 
-from konstantin_docs.models.erd import Note
+from dataclass_to_diagram.models.erd import Note
 
 LONG: Final[
     str

@@ -2,7 +2,7 @@
 
 from typing import Final, Iterable
 
-from konstantin_docs.models.erd.erd import Table, TableGroup
+from dataclass_to_diagram.models.erd.erd import Table, TableGroup
 
 TEMPLATE: Final[
     str

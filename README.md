@@ -1,8 +1,6 @@
-[![PyPI version](https://badge.fury.io/py/konstantin-docs.svg)](https://badge.fury.io/py/konstantin-docs)
+[![PyPI version](https://badge.fury.io/py/dataclass-to-diagram.svg)](https://badge.fury.io/py/dataclass-to-diagram)
 
-# kroki-python
-
-
+# dataclass_to_diagram
 
 
 

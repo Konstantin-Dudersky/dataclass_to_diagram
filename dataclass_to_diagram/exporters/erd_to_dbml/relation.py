@@ -1,6 +1,6 @@
 from typing import Final
 
-from konstantin_docs.models.erd import Relation
+from dataclass_to_diagram.models.erd import Relation
 
 TEMPLATE: Final[
     str

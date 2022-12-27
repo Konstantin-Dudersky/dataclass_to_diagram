@@ -3,9 +3,9 @@
 import logging
 from enum import Enum
 
-from konstantin_docs.dia.base import BaseDiagram
-from konstantin_docs.dia.base import Image
-from konstantin_docs.service import kroki
+from dataclass_to_diagram.dia.base import BaseDiagram
+from dataclass_to_diagram.dia.base import Image
+from dataclass_to_diagram.service import kroki
 
 from typing_extensions import Self
 

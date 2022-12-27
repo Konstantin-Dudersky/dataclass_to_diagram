@@ -1,5 +1,5 @@
-from konstantin_docs.models.erd import Note
-from konstantin_docs.exporters.erd_to_dbml.enum import (
+from dataclass_to_diagram.models.erd import Note
+from dataclass_to_diagram.exporters.erd_to_dbml.enum import (
     Enum,
     EnumValue,
     enum_to_dbml,
