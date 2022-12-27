@@ -1,8 +1,11 @@
 """Подготовить целевую папку."""
 
+import logging
 import os
 import shutil
 from pathlib import Path
+
+log = logging.getLogger(__name__)
 
 
 def __ignore_files(directory: str, files: list[str]) -> list[str]:
@@ -14,11 +17,9 @@ def __ignore_files(directory: str, files: list[str]) -> list[str]:
 
 def prepare_target_folder(path_source: Path, path_target: Path) -> None:
     """Подготовить целевую папку."""
-    # удаляем целевую папку
-    print("Удаляем целевую папку")
+    log.debug("Удаляем целевую папку")
     shutil.rmtree(path=path_target, ignore_errors=True)
-    # копируем структуру папок
-    print("Копируем структуру папок из исходной")
+    log.debug("Копируем структуру папок из исходной")
     shutil.copytree(
         src=path_source,
         dst=path_target,

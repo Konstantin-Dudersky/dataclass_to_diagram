@@ -15,7 +15,6 @@ from .prepare_target_folder import prepare_target_folder
 from .scan_source_folder_for_modules import scan_source_folder_for_modules
 
 log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
 
 
 def __search_diagram_in_module(module: ModuleType) -> BaseModel | None:
@@ -47,8 +46,8 @@ def _create_paths_and_check(source: str, target: str) -> tuple[Path, Path]:
     if not path_source.exists():
         msg = "Папка {0} не найдена!".format(path_source.absolute())
         raise IncorrectArgError(msg)
-    print("Папка с датаклассами: {0}".format(path_source))
-    print("Целевая папка: {0}".format(path_target))
+    log.info("Папка с датаклассами: {0}".format(path_source))
+    log.info("Целевая папка: {0}".format(path_target))
     return path_source, path_target
 
 

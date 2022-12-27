@@ -9,4 +9,3 @@ class BaseExporter(abc.ABC):
     @abc.abstractmethod
     def export(self) -> str:
         """Экспорт модели."""
-        pass
