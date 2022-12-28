@@ -32,7 +32,7 @@ wemake-python-styleguide = "0.17.0"
 
 
 [tool.poetry.scripts]
-dtd = "dataclass_to_diagram.__main__:main"
+dtd = "dataclass_to_diagram.__main__:start"
 
 
 [tool.poe.tasks]

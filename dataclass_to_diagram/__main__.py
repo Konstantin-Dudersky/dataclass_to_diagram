@@ -1,11 +1,12 @@
 """Точка входа."""
 
 import logging
+from types import MappingProxyType
 
 import typer
 from rich.logging import RichHandler
 
-from .main.main import export_models
+from . import converters, main, typings
 from .exceptions import BaseError
 
 FORMAT = "%(message)s"
@@ -17,7 +18,14 @@ logging.basicConfig(
 )
 logging.getLogger("asyncio").setLevel(logging.WARNING)
 log = logging.getLogger(__name__)
-# log.setLevel(logging.DEBUG)
+
+
+CONVERTERS: typings.TConverters = MappingProxyType(
+    {
+        "**/*.dbml": converters.DbmlConverter,
+    },
+)
+
 
 app = typer.Typer()
 
@@ -27,22 +35,20 @@ def export(
     source: str,
     destination: str = typer.Argument("dia_dist"),
 ) -> None:
-    """Генерировать диаграммы."""
+    """Экспортировать модели в текстовые файлы."""
     log.info("Скрипт для генерирования диаграмм запущен.")
     try:
-        export_models(source, destination)
+        main.export_models(source, destination)
     except BaseError as exc:
         log.critical(exc)
 
 
-from .main.convert.convert import convert
-
-
 @app.command()
-def convert1() -> None:
-    convert("test/dia_dist")
+def convert() -> None:
+    """Конвертировать текстовые файлы в изображения."""
+    main.convert("test/dia_dist", CONVERTERS)
 
 
-def main():
+def start():
     """Точка входа."""
     app()
