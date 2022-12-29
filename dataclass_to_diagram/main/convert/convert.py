@@ -17,7 +17,7 @@ def _check_folder(folder: Path) -> None:
         raise exceptions.IncorrectArgError(msg)
 
 
-def _find_files_by_pattern(
+def _find_files_by_filetype(
     path: Path,
     converters: typings.TConverters,
 ) -> dict[str, list[Path]]:
@@ -33,14 +33,14 @@ def _find_files_by_pattern(
     return files_by_pattern
 
 
-def _create_coros_for_patterns(
-    files_by_pattern: dict[str, list[Path]],
+def _create_coros_for_filetypes(
+    files_by_filetype: dict[str, list[Path]],
     converters: typings.TConverters,
 ) -> list[Coroutine[None, None, None]]:
     coros: list[Coroutine[None, None, None]] = []
-    for pattern, files in files_by_pattern.items():
+    for filetype, files in files_by_filetype.items():
         for file in files:
-            coros.append(converters[pattern]().convert(file))
+            coros.append(converters[filetype]().convert(file))
     return coros
 
 
@@ -66,12 +66,12 @@ def convert(
     path_target = Path(target)
     _check_folder(path_target)
     log.info("Ищем текстовые файлы в папке: {0}".format(path_target))
-    files_by_pattern: dict[str, list[Path]] = _find_files_by_pattern(
+    files_by_filetype: dict[str, list[Path]] = _find_files_by_filetype(
         path=path_target,
         converters=converters,
     )
-    coros: list[Coroutine[None, None, None]] = _create_coros_for_patterns(
-        files_by_pattern=files_by_pattern,
+    coros: list[Coroutine[None, None, None]] = _create_coros_for_filetypes(
+        files_by_filetype=files_by_filetype,
         converters=converters,
     )
     asyncio.run(_run_coros(coros))

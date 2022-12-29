@@ -4,21 +4,18 @@ import logging
 from types import MappingProxyType
 
 import typer
-from rich.logging import RichHandler
 
-from . import converters, main, typings
-from .exceptions import BaseError
+from . import converters, exceptions, exporters, logger, main, models, typings
 
-FORMAT = "%(message)s"
-logging.basicConfig(
-    level=logging.INFO,
-    format=FORMAT,
-    datefmt="[%X]",
-    handlers=[RichHandler()],
-)
-logging.getLogger("asyncio").setLevel(logging.WARNING)
+logger.logger_setup()
 log = logging.getLogger(__name__)
 
+
+EXPORTERS: typings.TExporters = MappingProxyType(
+    {
+        models.ModelTypes.erd: exporters.ErdToDbml,
+    },
+)
 
 CONVERTERS: typings.TConverters = MappingProxyType(
     {
@@ -29,24 +26,41 @@ CONVERTERS: typings.TConverters = MappingProxyType(
 
 app = typer.Typer()
 
+ARG_SRC = typer.Argument(
+    "dia_src",
+    help="Папка с моделями диаграмм",
+)
+ARG_DIST = typer.Argument(
+    "dia_dist",
+    help="Папка с экспортированными текстовыми файлами",
+)
+
 
 @app.command()
-def export(
-    source: str,
-    destination: str = typer.Argument("dia_dist"),
-) -> None:
+def export(source: str = ARG_SRC, distribution: str = ARG_DIST) -> None:
     """Экспортировать модели в текстовые файлы."""
-    log.info("Скрипт для генерирования диаграмм запущен.")
+    log.info("Запущен экспорт диаграмм.")
     try:
-        main.export_models(source, destination)
-    except BaseError as exc:
+        main.export(source, distribution, EXPORTERS)
+    except exceptions.BaseError as exc:
         log.critical(exc)
 
 
 @app.command()
-def convert() -> None:
+def convert(distribution: str = ARG_DIST) -> None:
     """Конвертировать текстовые файлы в изображения."""
-    main.convert("test/dia_dist", CONVERTERS)
+    log.info("Запущено конвертирование диаграмм.")
+    try:
+        main.convert("test/dia_dist", CONVERTERS)
+    except exceptions.BaseError as exc:
+        log.critical(exc)
+
+
+@app.command()
+def process(source: str = ARG_SRC, distribution: str = ARG_DIST) -> None:
+    """Экспортировать модели и конвертировать в изображения."""
+    export(source, distribution)
+    convert(distribution)
 
 
 def start():

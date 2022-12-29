@@ -4,9 +4,9 @@
 """
 
 from .convert.convert import convert
-from .main import export_models
+from .export.export import export
 
 __all__ = [
     "convert",
-    "export_models",
+    "export",
 ]
