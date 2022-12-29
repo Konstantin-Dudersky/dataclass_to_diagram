@@ -14,6 +14,7 @@ log = logging.getLogger(__name__)
 EXPORTERS: typings.TExporters = MappingProxyType(
     {
         models.ModelTypes.erd: exporters.ErdToDbml,
+        models.ModelTypes.с4: exporters.C4ToPlantuml,
     },
 )
 
