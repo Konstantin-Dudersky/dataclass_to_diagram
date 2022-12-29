@@ -121,7 +121,6 @@ class BaseC4Element:
         """Представление для спрайтов."""
         if self.__sprite is None:
             return ""
-        # return self.__sprite.sprite_short
         return self._repr_if_not_none("sprite", self.__sprite.sprite_short)
 
     @property

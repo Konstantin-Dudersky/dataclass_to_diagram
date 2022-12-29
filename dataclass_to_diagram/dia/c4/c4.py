@@ -17,7 +17,6 @@ from .base import BaseTag as _BaseTag
 
 logger: logging.Logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-logger.addHandler(logging.StreamHandler())
 
 
 # Diagram ---------------------------------------------------------------------
