@@ -2,36 +2,6 @@
 
 from dataclass_to_diagram import c4
 
-# ex 1 ------------------------------------------------------------------------
-dia1: c4.C4 = c4.C4(
-    filename="dia1",
-    title="",
-    links_context=[
-        person_alias := c4.context.Person(
-            label="Label",
-            descr="Optional Description",
-        ),
-        system_alias := c4.context.System(
-            label="Label",
-            descr="Optional Description",
-        ),
-    ],
-    links_container=[
-        container_alias := c4.container.Container(
-            label="Label",
-            techn="Technology",
-            descr="Optional Description",
-        ),
-    ],
-    links_rel=[
-        c4.rel.Rel(
-            links=(person_alias, container_alias),
-            label="Label",
-            techn="Optional Technology",
-        ),
-    ],
-)
-
 # ex 2 ------------------------------------------------------------------------
 dia2 = c4.C4(
     filename="dia2",

@@ -3,9 +3,7 @@ from dataclass_to_diagram.models import c4
 
 
 def test_empty():
-    dia = c4.C4(
-        contexts=[],
-    )
+    dia = c4.C4()
     puml: str = """@startuml
 !include C4_Dynamic.puml
 
