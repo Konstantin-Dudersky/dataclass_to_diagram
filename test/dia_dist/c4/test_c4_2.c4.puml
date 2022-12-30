@@ -1,4 +1,0 @@
-@startuml
-!include C4_Dynamic.puml
-System($alias=139736160401936, $label="system")
-@enduml

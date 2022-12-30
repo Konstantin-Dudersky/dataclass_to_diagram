@@ -4,6 +4,14 @@
 
 Создание диаграмм из датаклассов python
 
+## Типы диаграмм
+
+### С4
+
+Описание - https://c4model.com/
+
+Реализация на PlantUML - https://github.com/plantuml-stdlib/C4-PlantUML
+
 
 
 Состоит из пакетов:

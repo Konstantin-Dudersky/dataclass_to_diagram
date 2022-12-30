@@ -16,7 +16,7 @@ def test_container():
             comp2 := c4.component.Component(label="component2"),
         ],
     )
-    puml: str = """Container($alias={0}, $label="container"){{
+    puml: str = """Container($alias={0}, $label="container") {{
     Component($alias={1}, $label="component1")
     Component($alias={2}, $label="component2")
 }}""".format(
@@ -43,8 +43,8 @@ def test_context():
             cont2 := c4.container.Container(label="container2"),
         ],
     )
-    puml: str = """System($alias={0}, $label="context"){{
-    Container($alias={1}, $label="container1"){{
+    puml: str = """System($alias={0}, $label="context") {{
+    Container($alias={1}, $label="container1") {{
         Component($alias={3}, $label="component11")
         Component($alias={4}, $label="component12")
     }}

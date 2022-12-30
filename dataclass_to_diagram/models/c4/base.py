@@ -11,3 +11,13 @@ class BaseElement(object):
 
     def __post_init__(self) -> None:
         self.alias = str(id(self)).replace("-", "_")
+
+
+@dataclass
+class BaseRel(object):
+    class_name_str: str = field(init=False, default="NotImplemented")
+    begin: BaseElement
+    end: BaseElement
+    label: str
+    techn: str | None = None
+    descr: str | None = None

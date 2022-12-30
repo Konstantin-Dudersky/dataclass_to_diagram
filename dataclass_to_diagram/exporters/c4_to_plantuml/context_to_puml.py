@@ -17,16 +17,16 @@ def context_to_puml(
         "{0}={1}".format(key, value) for key, value in args.items()
     ]
     args_str = ", ".join(args_str_list)
-    if context.containers is None:
-        containers = ""
-    else:
+    if context.containers:
         containers_list: list[str] = []
         for container in context.containers:
             containers_list.append(container_to_puml(container))
         containers_list_joined: str = "\n".join(containers_list)
         containers = "\n{0}".format(containers_list_joined)
         containers = containers.replace("\n", "\n    ")
-        containers = "{{{0}\n}}".format(containers)
+        containers = " {{{0}\n}}".format(containers)
+    else:
+        containers = ""
     return TEMPLATE.format(
         class_name=context.class_name_str,
         args=args_str,
