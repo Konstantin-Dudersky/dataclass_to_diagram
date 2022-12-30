@@ -1,0 +1,10 @@
+@startuml
+!include C4_Dynamic.puml
+Person($alias=139702949492176, $label="Administrator")
+System_Boundary($alias=139702949562256, $label="Sample System") {
+    Container($alias=139702949570704, $label="Web Application", $descr="Allows users to compare multiple Twitter timelines", $techn="C#, ASP.NET Core 2.1 MVC")
+}
+System($alias=139702949570960, $label="Twitter")
+Rel($from=139702949492176, $to=139702949570704, $label="Uses", $techn="HTTPS")
+Rel($from=139702949570704, $to=139702949570960, $label="Gets tweets from", $techn="HTTPS")
+@enduml
