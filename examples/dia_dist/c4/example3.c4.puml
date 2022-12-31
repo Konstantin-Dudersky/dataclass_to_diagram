@@ -5,11 +5,12 @@
 !include <tupadr3/font-awesome-5/angular>
 !include <tupadr3/font-awesome-5/java>
 !include <tupadr3/font-awesome-5/users>
-Person($alias=139974568400208, $label="Customer", $descr="People that need products", $sprite=users)
-Container($alias=139974568408720, $label="SPA", $descr="The main interface that the customer interacts with", $techn="angular", $sprite=angular)
-Container($alias=139974568406800, $label="API", $descr="Handles all business logic", $techn="java", $sprite=java)
-ContainerDb($alias=139974568396880, $label="Database", $descr="Holds product, order and invoice information", $techn="Microsoft SQL", $sprite=msql_server)
-Rel($from=139974568400208, $to=139974568408720, $label="Uses", $techn="https")
-Rel($from=139974568408720, $to=139974568406800, $label="Uses", $techn="https")
-Rel_Right($from=139974568406800, $to=139974568396880, $label="Reads/Writes")
+Person($alias=139972264881936, $label="Customer", $descr="People that need products", $sprite=users)
+Container($alias=139972264882064, $label="SPA", $descr="The main interface that the customer interacts with", $techn="angular", $sprite=angular)
+Container($alias=139972266850896, $label="API", $descr="Handles all business logic", $techn="java", $sprite=java)
+ContainerDb($alias=139972264879632, $label="Database", $descr="Holds product, order and invoice information", $techn="Microsoft SQL", $sprite=msql_server)
+Rel($from=139972264881936, $to=139972264882064, $label="Uses", $techn="https")
+Rel($from=139972264882064, $to=139972266850896, $label="Uses", $techn="https")
+Rel_Right($from=139972266850896, $to=139972264879632, $label="Reads/Writes")
+SHOW_LEGEND()
 @enduml

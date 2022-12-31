@@ -3,9 +3,19 @@ from dataclass_to_diagram.models import c4
 
 
 def test_empty():
-    dia = c4.C4()
+    dia = c4.C4(show_legend=False)
     puml: str = """@startuml
 !include C4_Dynamic.puml
+@enduml
+"""
+    assert c4_to_puml(dia) == puml
+
+
+def test_show_legend():
+    dia = c4.C4(show_legend=True)
+    puml: str = """@startuml
+!include C4_Dynamic.puml
+SHOW_LEGEND()
 @enduml
 """
     assert c4_to_puml(dia) == puml
@@ -37,6 +47,7 @@ System_Boundary($alias={system}, $label="system") {{
 }}
 Rel($from={container1}, $to={container2}, $label="rel")
 BiRel($from={user}, $to={container1}, $label="rel")
+SHOW_LEGEND()
 @enduml
 """.format(
         user=user.alias,

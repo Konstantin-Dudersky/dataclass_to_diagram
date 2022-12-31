@@ -10,9 +10,15 @@ from .sprites_to_puml import sprites_to_puml
 TEMPLATE: Final[
     str
 ] = """@startuml
-!include C4_Dynamic.puml{sprites}{contexts}{containers}{relations}
+!include C4_Dynamic.puml{sprites}{contexts}{containers}{relations}{legend}
 @enduml
 """
+
+
+def _export_legend(show_legend: bool) -> str:
+    if not show_legend:
+        return ""
+    return "\nSHOW_LEGEND()"
 
 
 def c4_to_puml(c4: C4):
@@ -40,4 +46,5 @@ def c4_to_puml(c4: C4):
         contexts=contexts_str,
         containers=containers_str,
         relations=relations_str,
+        legend=_export_legend(c4.show_legend),
     )

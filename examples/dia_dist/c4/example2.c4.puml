@@ -1,10 +1,11 @@
 @startuml
 !include C4_Dynamic.puml
-Person($alias=139974568397008, $label="Administrator")
-System_Boundary($alias=139974568406864, $label="Sample System") {
-    Container($alias=139974568405776, $label="Web Application", $descr="Allows users to compare multiple Twitter timelines", $techn="C#, ASP.NET Core 2.1 MVC")
+Person($alias=139972264885456, $label="Administrator")
+System_Boundary($alias=139972264879888, $label="Sample System") {
+    Container($alias=139972264883344, $label="Web Application", $descr="Allows users to compare multiple Twitter timelines", $techn="C#, ASP.NET Core 2.1 MVC")
 }
-System($alias=139974568409872, $label="Twitter")
-Rel($from=139974568397008, $to=139974568405776, $label="Uses", $techn="HTTPS")
-Rel($from=139974568405776, $to=139974568409872, $label="Gets tweets from", $techn="HTTPS")
+System($alias=139972264879056, $label="Twitter")
+Rel($from=139972264885456, $to=139972264883344, $label="Uses", $techn="HTTPS")
+Rel($from=139972264883344, $to=139972264879056, $label="Gets tweets from", $techn="HTTPS")
+SHOW_LEGEND()
 @enduml

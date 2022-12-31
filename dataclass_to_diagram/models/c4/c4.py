@@ -11,6 +11,7 @@ class C4(BaseModel):
     contexts: Iterable[BaseContext] | None = None
     containers: Iterable[BaseContainer] | None = None
     relations: Iterable[BaseRel] | None = None
+    show_legend: bool = True
     sprites: Iterable[BaseSprite] | None = field(default=None, init=False)
 
     def __post_init__(self) -> None:
