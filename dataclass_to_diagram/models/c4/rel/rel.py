@@ -4,51 +4,51 @@ from dataclasses import dataclass, field
 from ..base import BaseRel
 
 
-@dataclass
+@dataclass(frozen=True)
 class Rel(BaseRel):
     class_name_str: str = field(init=False, default="Rel")
 
 
-@dataclass
+@dataclass(frozen=True)
 class RelUp(BaseRel):
     class_name_str: str = field(init=False, default="Rel_Up")
 
 
-@dataclass
+@dataclass(frozen=True)
 class RelDown(BaseRel):
     class_name_str: str = field(init=False, default="Rel_Down")
 
 
-@dataclass
+@dataclass(frozen=True)
 class RelLeft(BaseRel):
     class_name_str: str = field(init=False, default="Rel_Left")
 
 
-@dataclass
+@dataclass(frozen=True)
 class RelRight(BaseRel):
     class_name_str: str = field(init=False, default="Rel_Right")
 
 
-@dataclass
+@dataclass(frozen=True)
 class BiRel(BaseRel):
     class_name_str: str = field(init=False, default="BiRel")
 
 
-@dataclass
+@dataclass(frozen=True)
 class BiRelUp(BaseRel):
     class_name_str: str = field(init=False, default="BiRel_Up")
 
 
-@dataclass
+@dataclass(frozen=True)
 class BiRelDown(BaseRel):
     class_name_str: str = field(init=False, default="BiRel_Down")
 
 
-@dataclass
+@dataclass(frozen=True)
 class BiRelLeft(BaseRel):
     class_name_str: str = field(init=False, default="BiRel_Left")
 
 
-@dataclass
+@dataclass(frozen=True)
 class BiRelRight(BaseRel):
     class_name_str: str = field(init=False, default="BiRel_Right")

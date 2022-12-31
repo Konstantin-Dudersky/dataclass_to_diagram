@@ -1,8 +1,12 @@
 @startuml
 !include C4_Dynamic.puml
-Person($alias=139904210129424, $label="Label", $descr="Optional Description")
-System($alias=139904210140240, $label="Label", $descr="Optional Description")
-Container($alias=139904210138960, $label="Label", $descr="Optional Description", $techn="Technology")
-Rel($from=139904210129424, $to=139904210138960, $label="Label", $techn="Optional Technology")
+
+Person($alias=5, $label="Label", $descr="Optional Description")
+System($alias=6, $label="Label", $descr="Optional Description")
+
+Container($alias=7, $label="Label", $descr="Optional Description", $techn="Technology")
+
+Rel($from=5, $to=7, $label="Label", $techn="Optional Technology")
+
 SHOW_LEGEND()
 @enduml

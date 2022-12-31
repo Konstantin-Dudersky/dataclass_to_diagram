@@ -1,5 +1,6 @@
-from dataclass_to_diagram.models import c4
+"""Links."""
 
+from dataclass_to_diagram.models import c4
 
 dia = c4.C4(
     contexts=[

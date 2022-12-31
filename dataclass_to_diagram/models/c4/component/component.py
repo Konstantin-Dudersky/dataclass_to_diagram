@@ -3,31 +3,31 @@ from dataclasses import dataclass, field
 from ..base import BaseComponent
 
 
-@dataclass
+@dataclass(frozen=True)
 class Component(BaseComponent):
     class_name_str: str = field(init=False, default="Component")
 
 
-@dataclass
+@dataclass(frozen=True)
 class ComponentDb(BaseComponent):
     class_name_str: str = field(init=False, default="ComponentDb")
 
 
-@dataclass
+@dataclass(frozen=True)
 class ComponentQueue(BaseComponent):
     class_name_str: str = field(init=False, default="ComponentQueue")
 
 
-@dataclass
+@dataclass(frozen=True)
 class ComponentExt(BaseComponent):
     class_name_str: str = field(init=False, default="Component_Ext")
 
 
-@dataclass
+@dataclass(frozen=True)
 class ComponentDbExt(BaseComponent):
     class_name_str: str = field(init=False, default="ComponentDb_Ext")
 
 
-@dataclass
+@dataclass(frozen=True)
 class ComponentQueueExt(BaseComponent):
     class_name_str: str = field(init=False, default="ComponentQueue_Ext")

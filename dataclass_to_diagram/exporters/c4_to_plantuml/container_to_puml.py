@@ -3,6 +3,7 @@ from dataclass_to_diagram.models.c4.container.containter import (
     BaseContainer,
 )
 
+from .args_dict_to_str import args_dict_to_str
 from .base_element_to_puml import base_element_to_puml
 from .component_to_puml import component_to_puml
 
@@ -13,10 +14,7 @@ def container_to_puml(
     context: BaseContainer,
 ) -> str:
     args = base_element_to_puml(context)
-    args_str_list = [
-        "{0}={1}".format(key, value) for key, value in args.items()
-    ]
-    args_str = ", ".join(args_str_list)
+    args_str = args_dict_to_str(args)
     if context.components:
         components_list: list[str] = []
         for component in context.components:

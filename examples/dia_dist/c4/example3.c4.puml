@@ -5,12 +5,16 @@
 !include <tupadr3/font-awesome-5/angular>
 !include <tupadr3/font-awesome-5/java>
 !include <tupadr3/font-awesome-5/users>
-Person($alias=139904210135248, $label="Customer", $descr="People that need products", $sprite=users)
-Container($alias=139904210138064, $label="SPA", $descr="The main interface that the customer interacts with", $techn="angular", $sprite=angular)
-Container($alias=139904210025168, $label="API", $descr="Handles all business logic", $techn="java", $sprite=java)
-ContainerDb($alias=139904210128080, $label="Database", $descr="Holds product, order and invoice information", $techn="Microsoft SQL", $sprite=msql_server)
-Rel($from=139904210135248, $to=139904210138064, $label="Uses", $techn="https")
-Rel($from=139904210138064, $to=139904210025168, $label="Uses", $techn="https")
-Rel_Right($from=139904210025168, $to=139904210128080, $label="Reads/Writes")
+
+Person($alias=1, $label="Customer", $descr="People that need products", $sprite=users)
+
+Container($alias=2, $label="SPA", $descr="The main interface that the customer interacts with", $techn="angular", $sprite=angular)
+Container($alias=3, $label="API", $descr="Handles all business logic", $techn="java", $sprite=java)
+ContainerDb($alias=4, $label="Database", $descr="Holds product, order and invoice information", $techn="Microsoft SQL", $sprite=msql_server)
+
+Rel($from=1, $to=2, $label="Uses", $techn="https")
+Rel($from=2, $to=3, $label="Uses", $techn="https")
+Rel_Right($from=3, $to=4, $label="Reads/Writes")
+
 SHOW_LEGEND()
 @enduml

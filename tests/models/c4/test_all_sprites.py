@@ -30,6 +30,5 @@ def test():
         ],
         containers=[c4.container.Container("", sprite=sprites[5])],
     )
-    assert dia.sprites is not None
     for sprite in sprites:
-        assert sprite in dia.sprites
+        assert sprite in dia.find_all_sprites()
