@@ -10,7 +10,8 @@ TConverters: TypeAlias = MappingProxyType[
     Type[converters.BaseConverter],
 ]
 
+
 TExporters: TypeAlias = MappingProxyType[
-    models.ModelTypes,
+    Type[models.BaseModel],
     Type[exporters.BaseExporter],
 ]

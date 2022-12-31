@@ -31,7 +31,7 @@ def __search_diagram_in_module(module: ModuleType) -> models.BaseModel | None:
     log.info(
         "В модуле {0} найдена диаграмма {1}".format(
             module.__name__,
-            dias[0].model_type,
+            type(dias[0]),
         ),
     )
     return dias[0]
@@ -52,9 +52,9 @@ def _export_model_to_str(
     model: models.BaseModel,
     exporters: typings.TExporters,
 ) -> tuple[str, str]:
-    exporter_type = exporters.get(model.model_type)
+    exporter_type = exporters.get(type(model))
     if exporter_type is None:
-        msg: str = "Неизвестный тип модели:{0}".format(model.model_type)
+        msg: str = "Неизвестный тип модели:{0}".format(type(model))
         raise exceptions.IncorrectArgError(msg)
     exporter = exporter_type(model)
     return exporter.export(), exporter.file_extension

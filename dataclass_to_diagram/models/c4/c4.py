@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Sequence
 
-from dataclass_to_diagram.models import BaseModel, ModelTypes
+from ..base_model import BaseModel
 
 from .base import BaseContainer, BaseContext, BaseRel, BaseSprite
 from .tag import ElementTag, RelationTag
@@ -13,10 +13,6 @@ class C4(BaseModel):
     containers: Sequence[BaseContainer] | None = None
     relations: Sequence[BaseRel] | None = None
     show_legend: bool = True
-
-    def __post_init__(self) -> None:
-        """После инициализации полей."""
-        super().__init__(ModelTypes.с4)
 
     def find_all_sprites(self) -> set[BaseSprite]:
         """Возвращает все спрайты."""
