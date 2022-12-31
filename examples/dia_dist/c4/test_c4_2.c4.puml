@@ -1,7 +1,0 @@
-@startuml
-!include C4_Dynamic.puml
-
-System($alias=8, $label="system")
-
-SHOW_LEGEND()
-@enduml
