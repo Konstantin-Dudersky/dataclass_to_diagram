@@ -59,7 +59,7 @@ System_Boundary($alias={system}, $label="system") {{
 
 Container($alias={high_container}, $label="high-level container")
 
-Rel($from={container1}, $to={container2}, $label="rel")
+Rel($from={container1}, $to={container2}, $label="rel", $tags="tag_rel_1")
 BiRel($from={user}, $to={container1}, $label="rel")
 
 SHOW_LEGEND()
