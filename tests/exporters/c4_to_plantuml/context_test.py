@@ -16,8 +16,9 @@ def test_person_full():
     person = c4.context.Person(
         label="user",
         descr="user description",
+        link="https://link.to",
     )
-    puml: str = """Person($alias={0}, $label="user", $descr="user description")""".format(
+    puml: str = """Person($alias={0}, $label="user", $descr="user description", $link="https://link.to")""".format(
         person.alias,
     )
     assert context_to_puml(person) == puml

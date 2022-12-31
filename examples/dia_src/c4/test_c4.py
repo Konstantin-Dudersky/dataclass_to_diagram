@@ -2,65 +2,6 @@
 
 from dataclass_to_diagram import c4
 
-# ex 3 ------------------------------------------------------------------------
-# icons/sprites
-dia3 = c4.C4(
-    filename="dia3",
-    title="",
-    links_context=[
-        user := c4.context.Person(
-            label="Customer",
-            descr="People that need products",
-            sprite=c4.sprite.tupadr3.FontAwesome5(
-                c4.sprite.tupadr3.FontAwesome5Lib.USERS,
-            ),
-        ),
-    ],
-    links_container=[
-        spa := c4.container.Container(
-            label="SPA",
-            techn="angular",
-            descr="The main interface that the customer interacts with",
-            sprite=c4.sprite.tupadr3.FontAwesome5(
-                c4.sprite.tupadr3.FontAwesome5Lib.ANGULAR,
-            ),
-        ),
-        api := c4.container.Container(
-            label="API",
-            techn="java",
-            descr="Handles all business logic",
-            sprite=c4.sprite.tupadr3.FontAwesome5(
-                c4.sprite.tupadr3.FontAwesome5Lib.JAVA,
-            ),
-        ),
-        db := c4.container.ContainerDb(
-            label="Database",
-            techn="Microsoft SQL",
-            descr="Holds product, order and invoice information",
-            sprite=c4.sprite.tupadr3.Devicons(
-                c4.sprite.tupadr3.DeviconsLib.MSQL_SERVER,
-            ),
-        ),
-    ],
-    links_rel=[
-        c4.rel.Rel(
-            links=(user, spa),
-            label="Uses",
-            techn="https",
-        ),
-        c4.rel.Rel(
-            links=(spa, api),
-            label="Uses",
-            techn="https",
-        ),
-        c4.rel.RelR(
-            links=(api, db),
-            label="Reads/Writes",
-        ),
-    ],
-)
-
-
 # ex 4 ------------------------------------------------------------------------
 # links
 

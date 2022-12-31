@@ -10,10 +10,12 @@ def rel_to_puml(rel: BaseRel) -> str:
     args["$from"] = rel.begin.alias
     args["$to"] = rel.end.alias
     args["$label"] = '"{0}"'.format(rel.label)
-    if rel.techn is not None:
+    if rel.techn:
         args["$techn"] = '"{0}"'.format(rel.techn)
-    if rel.descr is not None:
+    if rel.descr:
         args["$descr"] = '"{0}"'.format(rel.descr)
+    if rel.link:
+        args["$link"] = '"{0}"'.format(rel.link)
     args_str_list = [
         "{0}={1}".format(key, value) for key, value in args.items()
     ]

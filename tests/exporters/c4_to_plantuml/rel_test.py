@@ -34,8 +34,9 @@ def test_rel_full(begin: context.System, end: context.System):
         label="label",
         techn="rel technology",
         descr="rel description",
+        link="https://link.to",
     )
-    puml: str = """Rel($from={0}, $to={1}, $label="label", $techn="rel technology", $descr="rel description")""".format(
+    puml: str = """Rel($from={0}, $to={1}, $label="label", $techn="rel technology", $descr="rel description", $link="https://link.to")""".format(
         begin.alias,
         end.alias,
     )

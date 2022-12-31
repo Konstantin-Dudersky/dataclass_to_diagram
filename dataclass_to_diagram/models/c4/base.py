@@ -16,19 +16,22 @@ class BaseSprite(StrEnum):
 
 @dataclass
 class BaseElement(ABC):
+    """Базовый класс для контекста, контейнера и компонента."""
+
     class_name_str: str = field(init=False, default="NotImplemented")
     alias: str = field(init=False)
     label: str
     descr: str | None = None
     techn: str | None = None
     sprite: BaseSprite | None = None
+    link: str | None = None
 
     def __post_init__(self) -> None:
         self.alias = str(id(self)).replace("-", "_")
 
     @abstractmethod
     def all_sprites(self) -> set[BaseSprite]:
-        """Возвращает include для спрайтов."""
+        """Возвращает все спрайты."""
         if self.sprite is None:
             return set()
         return {self.sprite}
@@ -39,6 +42,7 @@ class BaseComponent(BaseElement):
     """Уровень 3 - Component."""
 
     def all_sprites(self) -> set[BaseSprite]:
+        """Возвращает все спрайты."""
         return super().all_sprites()
 
 
@@ -49,7 +53,7 @@ class BaseContainer(BaseElement):
     components: Iterable[BaseComponent] | None = None
 
     def all_sprites(self) -> set[BaseSprite]:
-        """Возвращает include для спрайтов."""
+        """Возвращает все спрайты."""
         sprites = super().all_sprites()
         if self.components is None:
             return sprites
@@ -66,7 +70,7 @@ class BaseContext(BaseElement):
     containers: Iterable[BaseContainer] | None = None
 
     def all_sprites(self) -> set[BaseSprite]:
-        """Возвращает include для спрайтов."""
+        """Возвращает все спрайты."""
         sprites = super().all_sprites()
         if self.containers is None:
             return sprites
@@ -77,9 +81,12 @@ class BaseContext(BaseElement):
 
 @dataclass
 class BaseRel(object):
+    """Базовый класс для связи элементов."""
+
     class_name_str: str = field(init=False, default="NotImplemented")
     begin: BaseElement
     end: BaseElement
     label: str
     techn: str | None = None
     descr: str | None = None
+    link: str | None = None
