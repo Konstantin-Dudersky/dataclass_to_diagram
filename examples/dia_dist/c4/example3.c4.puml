@@ -1,10 +1,15 @@
 @startuml
 !include C4_Dynamic.puml
-Person($alias=139896631567760, $label="Customer", $descr="People that need products")
-Container($alias=139896624968080, $label="SPA", $descr="The main interface that the customer interacts with", $techn="angular")
-Container($alias=139896624955856, $label="API", $descr="Handles all business logic", $techn="java")
-ContainerDb($alias=139896631558992, $label="Database", $descr="Holds product, order and invoice information", $techn="Microsoft SQL")
-Rel($from=139896631567760, $to=139896624968080, $label="Uses", $techn="https")
-Rel($from=139896624968080, $to=139896624955856, $label="Uses", $techn="https")
-Rel_Right($from=139896624955856, $to=139896631558992, $label="Reads/Writes")
+!include <tupadr3/common>
+!include <tupadr3/devicons/msql_server>
+!include <tupadr3/font-awesome-5/angular>
+!include <tupadr3/font-awesome-5/java>
+!include <tupadr3/font-awesome-5/users>
+Person($alias=139974568400208, $label="Customer", $descr="People that need products", $sprite=users)
+Container($alias=139974568408720, $label="SPA", $descr="The main interface that the customer interacts with", $techn="angular", $sprite=angular)
+Container($alias=139974568406800, $label="API", $descr="Handles all business logic", $techn="java", $sprite=java)
+ContainerDb($alias=139974568396880, $label="Database", $descr="Holds product, order and invoice information", $techn="Microsoft SQL", $sprite=msql_server)
+Rel($from=139974568400208, $to=139974568408720, $label="Uses", $techn="https")
+Rel($from=139974568408720, $to=139974568406800, $label="Uses", $techn="https")
+Rel_Right($from=139974568406800, $to=139974568396880, $label="Reads/Writes")
 @enduml

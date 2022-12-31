@@ -1,18 +1,8 @@
 """Level 1 - Context."""
 
 from dataclasses import dataclass, field
-from typing import Iterable
 
-from ..base import BaseElement
-from ..container.containter import BaseContainer
-
-
-@dataclass
-class BaseContext(BaseElement):
-    """Level 1 - Context."""
-
-    techn: None = field(init=False, default=None)
-    containers: Iterable[BaseContainer] | None = None
+from ..base import BaseContext
 
 
 @dataclass

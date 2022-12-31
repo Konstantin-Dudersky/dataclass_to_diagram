@@ -11,4 +11,6 @@ def base_element_to_puml(
         args["$descr"] = '"{0}"'.format(base_element.descr)
     if base_element.techn is not None:
         args["$techn"] = '"{0}"'.format(base_element.techn)
+    if base_element.sprite is not None:
+        args["$sprite"] = base_element.sprite.value
     return args

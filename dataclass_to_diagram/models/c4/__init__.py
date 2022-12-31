@@ -1,4 +1,4 @@
-from . import component, container, context, rel
+from . import component, container, context, rel, sprite
 from .c4 import C4
 
 __all__ = [
@@ -7,4 +7,5 @@ __all__ = [
     "container",
     "context",
     "rel",
+    "sprite",
 ]

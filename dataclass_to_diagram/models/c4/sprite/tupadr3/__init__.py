@@ -1,9 +1,11 @@
 r"""Sprite.
 
+Для генерации перечислений на основе списка файлов:
+
+- клонировать репозиторий с библиотекой
 https://github.com/tupadr3/plantuml-icon-font-sprites.git
 
-Для генерации перечислений на основе списка файлов:
-- в папке с файлами создать файл _generate.py:
+- в папке с файлами библиотеки создать файл _generate.py:
 -------------------------------------------------------------------------------
 
 import os
@@ -26,13 +28,18 @@ with open(OUT_FILENAME, "w", encoding="utf-8") as stream:
         line = f'    {sprite.lower()} = "{sprite}"\n'
         stream.write(line)
 
-
 -------------------------------------------------------------------------------
-- настроить переменные BASE и PATH
 - запустить командой python3 _generate.py
 - содержимое файла _enum.txt вставить в перечиление
 """
-from .sprite_lib import tupadr3
 
-if __name__ == "__main__":
-    _ = tupadr3.FontAwesome5(tupadr3.FontAwesome5Lib.AD)
+
+from .devicons import Devicons
+from .devicons2 import Devicons2
+from .font_awesome_5 import FontAwesome5
+
+__all__ = [
+    "Devicons",
+    "Devicons2",
+    "FontAwesome5",
+]

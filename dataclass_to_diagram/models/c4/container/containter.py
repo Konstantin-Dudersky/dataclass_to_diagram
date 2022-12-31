@@ -1,13 +1,6 @@
 from dataclasses import dataclass, field
-from typing import Iterable
 
-from ..base import BaseElement
-from ..component.component import BaseComponent
-
-
-@dataclass
-class BaseContainer(BaseElement):
-    components: Iterable[BaseComponent] | None = None
+from ..base import BaseContainer
 
 
 @dataclass

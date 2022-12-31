@@ -6,7 +6,6 @@ def test_empty():
     dia = c4.C4()
     puml: str = """@startuml
 !include C4_Dynamic.puml
-
 @enduml
 """
     assert c4_to_puml(dia) == puml

@@ -5,12 +5,12 @@ from dataclass_to_diagram.models.c4 import C4
 from .context_to_puml import context_to_puml
 from .container_to_puml import container_to_puml
 from .rel_to_puml import rel_to_puml
+from .sprites_to_puml import sprites_to_puml
 
 TEMPLATE: Final[
     str
 ] = """@startuml
-!include C4_Dynamic.puml
-{contexts}{containers}{relations}
+!include C4_Dynamic.puml{sprites}{contexts}{containers}{relations}
 @enduml
 """
 
@@ -20,7 +20,7 @@ def c4_to_puml(c4: C4):
         contexts_list: list[str] = [
             context_to_puml(context) for context in c4.contexts
         ]
-        contexts_str = "\n".join(contexts_list)
+        contexts_str = "\n" + "\n".join(contexts_list)
     else:
         contexts_str = ""
     if c4.containers:
@@ -36,6 +36,7 @@ def c4_to_puml(c4: C4):
     else:
         relations_str = ""
     return TEMPLATE.format(
+        sprites=sprites_to_puml(c4.sprites),
         contexts=contexts_str,
         containers=containers_str,
         relations=relations_str,

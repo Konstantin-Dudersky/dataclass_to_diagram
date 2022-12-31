@@ -1,11 +1,6 @@
 from dataclasses import dataclass, field
 
-from ..base import BaseElement
-
-
-@dataclass
-class BaseComponent(BaseElement):
-    pass
+from ..base import BaseComponent
 
 
 @dataclass

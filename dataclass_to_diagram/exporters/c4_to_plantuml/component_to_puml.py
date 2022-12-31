@@ -1,6 +1,4 @@
-from dataclass_to_diagram.models.c4.component.component import (
-    BaseComponent,
-)
+from dataclass_to_diagram.models.c4.base import BaseComponent
 
 from .base_element_to_puml import base_element_to_puml
 
