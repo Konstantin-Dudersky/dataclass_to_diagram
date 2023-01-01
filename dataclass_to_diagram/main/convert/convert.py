@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Coroutine
 
 from dataclass_to_diagram import exceptions, typings
+from dataclass_to_diagram.converters import ConvertersParams
 
 log = logging.getLogger(__name__)
 
@@ -36,10 +37,11 @@ def _find_files_by_filetype(
 def _create_coros_for_filetypes(
     files_by_filetype: dict[str, list[Path]],
     converters: typings.TConverters,
+    converters_params: ConvertersParams,
 ) -> list[Coroutine[None, None, None]]:
     coros: list[Coroutine[None, None, None]] = []
     for filetype, files in files_by_filetype.items():
-        converter = converters[filetype]()
+        converter = converters[filetype](converters_params)
         for file in files:
             coro = converter.convert(file)
             coros.append(coro)
@@ -55,6 +57,7 @@ async def _run_coros(coros: list[Coroutine[None, None, None]]) -> None:
 def convert(
     target: str,
     converters: typings.TConverters,
+    converters_params: ConvertersParams,
 ) -> None:
     """Конвертировать текстовые файлы в изображения.
 
@@ -75,5 +78,6 @@ def convert(
     coros: list[Coroutine[None, None, None]] = _create_coros_for_filetypes(
         files_by_filetype=files_by_filetype,
         converters=converters,
+        converters_params=converters_params,
     )
     asyncio.run(_run_coros(coros))

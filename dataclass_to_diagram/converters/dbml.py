@@ -2,7 +2,7 @@
 
 import logging
 from pathlib import Path
-from typing import Any, Final
+from typing import Final
 
 from dataclass_to_diagram.shared.run_process_async import run_process_async
 
@@ -17,9 +17,6 @@ COMMAND: Final[str] = "dbml-renderer -i {input} -o {output}"
 
 class DbmlConverter(BaseConverter):
     """Конвертирование dbml."""
-
-    def __init__(self, **kwargs: Any) -> None:
-        """Конвертирование dbml."""
 
     async def convert(self, filepath: Path) -> None:
         """Конвертирование."""

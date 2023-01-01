@@ -40,8 +40,9 @@ class KrokiC4Converter(BaseConverter):
         try:
             response = await kroki_request(
                 diagram_source=diagram_source,
-                diagram_type="c4plantuml",
+                diagram_type="plantuml",
                 output_format=output_format,
+                kroki_url=self._converters_params.kroki_url,
             )
         except ConverterError:
             return

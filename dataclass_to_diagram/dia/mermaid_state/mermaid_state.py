@@ -12,7 +12,6 @@ from enum import Enum
 
 from dataclass_to_diagram.dia.base import BaseDiagram
 from dataclass_to_diagram.dia.base import Image
-from dataclass_to_diagram.service import kroki
 
 from typing_extensions import Self
 

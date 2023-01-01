@@ -52,8 +52,9 @@ def export(source: str = ARG_SRC, distribution: str = ARG_DIST) -> None:
 def convert(distribution: str = ARG_DIST) -> None:
     """Конвертировать текстовые файлы в изображения."""
     log.info("Запущено конвертирование диаграмм.")
+    converters_params = converters.ConvertersParams()
     try:
-        main.convert(distribution, CONVERTERS)
+        main.convert(distribution, CONVERTERS, converters_params)
     except exceptions.BaseError as exc:
         log.critical(exc)
 

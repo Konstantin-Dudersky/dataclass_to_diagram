@@ -15,11 +15,13 @@ async def kroki_request(
     diagram_source: str,
     diagram_type: DiagramType,
     output_format: OutputFormat,
+    kroki_url: str = "https://kroki.io",
 ) -> bytes:
+    """Запрос на конвертирование к сервису kroki.io."""
     async with httpx.AsyncClient() as client:
         try:
             response = await client.post(
-                url="https://kroki.io",
+                url=kroki_url,
                 json={
                     "diagram_source": diagram_source,
                     "diagram_type": diagram_type,
