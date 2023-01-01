@@ -23,12 +23,8 @@ class DbmlConverter(BaseConverter):
 
     async def convert(self, filepath: Path) -> None:
         """Конвертирование."""
+        converted_path = filepath.with_suffix("").with_suffix(".svg")
         await run_process_async(
-            COMMAND.format(
-                input=filepath,
-                output="{path}/{filename}.svg".format(
-                    path=self._extract_path(filepath),
-                    filename=self._extract_filename(filepath),
-                ),
-            ),
+            COMMAND.format(input=filepath, output=converted_path),
         )
+        self._log_convert_completed(converted_path)

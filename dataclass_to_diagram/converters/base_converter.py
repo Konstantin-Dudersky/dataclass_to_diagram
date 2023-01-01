@@ -1,7 +1,10 @@
 """Базовый конвертер."""
 
 import abc
+import logging
 from pathlib import Path
+
+log = logging.getLogger(__name__)
 
 
 class BaseConverter(abc.ABC):
@@ -11,8 +14,5 @@ class BaseConverter(abc.ABC):
     async def convert(self, filepath: Path) -> None:
         """Конвертирование."""
 
-    def _extract_filename(self, filepath: Path) -> str:
-        return filepath.name.split(".")[0]
-
-    def _extract_path(self, filepath: Path) -> Path:
-        return filepath.parents[0]
+    def _log_convert_completed(self, filepath: Path) -> None:
+        log.info("Конвертирование выполнено, создан файл: {0}".format(filepath))

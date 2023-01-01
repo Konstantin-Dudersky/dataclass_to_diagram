@@ -39,8 +39,10 @@ def _create_coros_for_filetypes(
 ) -> list[Coroutine[None, None, None]]:
     coros: list[Coroutine[None, None, None]] = []
     for filetype, files in files_by_filetype.items():
+        converter = converters[filetype]()
         for file in files:
-            coros.append(converters[filetype]().convert(file))
+            coro = converter.convert(file)
+            coros.append(coro)
     return coros
 
 

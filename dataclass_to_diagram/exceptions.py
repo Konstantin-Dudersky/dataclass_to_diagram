@@ -4,3 +4,9 @@ class BaseError(Exception):
 
 class IncorrectArgError(BaseError):
     pass
+
+
+class ConverterError(BaseError):
+    """Ошибка конвертирования файла."""
+
+    pass

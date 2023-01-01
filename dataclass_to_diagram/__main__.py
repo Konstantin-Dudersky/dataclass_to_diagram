@@ -21,6 +21,7 @@ EXPORTERS: typings.TExporters = MappingProxyType(
 CONVERTERS: typings.TConverters = MappingProxyType(
     {
         "**/*.dbml": converters.DbmlConverter,
+        "**/*.c4.puml": converters.KrokiC4Converter,
     },
 )
 
@@ -52,7 +53,7 @@ def convert(distribution: str = ARG_DIST) -> None:
     """Конвертировать текстовые файлы в изображения."""
     log.info("Запущено конвертирование диаграмм.")
     try:
-        main.convert("test/dia_dist", CONVERTERS)
+        main.convert(distribution, CONVERTERS)
     except exceptions.BaseError as exc:
         log.critical(exc)
 

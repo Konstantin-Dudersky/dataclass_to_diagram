@@ -20,6 +20,7 @@ version = "0.0.1"
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "*"
+httpx = "*"
 typer = { extras = ["all"], version = "^0.7.0" }
 typing_extensions = "*"                          # delete
 
