@@ -1,0 +1,19 @@
+@startuml
+
+state 1 <<start>>
+state 2 <<fork>>
+state "State2" as 3
+state "State3" as 4
+state 5 <<join>>
+state "State4" as 6
+state 7 <<end>>
+
+1 --> 2
+2 --> 3
+2 --> 4
+3 --> 5
+4 --> 5
+5 --> 6
+6 --> 7
+
+@enduml
