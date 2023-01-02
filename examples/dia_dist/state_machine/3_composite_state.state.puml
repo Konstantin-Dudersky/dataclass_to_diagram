@@ -1,27 +1,27 @@
 @startuml
 
-state 10 <<start>>
-state "NotShooting" as 13 {
-    state 11 <<start>>
-    state "Idle" as 12
+state 26 <<start>>
+state "NotShooting" as 29 {
+    state 27 <<start>>
+    state "Idle" as 28
 }
-state "Configuring" as 19 {
-    state 14 <<start>>
-    state "NewValueSelection" as 15
-    state "NewValuePreview" as 18 {
-        state "State1" as 16
-        state "State2" as 17
+state "Configuring" as 35 {
+    state 30 <<start>>
+    state "NewValueSelection" as 31
+    state "NewValuePreview" as 34 {
+        state "State1" as 32
+        state "State2" as 33
     }
 }
 
-10 --> 13
-11 --> 12
-12 --> 19 : EvConfig
-19 --> 12 : EvConfig
-14 --> 15
-15 --> 18 : EvNewValue
-18 --> 15 : EvNewValueRejected
-18 --> 15 : EvNewValueSaved
-16 --> 17
+26 --> 29
+27 --> 28
+28 --> 35 : EvConfig
+35 --> 28 : EvConfig
+30 --> 31
+31 --> 34 : EvNewValue
+34 --> 31 : EvNewValueRejected
+34 --> 31 : EvNewValueSaved
+32 --> 33
 
 @enduml

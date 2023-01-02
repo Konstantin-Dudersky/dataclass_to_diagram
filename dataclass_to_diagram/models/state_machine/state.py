@@ -1,7 +1,7 @@
 """Классы для описания диаграммы состояний."""
 
 from dataclasses import dataclass, field
-from typing import Iterable, Self
+from typing import Iterable, Literal, Self
 
 from ..alias_generator import AliasFenerator
 from ..base_model import BaseModel
@@ -46,6 +46,7 @@ class Transition(object):
     begin: State
     end: State
     description: str | None = None
+    option: Literal["history", "deep_history"] | None = None
 
 
 @dataclass(frozen=True)

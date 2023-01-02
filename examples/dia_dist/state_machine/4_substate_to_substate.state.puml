@@ -1,14 +1,14 @@
 @startuml
 
-state "A" as 3 {
-    state "Y" as 1
-    state "X" as 2
+state "A" as 11 {
+    state "Y" as 9
+    state "X" as 10
 }
-state "B" as 5 {
-    state "Z" as 4
+state "B" as 13 {
+    state "Z" as 12
 }
 
-2 --> 4
-4 --> 1
+10 --> 12
+12 --> 9
 
 @enduml

@@ -18,3 +18,16 @@ def test_with_description():
     trans = state_machine.Transition(st1, st2, description="description")
     puml = "{0} --> {1} : description".format(st1.alias, st2.alias)
     assert transition_to_puml(trans) == puml
+
+
+def test_history():
+    st1 = state_machine.State("begin")
+    st2 = state_machine.State(
+        "end",
+        internal_states=[
+            state_machine.State("internal"),
+        ],
+    )
+    trans = state_machine.Transition(st1, st2, option="history")
+    puml = "{0} --> {1}[H]".format(st1.alias, st2.alias)
+    assert transition_to_puml(trans) == puml

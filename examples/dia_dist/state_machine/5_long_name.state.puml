@@ -1,0 +1,25 @@
+@startuml
+
+state 18 <<start>>
+state "State1" as 19
+state "State2" as 20
+state "State3" as 24 {
+    state 21 <<start>>
+    state "Accumulate Enough Data" as 22
+    22 : Just a test
+    state "ProcessData" as 23
+}
+state 25 <<end>>
+
+18 --> 19
+19 --> 20 : Succeeded
+20 --> 24 : Succeeded
+19 --> 25 : Aborted
+20 --> 25 : Aborted
+24 --> 25 : Succeeded / Save Result
+24 --> 25 : Aborted
+21 --> 22
+22 --> 22 : New Data
+22 --> 23 : Enough Data
+
+@enduml
