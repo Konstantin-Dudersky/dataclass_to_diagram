@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from enum import StrEnum
 from typing import Iterable, Sequence
 
-from .alias_generator import AliasFenerator
+from ..alias_generator import AliasFenerator
 
 
 class BaseSprite(StrEnum):

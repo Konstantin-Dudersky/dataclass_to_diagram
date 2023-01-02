@@ -14,6 +14,7 @@ ignore =
     WPS112,#  Found private name pattern
     WPS114, # Found underscored number name pattern
     WPS300, # Found local folder import
+    WPS332, # Found walrus operator
     WPS348, # Found a line that starts with a dot
     WPS410, # Found wrong metadata variable: __all__
     WPS412, # Found `__init__.py` module with logic

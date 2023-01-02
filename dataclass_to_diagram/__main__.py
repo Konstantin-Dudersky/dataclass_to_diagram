@@ -15,6 +15,7 @@ EXPORTERS: typings.TExporters = MappingProxyType(
     {
         models.c4.C4: exporters.C4ToPlantuml,
         models.erd.Database: exporters.ErdToDbml,
+        models.state_machine.Diagram: exporters.StateToPlantuml,
     },
 )
 
