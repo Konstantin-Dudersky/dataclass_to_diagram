@@ -1,0 +1,27 @@
+@startuml
+
+state 5 <<start>>
+state "NotShooting" as 8 {
+    state 6 <<start>>
+    state "Idle" as 7
+}
+state "Configuring" as 14 {
+    state 9 <<start>>
+    state "NewValueSelection" as 10
+    state "NewValuePreview" as 13 {
+        state "State1" as 11
+        state "State2" as 12
+    }
+}
+
+5 --> 8
+6 --> 7
+7 --> 14 : EvConfig
+14 --> 7 : EvConfig
+9 --> 10
+10 --> 13 : EvNewValue
+13 --> 10 : EvNewValueRejected
+13 --> 10 : EvNewValueSaved
+11 --> 12
+
+@enduml
