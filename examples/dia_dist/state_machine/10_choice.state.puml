@@ -1,0 +1,14 @@
+@startuml
+
+state "Idle" as 1
+state "Req(Id)" as 2
+state 3 <<choice>>
+state "Minor(Id)" as 4
+state "Major(Id)" as 5
+
+1 --> 2
+2 --> 3
+3 --> 4 : [Id <= 10]
+3 --> 5 : [Id > 10]
+
+@enduml

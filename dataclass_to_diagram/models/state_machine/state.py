@@ -54,6 +54,13 @@ class StateJoin(State):
 
 
 @dataclass(frozen=True)
+class StateChoice(State):
+    name: str = field(init=False, default="")
+    internal_states: None = field(init=False, default=None)
+    description: None = field(init=False)
+
+
+@dataclass(frozen=True)
 class Transition(object):
     """Переход между состояниями."""
 

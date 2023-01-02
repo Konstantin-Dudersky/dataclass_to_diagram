@@ -2,16 +2,16 @@
 
 hide empty description
 
-state 43 <<start>>
-state "State1" as 44
-44 : this is a string
-44 : this is another string
-state "State2" as 45
-state 46 <<end>>
+state 48 <<start>>
+state "State1" as 49
+49 : this is a string
+49 : this is another string
+state "State2" as 50
+state 51 <<end>>
 
-43 --> 44
-44 --> 45
-44 --> 46
-45 --> 46
+48 --> 49
+49 --> 50
+49 --> 51
+50 --> 51
 
 @enduml

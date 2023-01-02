@@ -9,6 +9,7 @@ START: str = "state {alias} <<start>>"
 END: str = "state {alias} <<end>>"
 FORK: str = "state {alias} <<fork>>"
 JOIN: str = "state {alias} <<join>>"
+CHOICE: str = "state {alias} <<choice>>"
 
 
 def _export_internal_states(
@@ -49,16 +50,16 @@ def _export_description(
 
 def state_to_puml(state: state_machine.State) -> str:
     match state:
-        case state_machine.StateStart():
-            return START.format(alias=state.alias)
+        case state_machine.StateChoice():
+            return CHOICE.format(alias=state.alias)
         case state_machine.StateEnd():
             return END.format(alias=state.alias)
         case state_machine.StateFork():
             return FORK.format(alias=state.alias)
         case state_machine.StateJoin():
             return JOIN.format(alias=state.alias)
-        case state_machine.StateEnd():
-            return END.format(alias=state.alias)
+        case state_machine.StateStart():
+            return START.format(alias=state.alias)
         case state_machine.State():
             return TEMPLATE.format(
                 name=state.name,

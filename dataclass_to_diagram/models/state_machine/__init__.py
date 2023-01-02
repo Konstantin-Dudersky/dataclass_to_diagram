@@ -1,6 +1,7 @@
 from .state import (
     Diagram,
     State,
+    StateChoice,
     StateEnd,
     StateFork,
     StateJoin,
@@ -11,6 +12,7 @@ from .state import (
 __all__ = [
     "Diagram",
     "State",
+    "StateChoice",
     "StateEnd",
     "StateFork",
     "StateJoin",

@@ -1,29 +1,29 @@
 @startuml
 
-state 8 <<start>>
-state "State1" as 9
-state "State2" as 10
-state "State3" as 14 {
-    state 11 <<start>>
-    state "Accumulate Enough Data" as 12
-    12 : Just a test
-    state "ProcessData" as 13
+state 13 <<start>>
+state "State1" as 14
+state "State2" as 15
+state "State3" as 19 {
+    state 16 <<start>>
+    state "Accumulate Enough Data" as 17
+    17 : Just a test
+    state "ProcessData" as 18
 }
-state 15 <<end>>
+state 20 <<end>>
 
-8 --> 9
-9 --> 10 : Succeeded
-10 --> 14 : Succeeded
-10 --> 14[H] : Resume
-10 --> 14[H*] : DeepResume
-14 --> 10 : Pause
-14 --> 14 : Failed
-9 --> 15 : Aborted
-10 --> 15 : Aborted
-14 --> 15 : Succeeded / Save Result
-14 --> 15 : Aborted
-11 --> 12
-12 --> 12 : New Data
-12 --> 13 : Enough Data
+13 --> 14
+14 --> 15 : Succeeded
+15 --> 19 : Succeeded
+15 --> 19[H] : Resume
+15 --> 19[H*] : DeepResume
+19 --> 15 : Pause
+19 --> 19 : Failed
+14 --> 20 : Aborted
+15 --> 20 : Aborted
+19 --> 20 : Succeeded / Save Result
+19 --> 20 : Aborted
+16 --> 17
+17 --> 17 : New Data
+17 --> 18 : Enough Data
 
 @enduml
