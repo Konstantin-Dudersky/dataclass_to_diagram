@@ -54,3 +54,4 @@ class Diagram(BaseModel):
 
     states: Iterable[State] | None = None
     transitions: Iterable[Transition] | None = None
+    hide_empty_description: bool = False

@@ -1,4 +1,5 @@
 from typing import Iterable
+
 from dataclass_to_diagram.models import state_machine
 
 from ..shared.increase_indent import increase_indent
@@ -57,5 +58,3 @@ def state_to_puml(state: state_machine.State) -> str:
                 internal_states=_export_internal_states(state.internal_states),
                 decription=_export_description(state.alias, state.description),
             )
-
-    return ""

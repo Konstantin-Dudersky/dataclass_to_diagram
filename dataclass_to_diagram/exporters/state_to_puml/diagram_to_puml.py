@@ -5,10 +5,19 @@ from .transition_to_puml import transition_to_puml
 
 TEMPLATE: Final[
     str
-] = """@startuml{states}{transitions}
+] = """@startuml{options}{states}{transitions}
 
 @enduml
 """
+
+
+def _export_options(hide_empty_description: bool) -> str:
+    options: list[str] = []
+    if hide_empty_description:
+        options.append("hide empty description")
+    if not options:
+        return ""
+    return "\n\n{0}".format("\n".join(options))
 
 
 def _export_states(states: Iterable[state_machine.State] | None) -> str:
@@ -31,6 +40,7 @@ def _export_transitions(
 
 def diagram_to_puml(diagram: state_machine.Diagram) -> str:
     return TEMPLATE.format(
+        options=_export_options(diagram.hide_empty_description),
         states=_export_states(diagram.states),
         transitions=_export_transitions(diagram.transitions),
     )

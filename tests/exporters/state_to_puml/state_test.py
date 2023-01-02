@@ -59,7 +59,6 @@ def test_internal_states():
         internal_states=[
             st11 := state_machine.State("state11"),
             st12 := state_machine.State("state12"),
-            state_machine.DEFAULT_STATE,
         ],
     )
     puml: str = """state "main_state" as {0} {{

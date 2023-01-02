@@ -13,6 +13,17 @@ def test_empty():
     assert diagram_to_puml(dia) == puml
 
 
+def test_hide_empty_desc():
+    dia = state_machine.Diagram(hide_empty_description=True)
+    puml = """@startuml
+
+hide empty description
+
+@enduml
+"""
+    assert diagram_to_puml(dia) == puml
+
+
 def test_full():
     dia = state_machine.Diagram(
         states=[
