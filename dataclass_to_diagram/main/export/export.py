@@ -1,6 +1,7 @@
 """Точка входа для генерации схем."""
 
 import logging
+import sys
 from pathlib import Path
 from types import ModuleType
 
@@ -82,6 +83,7 @@ def export(
     exporters
         Словарь с соответствием типа модели и класса экспорта
     """
+    sys.path.append(str(Path.cwd()))
     path_source, path_target = _create_paths_and_check(source, target)
     prepare_target_folder(
         path_source=path_source,
