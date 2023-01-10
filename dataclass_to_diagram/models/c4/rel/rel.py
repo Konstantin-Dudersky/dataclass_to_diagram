@@ -30,6 +30,16 @@ class RelRight(BaseRel):
 
 
 @dataclass(frozen=True)
+class RelBack(BaseRel):
+    class_name_str: str = field(init=False, default="Rel_Back")
+
+
+@dataclass(frozen=True)
+class RelNeighbor(BaseRel):
+    class_name_str: str = field(init=False, default="Rel_Neighbor")
+
+
+@dataclass(frozen=True)
 class BiRel(BaseRel):
     class_name_str: str = field(init=False, default="BiRel")
 

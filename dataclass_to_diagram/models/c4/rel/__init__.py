@@ -5,8 +5,10 @@ from .rel import (
     BiRelRight,
     BiRelUp,
     Rel,
+    RelBack,
     RelDown,
     RelLeft,
+    RelNeighbor,
     RelRight,
     RelUp,
 )
@@ -18,8 +20,10 @@ __all__ = [
     "BiRelRight",
     "BiRelUp",
     "Rel",
+    "RelBack",
     "RelDown",
     "RelLeft",
+    "RelNeighbor",
     "RelRight",
     "RelUp",
 ]

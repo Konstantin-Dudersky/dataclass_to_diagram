@@ -145,7 +145,6 @@ class BaseContext(BaseElement):
 class BaseRel(object):
     """Базовый класс для связи элементов."""
 
-    class_name_str: str = field(init=False, default="NotImplemented")
     begin: BaseElement
     end: BaseElement
     label: str
@@ -153,3 +152,4 @@ class BaseRel(object):
     descr: str | None = None
     link: str | None = None
     tags: Iterable[BaseRelationTag] | None = None
+    class_name_str: str = field(init=False, default="NotImplemented")
