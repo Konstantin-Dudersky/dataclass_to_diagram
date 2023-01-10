@@ -6,7 +6,8 @@ TEMPLATE: str = """{begin} --> {end}{options}{description}"""
 def _export_description(description: str | None) -> str:
     if not description:
         return ""
-    return " : {0}".format(description)
+    desc = description.replace("\n", "\\n")
+    return " : {0}".format(desc)
 
 
 def _export_options(is_history: bool, is_deep_history: bool) -> str:

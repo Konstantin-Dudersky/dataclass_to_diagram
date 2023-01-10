@@ -1,14 +1,14 @@
 @startuml
 
-state "A" as 23 {
-    state "Y" as 21
-    state "X" as 22
+state "A" as 32 {
+    state "Y" as 30
+    state "X" as 31
 }
-state "B" as 25 {
-    state "Z" as 24
+state "B" as 34 {
+    state "Z" as 33
 }
 
-22 --> 24
-24 --> 21
+31 --> 33
+33 --> 30
 
 @enduml

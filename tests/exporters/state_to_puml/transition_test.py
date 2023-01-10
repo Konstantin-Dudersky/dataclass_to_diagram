@@ -20,6 +20,15 @@ def test_with_description():
     assert transition_to_puml(trans) == puml
 
 
+def test_with_description_multiline():
+    st1 = state_machine.State("begin")
+    st2 = state_machine.State("end")
+    trans = state_machine.Transition(st1, st2, description="line 1\nline2")
+    puml = "{0} --> {1} : line 1\\nline2".format(st1.alias, st2.alias)
+    print(transition_to_puml(trans))
+    assert transition_to_puml(trans) == puml
+
+
 def test_history():
     st1 = state_machine.State("begin")
     st2 = state_machine.State(

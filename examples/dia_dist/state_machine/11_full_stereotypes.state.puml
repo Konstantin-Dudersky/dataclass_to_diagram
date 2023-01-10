@@ -1,0 +1,24 @@
+@startuml
+
+state 13 <<start>>
+state 14 <<start>>
+state 15 <<choice>>
+state 16 <<fork>>
+state 17 <<join>>
+state "State 1" as 18
+state "State 2" as 19
+state 20 <<end>>
+state 21 <<end>>
+
+13 --> 15 : from start stereo\nto choice
+14 --> 15 : from start\nto choice
+15 --> 16 : from choice\nto fork
+15 --> 17 : from choice\nto join
+15 --> 20 : from choice\nto end stereo
+16 --> 18 : from fork\nto state
+16 --> 19 : from fork\nto state
+18 --> 21 : from state\nto end
+19 --> 17 : from state\nto join
+17 --> 21 : from join\nto end
+
+@enduml

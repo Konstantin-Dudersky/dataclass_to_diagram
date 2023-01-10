@@ -1,15 +1,15 @@
 @startuml
 
-state 26 <<start>>
-state "State1" as 27
-27 : this is a string
-27 : this is another string
-state "State2" as 28
-state 29 <<end>>
+state 35 <<start>>
+state "State1" as 36
+36 : this is a string
+36 : this is another string
+state "State2" as 37
+state 38 <<end>>
 
-26 --> 27
-27 --> 28
-27 --> 29
-28 --> 29
+35 --> 36
+36 --> 37
+36 --> 38
+37 --> 38
 
 @enduml
