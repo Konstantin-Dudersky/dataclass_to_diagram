@@ -23,6 +23,7 @@ CONVERTERS: typings.TConverters = MappingProxyType(
     {
         "**/*.dbml": converters.DbmlConverter,
         "**/*.c4.puml": converters.KrokiC4Converter,
+        "**/*.state.puml": converters.KrokiC4Converter,
     },
 )
 
